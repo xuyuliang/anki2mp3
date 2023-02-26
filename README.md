@@ -1,10 +1,14 @@
 # anki2mp3
+## purpose
+When I finished my daily Anki, I will mark almost 60 to 80 cards for review. It will cost me maybe one or two hours do nothing but sit there. 
+I wrote a piece of code, transfer the cards into one or two mp3 file with lyrics. at least, my hands are free, I can  do some chores with my earphone.
 
 ## introduction
 1. Anki export cards(notes). 
 
-<img src="https://user-images.githubusercontent.com/1154464/221409427-82f0bda5-06d5-4cc9-bd53-d0fe7cf714de.png width=30%"></img>
-<img src="https://user-images.githubusercontent.com/1154464/221409436-79768655-3e74-4fc9-a007-6673b78315e6.png width=40%"></img>
+<img src="https://user-images.githubusercontent.com/1154464/221409427-82f0bda5-06d5-4cc9-bd53-d0fe7cf714de.png" width=40%>.</img>
+
+<img src="https://user-images.githubusercontent.com/1154464/221409436-79768655-3e74-4fc9-a007-6673b78315e6.png" width=40%>.</img>
 
 2.save this exported file(Selected Notes.txt) to "root" folder (the folder where tts.py exists)
 
