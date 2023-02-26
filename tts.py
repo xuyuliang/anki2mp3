@@ -18,7 +18,7 @@ def find_sound_of_word(word) :
 def symboltocn(currword,text):
     wordpair = {}
     wordpair.update( {'=>':'衍生','~=':'约等于','SYN':'同义词','%=':'约等于','=>':'衍生 '} )
-    wordpair.update( {'OPP':'反义词','=':'同义词','%':currword,'~':currword,':':'.'} )
+    wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
     for k,v in wordpair.items():
         text = text.replace(k,v)
     return text
