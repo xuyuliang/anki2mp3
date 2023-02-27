@@ -7,8 +7,11 @@ import pyttsx3
 import gtts
 from pydub import AudioSegment
 
-SOUND_TEMP_FOLDER = './temp/'
-LONGMAN_BASE_PATH =  r"E:.\朗文直排\sent_rename\sent_rename"
+SOUND_TEMP_FOLDER = ('./temp/' , './outputmp3/')
+# LONGMAN_BASE_PATH =  r"E:.\朗文直排\sent_rename\sent_rename"
+LONGMAN_BASE_PATH =  r"F:\朗文直排\sent_rename"
+
+r"F:\朗文直排\sent_rename"
 INPUT_FILE = "Selected Notes.txt"
 
 def find_sound_of_word(word) :
@@ -19,6 +22,7 @@ def symboltocn(currword,text):
     wordpair = {}
     wordpair.update( {'=>':'衍生','~=':'约等于','SYN':'同义词','%=':'约等于','=>':'衍生 '} )
     wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
+    wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':' . '} )
     for k,v in wordpair.items():
         text = text.replace(k,v)
     return text
@@ -62,7 +66,7 @@ def list_voices(engine):
     # quit()
 
 def text_to_sound(k,v,engine,filename,sound_source):
-    currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
+    currpath = os.path.join(SOUND_TEMP_FOLDER[0],filename)
     print(currpath)
     if sound_source=='gTTS':
         if k=='en':
@@ -111,9 +115,9 @@ def text_to_sound(k,v,engine,filename,sound_source):
             engine.save_to_file(v,currpath)
             engine.runAndWait()
 
-def merge_sound(tempfolder,lyriclist):
-    folder_path = tempfolder 
-    mp3_files = [file for file in os.listdir(folder_path) if file.endswith(".mp3") and file[:-4].isdigit()]
+def merge_sound(tempfolders,lyriclist):
+    tempmp3_path,outputmp3_path = tempfolders 
+    mp3_files = [file for file in os.listdir(tempmp3_path) if file.endswith(".mp3") and file[:-4].isdigit()]
     mp3_files.sort(key=lambda x: int(x[:-4]))
     combined = AudioSegment.empty()
     total_duration = 0
@@ -122,7 +126,7 @@ def merge_sound(tempfolder,lyriclist):
     t = datetime.datetime.now()
     export_filename = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.mp3'
     export_lyric = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.lrc'
-    file_lrc = open(export_lyric, "w",encoding='utf-8')
+    file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
     file_lrc.write('[re:CompuPhase XYL]\n\n')
     m,s,ms = (0,0,0)
     for mp3_file in mp3_files:
@@ -143,7 +147,7 @@ def merge_sound(tempfolder,lyriclist):
             file_lrc.write(currtime+currtext)
 
         i+=1
-        currfile = os.path.join(folder_path, mp3_file)
+        currfile = os.path.join(tempmp3_path, mp3_file)
         # sound = AudioSegment.from_file(currfile, format="mp3")
         sound = AudioSegment.from_file(currfile)
         duration_sec = sound.duration_seconds
@@ -154,7 +158,7 @@ def merge_sound(tempfolder,lyriclist):
         ms = str(total_duration - int(total_duration))[2:4]
 
     file_lrc.close()
-    combined.export(export_filename, format="mp3")
+    combined.export(os.path.join(outputmp3_path,export_filename), format="mp3")
 
 def product_sound_separately(textlist,engine,sound_source='localTTS'):
     # engine.setProperty("voice", engine.getProperty("voices")[0].id)
@@ -209,7 +213,7 @@ def main():
     # list_voices(engine)
 
     textlist,lyriclist = processInputFile(INPUT_FILE)
-    clear_sound_folder(SOUND_TEMP_FOLDER)
+    clear_sound_folder(SOUND_TEMP_FOLDER[0])
     product_sound_separately(textlist,engine,sound_source='longman')
 
     merge_sound(SOUND_TEMP_FOLDER,lyriclist)
