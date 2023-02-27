@@ -1,2 +1,15 @@
-/venv/
-/temp/
+venv/pyvenv.cfg
+venv/Lib/site-packages/AUTHORS.rst
+venv/Lib/site-packages/CONTRIBUTING.rst
+venv/Lib/site-packages/deprecation.py
+venv/Lib/site-packages/distutils-precedence.pth
+venv/Lib/site-packages/HISTORY.rst
+venv/Lib/site-packages/LICENSE
+venv/Lib/site-packages/Makefile
+venv/Lib/site-packages/MANIFEST.in
+venv/Lib/site-packages/playsound.py
+venv/Lib/site-packages/poetry.lock
+venv
+Selected Notes.txt
+temp
+outputmp3
