@@ -6,13 +6,22 @@ import string
 import pyttsx3
 import gtts
 import csv
+import configparser
 from pydub import AudioSegment
 
-SOUND_TEMP_FOLDER = ('./temp/' , './outputmp3/')
-# LONGMAN_BASE_PATH =  r"E:.\朗文直排\sent_rename\sent_rename"
-LONGMAN_BASE_PATH =  r"F:\朗文直排\sent_rename"
+config = configparser.ConfigParser()
+config.read("config.ini",encoding='utf-8')
+SOUND_TEMP_FOLDER = config['folders']['SOUND_TEMP_FOLDER']
+SOUND_OUTPUT_FOLDER = config['folders']['SOUND_OUTPUT_FOLDER']
+LONGMAN_BASE_PATH = config['folders']['LONGMAN_BASE_PATH']
+INPUT_FILE = config['folders']['INPUT_FILE']
 
-INPUT_FILE = "Selected Notes.txt"
+# quit()
+
+
+
+
+
 
 def find_sound_of_word(word) :
     pass
@@ -24,6 +33,7 @@ def symboltocn(currword,text):
     wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
     wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':'.','adj.':'。adjective。','n.':'。noun。','vt.':'。vt.'} )
     wordpair.update( {'vi.':'。vi.','adv.':'。adverb.','v.':'。v.','sb.':'somebody','sth.':'something'} )
+    wordpair.update( {' sb':'。somebody',' sth':'。something',':(':'。(',':)':'。)'} )
     for k,v in wordpair.items():
         text = text.replace(k,v)
     return text
@@ -67,7 +77,7 @@ def list_voices(engine):
     # quit()
 
 def text_to_sound(k,v,engine,filename,sound_source):
-    currpath = os.path.join(SOUND_TEMP_FOLDER[0],filename)
+    currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
     print(currpath)
     if sound_source=='gTTS':
         if k=='en':
@@ -117,7 +127,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
             engine.runAndWait()
 
 def merge_sound(tempfolders,lyriclist):
-    tempmp3_path,outputmp3_path = tempfolders 
+    tempmp3_path,outputmp3_path = SOUND_TEMP_FOLDER , SOUND_OUTPUT_FOLDER
     mp3_files = [file for file in os.listdir(tempmp3_path) if file.endswith(".mp3") and file[:-4].isdigit()]
     mp3_files.sort(key=lambda x: int(x[:-4]))
     combined = AudioSegment.empty()
@@ -167,7 +177,7 @@ def product_sound_separately(textlist,engine,sound_source='localTTS'):
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
 
-    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER[1], 'get_sound_progress.txt'), "w",encoding='utf-8'))
+    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER, 'get_sound_progress.txt'), "w",encoding='utf-8'))
     i = 1
     for contents in textlist:
         # print(contents)
@@ -212,11 +222,11 @@ def main():
     engine = pyttsx3.init()
     engine.setProperty("stripPunct",True)
     engine.setProperty("rate", 100)
-    engine.setProperty("volume", 1.0)
+    engine.setProperty("volume", 1.2)
     # list_voices(engine)
 
     textlist,lyriclist = processInputFile(INPUT_FILE)
-    clear_sound_folder(SOUND_TEMP_FOLDER[0])
+    clear_sound_folder(SOUND_TEMP_FOLDER)
     product_sound_separately(textlist,engine,sound_source='longman')
 
     merge_sound(SOUND_TEMP_FOLDER,lyriclist)
