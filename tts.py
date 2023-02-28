@@ -5,13 +5,13 @@ import sqlite3
 import string
 import pyttsx3
 import gtts
+import csv
 from pydub import AudioSegment
 
 SOUND_TEMP_FOLDER = ('./temp/' , './outputmp3/')
 # LONGMAN_BASE_PATH =  r"E:.\朗文直排\sent_rename\sent_rename"
 LONGMAN_BASE_PATH =  r"F:\朗文直排\sent_rename"
 
-r"F:\朗文直排\sent_rename"
 INPUT_FILE = "Selected Notes.txt"
 
 def find_sound_of_word(word) :
@@ -22,7 +22,8 @@ def symboltocn(currword,text):
     wordpair = {}
     wordpair.update( {'=>':'衍生','~=':'约等于','SYN':'同义词','%=':'约等于','=>':'衍生 '} )
     wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
-    wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':' . '} )
+    wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':'.','adj.':'。adjective。','n.':'。noun。','vt.':'。vt.'} )
+    wordpair.update( {'vi.':'。vi.','adv.':'。adverb.','v.':'。v.','sb.':'somebody','sth.':'something'} )
     for k,v in wordpair.items():
         text = text.replace(k,v)
     return text
@@ -35,11 +36,11 @@ def processInputFile(input_file):
     lyric =[]
     for line in file:
         content = [] 
-        word_and_explain = {}
+        word_and_tips = {}
         word = line.split("\t")[0]
-        word_and_explain['word'] = word
-        word_and_explain['tips'] = line.split("\t")[6]
-        lyric.append(word_and_explain)
+        word_and_tips['word'] = word
+        word_and_tips['tips'] = line.split("\t")[6]
+        lyric.append(word_and_tips)
         letters = list(word) 
         explain = line.split("\t")[2]
         explain = symboltocn(word,explain)
@@ -126,6 +127,7 @@ def merge_sound(tempfolders,lyriclist):
     t = datetime.datetime.now()
     export_filename = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.mp3'
     export_lyric = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.lrc'
+        
     file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
     file_lrc.write('[re:CompuPhase XYL]\n\n')
     m,s,ms = (0,0,0)
@@ -145,7 +147,6 @@ def merge_sound(tempfolders,lyriclist):
             currtext = lyriclist[j]['word']+'\n'
             j+=1
             file_lrc.write(currtime+currtext)
-
         i+=1
         currfile = os.path.join(tempmp3_path, mp3_file)
         # sound = AudioSegment.from_file(currfile, format="mp3")
@@ -166,10 +167,12 @@ def product_sound_separately(textlist,engine,sound_source='localTTS'):
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
 
+    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER[1], 'get_sound_progress.txt'), "w",encoding='utf-8'))
     i = 1
     for contents in textlist:
         # print(contents)
         # print('-----------')
+        file_ori_list_dict.writerow(contents)
         for content in contents:
             print(content)
             for k,v in content.items():
