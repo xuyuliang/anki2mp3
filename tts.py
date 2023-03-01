@@ -22,12 +22,8 @@ INPUT_FOLDER= config['folders']['INPUT_FOLDER']
 # print(wordpair)
 SYMBOL_REPLACE ={}
 
-for item in config['symbol_pronounce']:
-    curr = config['symbol_pronounce'][item]
-    SYMBOL_REPLACE.update(eval(curr))
 
 # print (SYMBOL_REPLACE) 
-quit()
 def find_sound_of_word(word) :
     pass
 
@@ -39,6 +35,9 @@ def symboltocn(currword,text):
     # wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':'.','adj.':'。adjective。','n.':'。noun。','vt.':'。vt.'} )
     # wordpair.update( {'vi.':'。vi.','adv.':'。adverb.','v.':'。v.','sb.':'somebody','sth.':'something'} )
     # wordpair.update( {' sb':'。somebody',' sth':'。something',':(':'。(',':)':'。)'} )
+    for item in config['symbol_pronounce']:
+        curr = config['symbol_pronounce'][item]
+        SYMBOL_REPLACE.update(eval(curr))
     for k,v in SYMBOL_REPLACE.items():
         text = text.replace(k,v)
     return text
@@ -185,7 +184,7 @@ def product_sound_separately(textlist,input_filename,engine,sound_source='localT
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
 
     progressfile = 'get_sound_progress'+input_filename.split('.')[0]+'.txt'
-    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER, progressfile), "w",encoding='utf-8'))
+    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_OUTPUT_FOLDER, progressfile), "w",encoding='utf-8'))
     i = 1
     for contents in textlist:
         # print(contents)
