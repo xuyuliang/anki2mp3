@@ -9,38 +9,43 @@ import csv
 import configparser
 from pydub import AudioSegment
 
-config = configparser.ConfigParser()
+config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
 SOUND_TEMP_FOLDER = config['folders']['SOUND_TEMP_FOLDER']
 SOUND_OUTPUT_FOLDER = config['folders']['SOUND_OUTPUT_FOLDER']
 LONGMAN_BASE_PATH = config['folders']['LONGMAN_BASE_PATH']
-INPUT_FILE = config['folders']['INPUT_FILE']
+INPUT_FOLDER= config['folders']['INPUT_FOLDER']
+# wordpair = {}
+# for item in config['symbol_pronounce']:
+#     print(item)
+#     wordpair.update(item[0][1:-1],item[1][1:-1])
+# print(wordpair)
+SYMBOL_REPLACE ={}
 
-# quit()
+for item in config['symbol_pronounce']:
+    curr = config['symbol_pronounce'][item]
+    SYMBOL_REPLACE.update(eval(curr))
 
-
-
-
-
-
+# print (SYMBOL_REPLACE) 
+quit()
 def find_sound_of_word(word) :
     pass
 
 
 def symboltocn(currword,text):
-    wordpair = {}
-    wordpair.update( {'=>':'衍生','~=':'约等于','SYN':'同义词','%=':'约等于','=>':'衍生 '} )
-    wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
-    wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':'.','adj.':'。adjective。','n.':'。noun。','vt.':'。vt.'} )
-    wordpair.update( {'vi.':'。vi.','adv.':'。adverb.','v.':'。v.','sb.':'somebody','sth.':'something'} )
-    wordpair.update( {' sb':'。somebody',' sth':'。something',':(':'。(',':)':'。)'} )
-    for k,v in wordpair.items():
+    # wordpair = {}
+    # wordpair.update( {'=>':'衍生','~=':'约等于','SYN':'同义词','%=':'约等于','=>':'衍生 '} )
+    # wordpair.update( {'OPP':'反义词','=':'同义词','%':currword+' ','~':currword+' ',':':'.'} )
+    # wordpair.update( {'BrE':'英国英语','NAmE':'美国英语','\n':'.','adj.':'。adjective。','n.':'。noun。','vt.':'。vt.'} )
+    # wordpair.update( {'vi.':'。vi.','adv.':'。adverb.','v.':'。v.','sb.':'somebody','sth.':'something'} )
+    # wordpair.update( {' sb':'。somebody',' sth':'。something',':(':'。(',':)':'。)'} )
+    for k,v in SYMBOL_REPLACE.items():
         text = text.replace(k,v)
     return text
 
 def processInputFile(input_file):
 
-    file = open(input_file, "r",encoding='utf-8')
+    file = open(os.path.join(INPUT_FOLDER, input_file), "r",encoding='utf-8')
     # file = open(input_file, "r",encoding='latin-1')
     textlist = [] 
     lyric =[]
@@ -126,7 +131,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
             engine.save_to_file(v,currpath)
             engine.runAndWait()
 
-def merge_sound(tempfolders,lyriclist):
+def merge_sound(output_filename,lyriclist):
     tempmp3_path,outputmp3_path = SOUND_TEMP_FOLDER , SOUND_OUTPUT_FOLDER
     mp3_files = [file for file in os.listdir(tempmp3_path) if file.endswith(".mp3") and file[:-4].isdigit()]
     mp3_files.sort(key=lambda x: int(x[:-4]))
@@ -135,8 +140,10 @@ def merge_sound(tempfolders,lyriclist):
     i = 0
     j = 0
     t = datetime.datetime.now()
-    export_filename = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.mp3'
-    export_lyric = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.lrc'
+    # export_filename = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.mp3'
+    # export_lyric = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.lrc'
+    export_filename = output_filename.split('.')[0] +'.mp3'
+    export_lyric = output_filename.split('.')[0] +'.lrc'
         
     file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
     file_lrc.write('[re:CompuPhase XYL]\n\n')
@@ -171,13 +178,14 @@ def merge_sound(tempfolders,lyriclist):
     file_lrc.close()
     combined.export(os.path.join(outputmp3_path,export_filename), format="mp3")
 
-def product_sound_separately(textlist,engine,sound_source='localTTS'):
+def product_sound_separately(textlist,input_filename,engine,sound_source='localTTS'):
     # engine.setProperty("voice", engine.getProperty("voices")[0].id)
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
     # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
 
-    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER, 'get_sound_progress.txt'), "w",encoding='utf-8'))
+    progressfile = 'get_sound_progress'+input_filename.split('.')[0]+'.txt'
+    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_TEMP_FOLDER, progressfile), "w",encoding='utf-8'))
     i = 1
     for contents in textlist:
         # print(contents)
@@ -224,12 +232,14 @@ def main():
     engine.setProperty("rate", 100)
     engine.setProperty("volume", 1.2)
     # list_voices(engine)
-
-    textlist,lyriclist = processInputFile(INPUT_FILE)
-    clear_sound_folder(SOUND_TEMP_FOLDER)
-    product_sound_separately(textlist,engine,sound_source='longman')
-
-    merge_sound(SOUND_TEMP_FOLDER,lyriclist)
+    for input_file in os.listdir(INPUT_FOLDER):
+        if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
+            continue
+        print(type(input_file),':',input_file)
+        textlist,lyriclist = processInputFile(input_file)
+        clear_sound_folder(SOUND_TEMP_FOLDER)
+        product_sound_separately(textlist,input_file,engine,sound_source='longman')
+        merge_sound(input_file,lyriclist)
     
 
     
