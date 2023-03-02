@@ -1,3 +1,5 @@
+import os
+import csv
 def isEnglishChar(s):
     try:
         s.encode(encoding='utf-8').decode('ascii')
@@ -31,24 +33,36 @@ def extract_english_letters(realword,astring):
                     # print('got it',i,item,'combindword is:',curr_conbind_word)
                     resultword ,oldc = '',''
                     print(listword[:i+1])
-                    for myc in listword[:i+1]:
-                        if myc == '':
-                            myc = '.'
+                    almostresult = '.'.join(listword[:i+1])
+                    print('almostresult:',almostresult)
+                    for myc in almostresult: 
                         if oldc =='.' and myc == '.':
                             continue
+                        if myc == '.':
+                            oldc ='.' 
                         resultword += myc
                         oldc = myc
                     return resultword 
             return ''
 
-def temp():
-    mylist=['a','b','c']
-    print(mylist[0:4])
+def cutbypronuncation(myword):
+    if len(myword) <= 5:
+        return myword
+    
+    
 def main():
-    testtext = ' tan晒黑+trum没有p，trump是川普、胜出 的意思。联想：小孩晒黑了发脾气'
-    res = extract_english_letters('tantrum',testtext)
-    print(res)
-    # temp()
+    '''
+    word,text = 'tantrum',' tan晒黑+trum没有p，trump是川普、胜出 的意思。联想：小孩晒黑了发脾气'
+    # word,text = 'apocalypse','apo.ca.lyp.se'
+    # word,text = 'tantrum','tan.trum'
+    res = extract_english_letters(word,text)
+    print('result:',res)
+    '''
+    file = open('./testwords4cut.txt','r',encoding='utf-8')
+    for line in file:
+        aword = str.strip(line)
+        print(aword)
+        print(cutbypronuncation(aword))
 
 if __name__ == "__main__" :
     main()
