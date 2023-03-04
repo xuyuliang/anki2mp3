@@ -7,6 +7,7 @@ import pyttsx3
 import gtts
 import csv
 import configparser
+import cutwords
 from pydub import AudioSegment
 
 config = configparser.RawConfigParser()
@@ -15,6 +16,7 @@ SOUND_TEMP_FOLDER = config['folders']['SOUND_TEMP_FOLDER']
 SOUND_OUTPUT_FOLDER = config['folders']['SOUND_OUTPUT_FOLDER']
 LONGMAN_BASE_PATH = config['folders']['LONGMAN_BASE_PATH']
 INPUT_FOLDER= config['folders']['INPUT_FOLDER']
+NEED_READ_SPELLING = False
 # wordpair = {}
 # for item in config['symbol_pronounce']:
 #     print(item)
@@ -79,6 +81,17 @@ def list_voices(engine):
     for voice in voices:
         print(voice.id)
     # quit()
+def read_spelling(engine,filename,aword):
+    currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
+    aword= str.strip(aword.split('.')[0]) #因为TTS默认念3遍，words已经预处理了 * 3
+    engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
+    engine.setProperty("rate", 100)
+    newword = cutwords.cutbypronuncation(aword) 
+    newword = list(newword)
+    newword = ' '.join(newword)
+    engine.save_to_file(newword,currpath)
+    print('read spelling',newword,currpath)
+    engine.runAndWait()
 
 def text_to_sound(k,v,engine,filename,sound_source):
     currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
@@ -147,32 +160,61 @@ def merge_sound(output_filename,lyriclist):
     file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
     file_lrc.write('[re:CompuPhase XYL]\n\n')
     m,s,ms = (0,0,0)
-    for mp3_file in mp3_files:
+    if NEED_READ_SPELLING:
+        for mp3_file in mp3_files:
 
-        currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
-        if i%3 == 0:
-            # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
-            currtext = lyriclist[j]['word']+'\n'
-            # j+=1
-            file_lrc.write(currtime+currtext)
-        if i%3 == 1:
-            currtext = lyriclist[j]['tips']+'\n'
-            # j+=1
-            file_lrc.write(currtime+currtext)
-        if i%3 == 2:
-            currtext = lyriclist[j]['word']+'\n'
-            j+=1
-            file_lrc.write(currtime+currtext)
-        i+=1
-        currfile = os.path.join(tempmp3_path, mp3_file)
-        # sound = AudioSegment.from_file(currfile, format="mp3")
-        sound = AudioSegment.from_file(currfile)
-        duration_sec = sound.duration_seconds
-        total_duration += duration_sec
-        print('合并',currfile,'时长:',duration_sec)
-        combined += sound
-        m, s = divmod(total_duration, 60)
-        ms = str(total_duration - int(total_duration))[2:4]
+            currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
+            if i%4 == 1:
+                # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
+                currtext = lyriclist[j]['word']+'\n'
+                # j+=1
+                file_lrc.write(currtime+currtext)
+            if i%4 == 2:
+                currtext = lyriclist[j]['tips']+'\n'
+                # j+=1
+                file_lrc.write(currtime+currtext)
+            if i%4 == 3:
+                currtext = lyriclist[j]['word']+'\n'
+                j+=1
+                file_lrc.write(currtime+currtext)
+            i+=1
+            currfile = os.path.join(tempmp3_path, mp3_file)
+            # sound = AudioSegment.from_file(currfile, format="mp3")
+            sound = AudioSegment.from_file(currfile)
+            duration_sec = sound.duration_seconds
+            total_duration += duration_sec
+            print('合并',currfile,'时长:',duration_sec)
+            combined += sound
+            m, s = divmod(total_duration, 60)
+            ms = str(total_duration - int(total_duration))[2:4]
+
+    else:
+        for mp3_file in mp3_files:
+
+            currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
+            if i%3 == 0:
+                # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
+                currtext = lyriclist[j]['word']+'\n'
+                # j+=1
+                file_lrc.write(currtime+currtext)
+            if i%3 == 1:
+                currtext = lyriclist[j]['tips']+'\n'
+                # j+=1
+                file_lrc.write(currtime+currtext)
+            if i%3 == 2:
+                currtext = lyriclist[j]['word']+'\n'
+                j+=1
+                file_lrc.write(currtime+currtext)
+            i+=1
+            currfile = os.path.join(tempmp3_path, mp3_file)
+            # sound = AudioSegment.from_file(currfile, format="mp3")
+            sound = AudioSegment.from_file(currfile)
+            duration_sec = sound.duration_seconds
+            total_duration += duration_sec
+            print('合并',currfile,'时长:',duration_sec)
+            combined += sound
+            m, s = divmod(total_duration, 60)
+            ms = str(total_duration - int(total_duration))[2:4]
 
     file_lrc.close()
     combined.export(os.path.join(outputmp3_path,export_filename), format="mp3")
@@ -195,8 +237,11 @@ def product_sound_separately(textlist,input_filename,engine,sound_source='localT
             for k,v in content.items():
                 print(k,v)
                 print('-------')
+                if NEED_READ_SPELLING: 
+                    read_spelling(engine,str(i)+'.mp3',v)
+                    i+=1
                 text_to_sound(k,v,engine,str(i)+'.mp3',sound_source)
-                i = i + 1
+                i+=1
 
 def clean_list(textlist):
     testfile = open('./testfile.txt',"w",encoding='utf-8')
@@ -235,6 +280,9 @@ def main():
         if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
             continue
         print(type(input_file),':',input_file)
+        if config['filename']['spelling_difficulty'] in input_file:
+            global NEED_READ_SPELLING
+            NEED_READ_SPELLING = True
         textlist,lyriclist = processInputFile(input_file)
         clear_sound_folder(SOUND_TEMP_FOLDER)
         product_sound_separately(textlist,input_file,engine,sound_source='longman')
