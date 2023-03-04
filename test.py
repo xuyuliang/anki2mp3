@@ -4,24 +4,30 @@ from pydub import AudioSegment
 import gtts
 import eyed3
 from eyed3.id3 import Tag 
+import cutwords
 # from playsound import playsound
-text = 'apple cat british english vituperation fracas unguent'
-text = "'pɜrs(ə)nɪdʒ"
-tts = gtts.gTTS(text,lang="en")
-tts.save("hello.mp3")
+# text = 'apple cat british english vituperation fracas unguent'
+# text = "'pɜrs(ə)nɪdʒ"
+# tts = gtts.gTTS(text,lang="en")
+# tts.save("hello.mp3")
 
-quit()
+# quit()
 
 # the engine
 engine = pyttsx3.init()
-# engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
+engine.setProperty("stripPunct",True)
+engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
 # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
-engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
-engine.setProperty("rate", 150)
+# engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
+engine.setProperty("rate", 00)
 # engine.say('vituperation')
-engine.say("'pɜrs(ə)nɪdʒ")
-# engine.save_to_file(text, 'test2.wav')
-
+aword = 'astrology'
+newword = cutwords.cutbypronuncation(aword) 
+newword = list(newword)
+newword = ' '.join(newword)
+print(newword)
+# engine.say(newword)
+engine.save_to_file(newword, 'test2.wav')
 engine.runAndWait()
 quit()
 # load the mp3 as an audio

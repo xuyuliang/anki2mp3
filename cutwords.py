@@ -1,7 +1,7 @@
 import configparser
 import os
 import csv
-
+from nltk.stem.lancaster import LancasterStemmer  
 
 config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
@@ -10,7 +10,13 @@ CONSONANTS = eval(config['characters']['consonants'])
 HALF_VOWEL = eval(config['characters']['half_vowel'])
 DOUBLE_CONSONANTS =eval(config['characters']['double_consonants'])
 
+def cutbyroot(aword):
 
+    # 基于Lancaster 词干提取算法
+    lancaster_stemmer = LancasterStemmer(strip_prefix_flag=True)  
+    stem = lancaster_stemmer.stem(aword)
+    affixes = aword.split(stem) 
+    return stem, affixes 
 
 def isEnglishChar(s):
     try:
@@ -28,7 +34,7 @@ def extract_english_letters(realword,astring):
                 firstword += c
             else:
                 firstword +='.'
-        print('firstword:',firstword)
+        # print('firstword:',firstword)
         bigword = firstword.replace('.','')
         if realword in bigword:
             #find tail
@@ -44,9 +50,9 @@ def extract_english_letters(realword,astring):
                 if realword.endswith(item) and len(item)>0 and curr_conbind_word == realword: 
                     # print('got it',i,item,'combindword is:',curr_conbind_word)
                     resultword ,oldc = '',''
-                    print(listword[:i+1])
+                    # print(listword[:i+1])
                     almostresult = '.'.join(listword[:i+1])
-                    print('almostresult:',almostresult)
+                    # print('almostresult:',almostresult)
                     for myc in almostresult: 
                         if oldc =='.' and myc == '.':
                             continue
@@ -69,50 +75,43 @@ def cutbypronuncation(myword):
         if (list_myword[i] in HALF_VOWEL) and (i>0) and (i< (len(list_myword)-1)):
             vowels_position.append(i)
 
-    print(vowels_position)
+    # print(vowels_position)
     dict_consonants_group= {}
     for i in range(len(vowels_position)):
         if i+1 < len(vowels_position):
             consonants_group = list_myword[vowels_position[i]+1:vowels_position[i+1]]
             dict_consonants_group.update({vowels_position[i]+1:consonants_group})
+        # 单词尾部的辅音就不处理了
         # else:
         #     consonants_group = list_myword[vowels_position[i]+1:]
 
-        print('cons',consonants_group)
-    print(dict_consonants_group)
+        # print('cons',consonants_group)
+    # print(dict_consonants_group)
     list_newword = list_myword.copy()
     offset = 0
-    # for item in dict_consonants_group:
-    #     if len(item[1]) == 1:
-    #         list_newword.insert(offset+item[0]+1,'.')
-    #         offset += 1
-    #     if len(item[1]) == 2:
-    #         if ''.join(item[1]) in DOUBLE_CONSONANTS:
-    #             list_newword.insert(offset+item[0]+1,'.')
-    #         else:
-    #             list_newword.insert(offset+item[0]+2,'.')
-    #         offset += 1
-    #     if len(item[1]) == 3:
-    #         if item[1][:2] in DOUBLE_CONSONANTS:
-    #             list_newword.insert(offset+item[0]+3,'.')
-    #         if item[1][1:] in DOUBLE_CONSONANTS:
-    #             list_newword.insert(offset+item[0]+1,'.')
-    #         else:
-    #             print('3个辅音，没有双辅音，是不是需要检查一下了')
-    #             list_newword.insert(offset+item[0] +2,'.')
-    #         offset += 1
+    for k in dict_consonants_group:
+        v = dict_consonants_group[k]
+        # print (k,v)
+        if len(v) == 1:
+            list_newword.insert(offset+k,'.')
+            offset += 1
+        if len(v) == 2:
+            if ''.join(v) in DOUBLE_CONSONANTS:
+                list_newword.insert(offset+k,'.')
+            else:
+                list_newword.insert(offset+k+1,'.')
+            offset += 1
+        if len(v) == 3:
+            if v[:2] in DOUBLE_CONSONANTS:
+                list_newword.insert(offset+k+2,'.')
+            if v[1:] in DOUBLE_CONSONANTS:
+                list_newword.insert(offset+k+1,'.')
+            else:
+                # print('3个辅音，没有双辅音，是不是需要检查一下了')
+                list_newword.insert(offset+k,'.')
+            offset += 1
     # print(''.join(list_newword))
-
-
-
-
-
-
-
-
-            
-
-    
+    return ''.join(list_newword)
     
 def main():
     # '''
@@ -124,15 +123,17 @@ def main():
     # print('result:',res)
     # '''
 
-    # i = 0
     # file = open('./testwords4cut.txt','r',encoding='utf-8')
+    # i=0
     # for line in file:
     #     aword = str.strip(line)
     #     print(aword)
     #     print(cutbypronuncation(aword))
+    #     # print(cutbyroot(aword))
     #     if i > 20:
     #         quit()
-    aword = 'coaincidented'
+    #     i+=1
+    aword = 'splincipho'
     cutbypronuncation(aword)
 
 if __name__ == "__main__" :
