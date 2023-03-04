@@ -54,16 +54,22 @@ def processInputFile(input_file):
         content = [] 
         word_and_tips = {}
         word = line.split("\t")[0]
+        letters = cutwords.cutbypronuncation(word) 
         word_and_tips['word'] = word
+        if NEED_READ_SPELLING:
+            word_and_tips['spelling'] = letters 
         word_and_tips['tips'] = line.split("\t")[6]
         lyric.append(word_and_tips)
-        letters = list(word) 
         explain = line.split("\t")[2]
         explain = symboltocn(word,explain)
         words =  (word +'. ')*3
         mydict = {}
         mydict['en']=words
         content.append(mydict)
+        if NEED_READ_SPELLING:
+            mydict = {}
+            mydict['spelling']=letters
+            content.append(mydict)
         mydict = {}
         mydict['cn']=explain
         content.append(mydict)
@@ -80,6 +86,7 @@ def list_voices(engine):
     voices = engine.getProperty('voices')
     for voice in voices:
         print(voice.id)
+
     # quit()
 def read_spelling(engine,filename,aword):
     currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
@@ -87,8 +94,8 @@ def read_spelling(engine,filename,aword):
     engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
     engine.setProperty("rate", 100)
     newword = cutwords.cutbypronuncation(aword) 
-    newword = list(newword)
-    newword = ' '.join(newword)
+    # newword = list(newword)
+    # newword = ' '.join(newword)
     engine.save_to_file(newword,currpath)
     print('read spelling',newword,currpath)
     engine.runAndWait()
@@ -98,6 +105,9 @@ def text_to_sound(k,v,engine,filename,sound_source):
     print(currpath)
     if sound_source=='gTTS':
         if k=='en':
+            tts = gtts.gTTS(v,lang="en")
+            tts.save(currpath)
+        if k=='spelling':
             tts = gtts.gTTS(v,lang="en")
             tts.save(currpath)
         if k=='cn':
@@ -123,17 +133,25 @@ def text_to_sound(k,v,engine,filename,sound_source):
             cur.close()
             con.close()
 
+        if k=='spelling':
+            engine.setProperty("rate", 200)
+            engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
+            engine.save_to_file(v,currpath)
+            engine.runAndWait()
         if k=='cn':
             engine.setProperty("rate", 150)
             engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
             engine.save_to_file(v,currpath)
             engine.runAndWait()
-        
-
 
     else:
         if k=='en':
             engine.setProperty("rate", 100)
+            engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
+            engine.save_to_file(v,currpath)
+            engine.runAndWait()
+        if k=='spelling':
+            engine.setProperty("rate", 200)
             engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
             engine.save_to_file(v,currpath)
             engine.runAndWait()
@@ -164,9 +182,13 @@ def merge_sound(output_filename,lyriclist):
         for mp3_file in mp3_files:
 
             currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
-            if i%4 == 1:
+            if i%4 == 0:
                 # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
                 currtext = lyriclist[j]['word']+'\n'
+                # j+=1
+                file_lrc.write(currtime+currtext)
+            if i%4 == 1:
+                currtext = lyriclist[j]['spelling']+'\n'
                 # j+=1
                 file_lrc.write(currtime+currtext)
             if i%4 == 2:
@@ -237,9 +259,6 @@ def product_sound_separately(textlist,input_filename,engine,sound_source='localT
             for k,v in content.items():
                 print(k,v)
                 print('-------')
-                if NEED_READ_SPELLING: 
-                    read_spelling(engine,str(i)+'.mp3',v)
-                    i+=1
                 text_to_sound(k,v,engine,str(i)+'.mp3',sound_source)
                 i+=1
 
@@ -282,7 +301,7 @@ def main():
         print(type(input_file),':',input_file)
         if config['filename']['spelling_difficulty'] in input_file:
             global NEED_READ_SPELLING
-            NEED_READ_SPELLING = True
+            NEED_READ_SPELLING = True 
         textlist,lyriclist = processInputFile(input_file)
         clear_sound_folder(SOUND_TEMP_FOLDER)
         product_sound_separately(textlist,input_file,engine,sound_source='longman')

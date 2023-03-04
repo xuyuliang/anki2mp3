@@ -13,5 +13,7 @@ venv
 temp
 outputmp3
 myapkg
+__pycache__
 selectednotes
 Selected Notes.txt
+__pycache__/cutwords.cpython-311.pyc

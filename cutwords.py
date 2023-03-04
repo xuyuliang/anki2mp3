@@ -65,7 +65,7 @@ def extract_english_letters(realword,astring):
 
 def cutbypronuncation(myword):
     if len(myword) <= 5:
-        return myword
+        return ' '.join(list(myword))
     list_myword = list(myword)
     list_newword = list_myword.copy()
     vowels_position =[] 
@@ -111,7 +111,9 @@ def cutbypronuncation(myword):
                 list_newword.insert(offset+k,'.')
             offset += 1
     # print(''.join(list_newword))
-    return ''.join(list_newword)
+    # newword = list(newword)
+    # newword = ' '.join(newword)
+    return ' '.join(list_newword)
     
 def main():
     # '''
@@ -134,7 +136,8 @@ def main():
     #         quit()
     #     i+=1
     aword = 'splincipho'
-    cutbypronuncation(aword)
+    aword = 'spate'
+    print(cutbypronuncation(aword))
 
 if __name__ == "__main__" :
     main()
