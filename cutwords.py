@@ -62,7 +62,7 @@ def extract_english_letters(realword,astring):
                             oldc ='.' 
                         resultword += myc
                         oldc = myc
-                    return resultword 
+                    return ' '.join(list(resultword))
             return ''
         else:
             return ''
