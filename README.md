@@ -3,6 +3,11 @@
 When I finish my daily Anki work, I usually have 60 to 80 cards to review, which can take me one or two hours of sitting still. To free up my hands, I wrote a piece of code that converts the cards into several MP3 files with lyrics, so that I can listen to them while doing chores or go jogging.
 
 ## introduction
+0. modify config.ini
+At least, you should point out which fields should export to be converted to sound and which need'nt.
+<img src="https://user-images.githubusercontent.com/1154464/222960563-b3713136-8858-4f99-80f7-cb0c0b011990.png">.<img>
+
+
 1. Export your cards(notes). 
 
 <img src="https://user-images.githubusercontent.com/1154464/221409427-82f0bda5-06d5-4cc9-bd53-d0fe7cf714de.png" width=40%>.</img>
