@@ -14,20 +14,19 @@ config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
 SOUND_TEMP_FOLDER = config['folders']['SOUND_TEMP_FOLDER']
 SOUND_OUTPUT_FOLDER = config['folders']['SOUND_OUTPUT_FOLDER']
-LONGMAN_BASE_PATH = config['folders']['LONGMAN_BASE_PATH']
 INPUT_FOLDER= config['folders']['INPUT_FOLDER']
 NEED_READ_SPELLING = False
-# wordpair = {}
-# for item in config['symbol_pronounce']:
-#     print(item)
-#     wordpair.update(item[0][1:-1],item[1][1:-1])
-# print(wordpair)
 SYMBOL_REPLACE ={}
+LONGMAN_BASE_PATH = '' 
 
-
-# print (SYMBOL_REPLACE) 
-def find_sound_of_word(word) :
-    pass
+def determin_LONGMAN_BASE_PATH():
+    paths = eval(config['folders']['LONGMAN_BASE_PATH'])
+    print(paths)
+    for path in paths:
+        if os.path.isdir(path):
+           global LONGMAN_BASE_PATH
+           LONGMAN_BASE_PATH = path
+           break
 
 
 def symboltocn(currword,text):
@@ -39,6 +38,7 @@ def symboltocn(currword,text):
     # wordpair.update( {' sb':'。somebody',' sth':'。something',':(':'。(',':)':'。)'} )
     for item in config['symbol_pronounce']:
         curr = config['symbol_pronounce'][item]
+        global SYMBOL_REPLACE
         SYMBOL_REPLACE.update(eval(curr))
     for k,v in SYMBOL_REPLACE.items():
         text = text.replace(k,v)
@@ -47,30 +47,38 @@ def symboltocn(currword,text):
 def processInputFile(input_file):
 
     file = open(os.path.join(INPUT_FOLDER, input_file), "r",encoding='utf-8')
-    # file = open(input_file, "r",encoding='latin-1')
     textlist = [] 
     lyric =[]
     for line in file:
-        content = [] 
+        # process lyric
         word_and_tips = {}
         word = line.split("\t")[0]
-        letters = cutwords.cutbypronuncation(word) 
         word_and_tips['word'] = word
+        tips = line.split("\t")[6];
         if NEED_READ_SPELLING:
-            word_and_tips['spelling'] = letters 
-        word_and_tips['tips'] = line.split("\t")[6]
+            letters = cutwords.extract_english_letters(word,tips)
+            if letters == '':
+                letters = cutwords.cutbypronuncation(word) 
+                word_and_tips['spelling'] = letters 
+        word_and_tips['tips'] = tips
+        word_and_tips['word_again'] = word
         lyric.append(word_and_tips)
-        explain = line.split("\t")[2]
-        explain = symboltocn(word,explain)
+
+        # process textlist
+        content = [] 
         words =  (word +'. ')*3
         mydict = {}
         mydict['en']=words
         content.append(mydict)
+
         if NEED_READ_SPELLING:
             mydict = {}
             mydict['spelling']=letters
             content.append(mydict)
+
         mydict = {}
+        explain = line.split("\t")[2]
+        explain = symboltocn(word,explain)
         mydict['cn']=explain
         content.append(mydict)
         
@@ -88,17 +96,6 @@ def list_voices(engine):
         print(voice.id)
 
     # quit()
-def read_spelling(engine,filename,aword):
-    currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
-    aword= str.strip(aword.split('.')[0]) #因为TTS默认念3遍，words已经预处理了 * 3
-    engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
-    engine.setProperty("rate", 100)
-    newword = cutwords.cutbypronuncation(aword) 
-    # newword = list(newword)
-    # newword = ' '.join(newword)
-    engine.save_to_file(newword,currpath)
-    print('read spelling',newword,currpath)
-    engine.runAndWait()
 
 def text_to_sound(k,v,engine,filename,sound_source):
     currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
@@ -113,7 +110,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
         if k=='cn':
             tts = gtts.gTTS(v,lang="zh")
             tts.save(currpath)
-    elif sound_source=='longman':
+    if sound_source=='longman':
         if k=='en':
             con= sqlite3.connect("./sound_vocabulary.db")
             cur= con.cursor()
@@ -124,7 +121,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
             if row != None:
                 shutil.copyfile(os.path.join(LONGMAN_BASE_PATH,row[0],row[1]),currpath)
             else:
-                print(word,'在longman 库中找不到，只好tts')
+                print(word,'在longman 库中找不到 只好tts')
                 engine.setProperty("rate", 100)
                 engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
                 engine.save_to_file(v,currpath)
@@ -134,7 +131,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
             con.close()
 
         if k=='spelling':
-            engine.setProperty("rate", 200)
+            engine.setProperty("rate", 100)
             engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
             engine.save_to_file(v,currpath)
             engine.runAndWait()
@@ -144,14 +141,14 @@ def text_to_sound(k,v,engine,filename,sound_source):
             engine.save_to_file(v,currpath)
             engine.runAndWait()
 
-    else:
+    if sound_source == 'localTTS':
         if k=='en':
             engine.setProperty("rate", 100)
             engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
             engine.save_to_file(v,currpath)
             engine.runAndWait()
         if k=='spelling':
-            engine.setProperty("rate", 200)
+            engine.setProperty("rate", 100)
             engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
             engine.save_to_file(v,currpath)
             engine.runAndWait()
@@ -161,7 +158,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
             engine.save_to_file(v,currpath)
             engine.runAndWait()
 
-def merge_sound(output_filename,lyriclist):
+def merge_sound(input_filename,lyriclist):
     tempmp3_path,outputmp3_path = SOUND_TEMP_FOLDER , SOUND_OUTPUT_FOLDER
     mp3_files = [file for file in os.listdir(tempmp3_path) if file.endswith(".mp3") and file[:-4].isdigit()]
     mp3_files.sort(key=lambda x: int(x[:-4]))
@@ -169,37 +166,33 @@ def merge_sound(output_filename,lyriclist):
     total_duration = 0
     i = 0
     j = 0
-    t = datetime.datetime.now()
+    # t = datetime.datetime.now()
     # export_filename = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.mp3'
     # export_lyric = str(t).split('.')[0].replace(' ','日').replace(':','-') +'.lrc'
-    export_filename = output_filename.split('.')[0] +'.mp3'
-    export_lyric = output_filename.split('.')[0] +'.lrc'
+    export_filename = input_filename.split('.')[0] +'.mp3'
+    export_lyric = input_filename.split('.')[0] +'.lrc'
         
     file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
     file_lrc.write('[re:CompuPhase XYL]\n\n')
     m,s,ms = (0,0,0)
-    if NEED_READ_SPELLING:
-        for mp3_file in mp3_files:
-
+    #
+    print('len of list',len(lyriclist))
+    print('len of mp3files',len(mp3_files))
+    for item in lyriclist:
+        print(item)
+    for item in mp3_files:
+        print(item)
+    i = 0
+    for dictitem in lyriclist:
+        print(i,dictitem)
+        for currkey in dictitem: 
+            print(currkey)
+            #lyric
             currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
-            if i%4 == 0:
-                # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
-                currtext = lyriclist[j]['word']+'\n'
-                # j+=1
-                file_lrc.write(currtime+currtext)
-            if i%4 == 1:
-                currtext = lyriclist[j]['spelling']+'\n'
-                # j+=1
-                file_lrc.write(currtime+currtext)
-            if i%4 == 2:
-                currtext = lyriclist[j]['tips']+'\n'
-                # j+=1
-                file_lrc.write(currtime+currtext)
-            if i%4 == 3:
-                currtext = lyriclist[j]['word']+'\n'
-                j+=1
-                file_lrc.write(currtime+currtext)
-            i+=1
+            currtext = dictitem[currkey]+'\n'
+            file_lrc.write(currtime+currtext)
+            #mp3
+            mp3_file = mp3_files[i]
             currfile = os.path.join(tempmp3_path, mp3_file)
             # sound = AudioSegment.from_file(currfile, format="mp3")
             sound = AudioSegment.from_file(currfile)
@@ -209,43 +202,12 @@ def merge_sound(output_filename,lyriclist):
             combined += sound
             m, s = divmod(total_duration, 60)
             ms = str(total_duration - int(total_duration))[2:4]
-
-    else:
-        for mp3_file in mp3_files:
-
-            currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
-            if i%3 == 0:
-                # currtext = lyriclist[j]['word']+'\n'+lyriclist[j]['tips']+'\n'
-                currtext = lyriclist[j]['word']+'\n'
-                # j+=1
-                file_lrc.write(currtime+currtext)
-            if i%3 == 1:
-                currtext = lyriclist[j]['tips']+'\n'
-                # j+=1
-                file_lrc.write(currtime+currtext)
-            if i%3 == 2:
-                currtext = lyriclist[j]['word']+'\n'
-                j+=1
-                file_lrc.write(currtime+currtext)
             i+=1
-            currfile = os.path.join(tempmp3_path, mp3_file)
-            # sound = AudioSegment.from_file(currfile, format="mp3")
-            sound = AudioSegment.from_file(currfile)
-            duration_sec = sound.duration_seconds
-            total_duration += duration_sec
-            print('合并',currfile,'时长:',duration_sec)
-            combined += sound
-            m, s = divmod(total_duration, 60)
-            ms = str(total_duration - int(total_duration))[2:4]
 
     file_lrc.close()
     combined.export(os.path.join(outputmp3_path,export_filename), format="mp3")
 
 def product_sound_separately(textlist,input_filename,engine,sound_source='localTTS'):
-    # engine.setProperty("voice", engine.getProperty("voices")[0].id)
-    # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
-    # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
-    # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
 
     progressfile = 'get_sound_progress'+input_filename.split('.')[0]+'.txt'
     file_ori_list_dict = csv.writer(open(os.path.join(SOUND_OUTPUT_FOLDER, progressfile), "w",encoding='utf-8'))
@@ -295,6 +257,7 @@ def main():
     engine.setProperty("rate", 100)
     engine.setProperty("volume", 1.2)
     # list_voices(engine)
+    determin_LONGMAN_BASE_PATH()
     for input_file in os.listdir(INPUT_FOLDER):
         if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
             continue
@@ -312,3 +275,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # determin_LONGMAN_BASE_PATH()

@@ -1,7 +1,7 @@
 import configparser
 import os
 import csv
-from nltk.stem.lancaster import LancasterStemmer  
+# from nltk.stem.lancaster import LancasterStemmer  
 
 config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
@@ -9,14 +9,16 @@ VOWELS = eval(config['characters']['vowels'])
 CONSONANTS = eval(config['characters']['consonants'])
 HALF_VOWEL = eval(config['characters']['half_vowel'])
 DOUBLE_CONSONANTS =eval(config['characters']['double_consonants'])
-
+# print( ['l','d','r'][1:]  in DOUBLE_CONSONANTS)
+# print( ['l','d','r'][1:] )
+# quit()
 def cutbyroot(aword):
-
+    pass
     # 基于Lancaster 词干提取算法
-    lancaster_stemmer = LancasterStemmer(strip_prefix_flag=True)  
-    stem = lancaster_stemmer.stem(aword)
-    affixes = aword.split(stem) 
-    return stem, affixes 
+    # lancaster_stemmer = LancasterStemmer(strip_prefix_flag=True)  
+    # stem = lancaster_stemmer.stem(aword)
+    # affixes = aword.split(stem) 
+    # return stem, affixes 
 
 def isEnglishChar(s):
     try:
@@ -62,6 +64,8 @@ def extract_english_letters(realword,astring):
                         oldc = myc
                     return resultword 
             return ''
+        else:
+            return ''
 
 def cutbypronuncation(myword):
     if len(myword) <= 5:
@@ -102,9 +106,11 @@ def cutbypronuncation(myword):
                 list_newword.insert(offset+k+1,'.')
             offset += 1
         if len(v) == 3:
-            if v[:2] in DOUBLE_CONSONANTS:
+            if ''.join(v[:2]) in DOUBLE_CONSONANTS:
+                print('前')
                 list_newword.insert(offset+k+2,'.')
-            if v[1:] in DOUBLE_CONSONANTS:
+            elif ''.join(v[1:]) in DOUBLE_CONSONANTS:
+                print('后')
                 list_newword.insert(offset+k+1,'.')
             else:
                 # print('3个辅音，没有双辅音，是不是需要检查一下了')
@@ -114,6 +120,7 @@ def cutbypronuncation(myword):
     # newword = list(newword)
     # newword = ' '.join(newword)
     return ' '.join(list_newword)
+
     
 def main():
     # '''
@@ -135,8 +142,8 @@ def main():
     #     if i > 20:
     #         quit()
     #     i+=1
-    aword = 'splincipho'
-    aword = 'spate'
+    # aword = 'corpuscle'
+    aword = 'doldrums'
     print(cutbypronuncation(aword))
 
 if __name__ == "__main__" :
