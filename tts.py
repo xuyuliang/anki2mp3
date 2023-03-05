@@ -75,7 +75,7 @@ def processInputFile(input_file):
             content.append(mydict)
 
         mydict = {}
-        explain = line.split("\t")[int(p_tip)-1]
+        explain = line.split("\t")[int(p_explanation)-1]
         explain = symboltocn(word,explain)
         mydict['cn']=explain
         content.append(mydict)
