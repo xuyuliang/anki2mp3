@@ -18,6 +18,7 @@ INPUT_FOLDER= config['folders']['INPUT_FOLDER']
 CN_ENGINE = config['engines']['cn'] 
 EN_ENGINE = config['engines']['en'] 
 SPELLING_ENGINE = config['engines']['spelling'] 
+ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tip'],config['Anki_fields']['explanation'])
 NEED_READ_SPELLING = False
 SYMBOL_REPLACE ={}
 LONGMAN_BASE_PATH = '' 
@@ -42,16 +43,16 @@ def symboltocn(currword,text):
     return text
 
 def processInputFile(input_file):
-
+    p_word,p_tip,p_explanation = ANKI_FIELDS
     file = open(os.path.join(INPUT_FOLDER, input_file), "r",encoding='utf-8')
     textlist = [] 
     lyric =[]
     for line in file:
         # process lyric
         word_and_tips = {}
-        word = line.split("\t")[0]
+        word = line.split("\t")[int(p_word)-1]
         word_and_tips['word'] = word
-        tips = line.split("\t")[6];
+        tips = line.split("\t")[int(p_tip)-1];
         if NEED_READ_SPELLING:
             letters = cutwords.extract_english_letters(word,tips)
             if letters == '':
@@ -74,7 +75,7 @@ def processInputFile(input_file):
             content.append(mydict)
 
         mydict = {}
-        explain = line.split("\t")[2]
+        explain = line.split("\t")[int(p_tip)-1]
         explain = symboltocn(word,explain)
         mydict['cn']=explain
         content.append(mydict)
