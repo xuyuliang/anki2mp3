@@ -125,11 +125,11 @@ def text_to_sound(k,v,engine,filename,sound_source):
                 shutil.copyfile(os.path.join(LONGMAN_BASE_PATH,row[0],row[1]),currpath)
             else:
                 print(word,'在longman 库中找不到 只好tts')
-                text2mp3('en',engine,currpath,v)
+                text2mp3('spelling',engine,currpath,v)
             cur.close()
             con.close()
-
-        text2mp3(k,engine,currpath,v)
+        else:
+            text2mp3(k,engine,currpath,v)
 
     if sound_source == 'localTTS':
         text2mp3(k,engine,currpath,v)
