@@ -2,7 +2,6 @@ import datetime
 import os
 import shutil
 import sqlite3
-import string
 import pyttsx3
 import gtts
 import csv
@@ -53,12 +52,12 @@ def processInputFile(input_file):
         word = line.split("\t")[int(p_word)-1]
         word_and_tips['word'] = word
         tips = line.split("\t")[int(p_tip)-1];
+        word_and_tips['tips'] = tips
         if NEED_READ_SPELLING:
             letters = cutwords.extract_english_letters(word,tips)
             if letters == '':
                 letters = cutwords.cutbypronuncation(word) 
             word_and_tips['spelling'] = letters 
-        word_and_tips['tips'] = tips
         word_and_tips['word_again'] = word
         lyric.append(word_and_tips)
 
@@ -69,16 +68,16 @@ def processInputFile(input_file):
         mydict['en']=words
         content.append(mydict)
 
-        if NEED_READ_SPELLING:
-            mydict = {}
-            mydict['spelling']=letters
-            content.append(mydict)
-
         mydict = {}
         explain = line.split("\t")[int(p_explanation)-1]
         explain = symboltocn(word,explain)
         mydict['cn']=explain
         content.append(mydict)
+
+        if NEED_READ_SPELLING:
+            mydict = {}
+            mydict['spelling']=letters
+            content.append(mydict)
         
         mydict = {}
         mydict['en']=words
@@ -90,10 +89,10 @@ def processInputFile(input_file):
 def text2mp3(type,engine,path,v):
 
     if type == 'en':
-        engine.setProperty("rate", 100)
+        engine.setProperty("rate", 150)
         engine.setProperty('voice',EN_ENGINE)
     if type == 'spelling':
-        engine.setProperty("rate", 100)
+        engine.setProperty("rate", 120)
         engine.setProperty('voice',SPELLING_ENGINE)
     if type == 'cn':
         engine.setProperty("rate", 150)
