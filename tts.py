@@ -52,8 +52,15 @@ def analyse_filename(filename):
     if option == '':
         option = 'default'
     # print('option:',option)
-    read_order = eval(config['customized'][option])['read']
-    lyric_order = eval(config['customized'][option])['lyric']
+    try:
+        read_order = eval(config['customized'][option])['read']
+        lyric_order = eval(config['customized'][option])['lyric']
+    except(KeyError):
+        print('You configed in "filename" section but not config :',option,'in "customized" section your config.ini ')
+    finally:
+        option = 'default'
+        read_order = eval(config['customized'][option])['read']
+        lyric_order = eval(config['customized'][option])['lyric']
     return (read_order,lyric_order)
 
 def processInputFile(input_file):
