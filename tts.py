@@ -14,11 +14,10 @@ config.read("config.ini",encoding='utf-8')
 SOUND_TEMP_FOLDER = config['folders']['SOUND_TEMP_FOLDER']
 SOUND_OUTPUT_FOLDER = config['folders']['SOUND_OUTPUT_FOLDER']
 INPUT_FOLDER= config['folders']['INPUT_FOLDER']
-CN_ENGINE = config['engines']['cn'] 
-EN_ENGINE = config['engines']['en'] 
+EXPLAIN_ENGINE = config['engines']['explanation'] 
+WORD_ENGINE = config['engines']['word'] 
 SPELLING_ENGINE = config['engines']['spelling'] 
-ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tip'],config['Anki_fields']['explanation'])
-NEED_READ_SPELLING = False
+ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],config['Anki_fields']['explanation'])
 SYMBOL_REPLACE ={}
 LONGMAN_BASE_PATH = '' 
 
@@ -41,79 +40,94 @@ def symboltocn(currword,text):
         text = text.replace(k,v)
     return text
 
+def analyse_filename(filename):
+    read_order=[{}]
+    lyric_order = [{}]
+    option = ''
+    filename = filename.split('.')[0]
+
+    for item in config['filename']:
+        if filename == config['filename'][item]:
+            option = item  
+    if option == '':
+        option = 'default'
+    # print('option:',option)
+    read_order = eval(config['customized'][option])['read']
+    lyric_order = eval(config['customized'][option])['lyric']
+    return (read_order,lyric_order)
+
 def processInputFile(input_file):
     p_word,p_tip,p_explanation = ANKI_FIELDS
+    positions = {'word':int(p_word)-1,'tips':int(p_tip)-1,'explanation':int(p_explanation)-1}
     file = open(os.path.join(INPUT_FOLDER, input_file), "r",encoding='utf-8')
-    textlist = [] 
-    lyric =[]
+    readlist = [] 
+    lyriclist =[]
+    read_order,lyric_order =  analyse_filename(input_file)
+    print(lyric_order)
     for line in file:
+        notefields =line.split("\t") 
+        word = notefields[positions['word']]
+        tips = notefields[positions['tips']]
+        explain = notefields[positions['explanation']]
+        # get letters
+        letters = cutwords.extract_english_letters(word,tips)
+        if letters == '':
+            letters = cutwords.cutbypronuncation(word) 
         # process lyric
-        word_and_tips = {}
-        word = line.split("\t")[int(p_word)-1]
-        word_and_tips['word'] = word
-        tips = line.split("\t")[int(p_tip)-1];
-        word_and_tips['tips'] = tips
-        if NEED_READ_SPELLING:
-            letters = cutwords.extract_english_letters(word,tips)
-            if letters == '':
-                letters = cutwords.cutbypronuncation(word) 
-            word_and_tips['spelling'] = letters 
-        word_and_tips['word_again'] = word
-        lyric.append(word_and_tips)
+        aline_lyric = []
+        for item in lyric_order:
+            if item == 'spelling':
+                aline_lyric.append({'spelling':letters})
+            else:
+                aline_lyric.append({item:notefields[positions[item]]})
+        lyriclist.append(aline_lyric)
 
         # process textlist
-        content = [] 
-        words =  (word +'. ')*3
-        mydict = {}
-        mydict['en']=words
-        content.append(mydict)
-
-        mydict = {}
-        explain = line.split("\t")[int(p_explanation)-1]
-        explain = symboltocn(word,explain)
-        mydict['cn']=explain
-        content.append(mydict)
-
-        if NEED_READ_SPELLING:
-            mydict = {}
-            mydict['spelling']=letters
-            content.append(mydict)
-        
-        mydict = {}
-        mydict['en']=words
-        content.append(mydict)
-
-        textlist.append(content)
+        aline_readtext = []
+        for item in read_order:
+            if item == 'word':
+                aline_readtext.append({'word':(word +'. ')*3})
+            if item == 'explanation':
+                explain = symboltocn(word,explain)
+                aline_readtext.append({'explanation':explain})
+            if item == 'spelling':
+                aline_readtext.append({'spelling':letters})
+            # else:
+            #     aline_readtext.append({item:notefields[positions[item]]})
+        readlist.append(aline_readtext)
+            
     file.close
-    return textlist,lyric
+    # print( readlist)
+    # print(lyriclist)
+    return readlist,lyriclist
 def text2mp3(type,engine,path,v):
 
-    if type == 'en':
+    if type == 'word':
         engine.setProperty("rate", 150)
-        engine.setProperty('voice',EN_ENGINE)
+        engine.setProperty('voice',WORD_ENGINE)
     if type == 'spelling':
         engine.setProperty("rate", 120)
         engine.setProperty('voice',SPELLING_ENGINE)
-    if type == 'cn':
+    if type == 'explanation':
         engine.setProperty("rate", 150)
-        engine.setProperty('voice',CN_ENGINE)
+        engine.setProperty('voice',EXPLAIN_ENGINE)
     engine.save_to_file(v,path)
     engine.runAndWait()
 def text_to_sound(k,v,engine,filename,sound_source):
     currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
     print(currpath)
     if sound_source=='gTTS':
-        if k=='en':
+        if k=='word':
             tts = gtts.gTTS(v,lang="en")
             tts.save(currpath)
         if k=='spelling':
             tts = gtts.gTTS(v,lang="en")
             tts.save(currpath)
-        if k=='cn':
+        if k=='explanation':
             tts = gtts.gTTS(v,lang="zh")
             tts.save(currpath)
     if sound_source=='longman':
-        if k=='en':
+        if k=='word':
             con= sqlite3.connect("./sound_vocabulary.db")
             cur= con.cursor()
             word= str.strip(v.split('.')[0]) #因为TTS默认念3遍，words已经预处理了 * 3
@@ -133,7 +147,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
     if sound_source == 'localTTS':
         text2mp3(k,engine,currpath,v)
 
-def merge_sound(input_filename,lyriclist):
+def merge_sound(input_filename,readlist,lyriclist):
     tempmp3_path,outputmp3_path = SOUND_TEMP_FOLDER , SOUND_OUTPUT_FOLDER
     mp3_files = [file for file in os.listdir(tempmp3_path) if file.endswith(".mp3") and file[:-4].isdigit()]
     mp3_files.sort(key=lambda x: int(x[:-4]))
@@ -149,14 +163,21 @@ def merge_sound(input_filename,lyriclist):
     # print('len of list',len(lyriclist))
     # print('len of mp3files',len(mp3_files))
     i = 0
-    for dictitem in lyriclist:
-        print(i,dictitem)
-        for currkey in dictitem: 
-            print(currkey)
+    lyric_item = 0
+    for line in readlist:
+        print(i,line)
+        j = 0
+        for currdict in line: 
+            print(currdict)
             #lyric
             currtime = str(f"[{int(m):02d}:{int(s):02d}.{ms}]")
-            currtext = dictitem[currkey]+'\n'
-            file_lrc.write(currtime+currtext)
+            # print("当前list是：", list(lyriclist[lyric_item]))
+
+            if j < len( lyriclist[lyric_item] ):
+               for key,currtext in lyriclist[lyric_item][j].items():
+                   currtext = currtext + '\n'
+               j+=1
+               file_lrc.write(currtime+currtext)
             #mp3
             mp3_file = mp3_files[i]
             currfile = os.path.join(tempmp3_path, mp3_file)
@@ -168,18 +189,18 @@ def merge_sound(input_filename,lyriclist):
             m, s = divmod(total_duration, 60)
             ms = str(total_duration - int(total_duration))[2:4]
             i+=1
-
+        lyric_item += 1
     file_lrc.close()
     combined.export(os.path.join(outputmp3_path,export_filename), format="mp3")
 
-def product_sound_separately(textlist,input_filename,engine,sound_source='localTTS'):
+def product_sound_separately(readlist,input_filename,engine,sound_source='localTTS'):
 
     progressfile = 'get_sound_progress'+input_filename.split('.')[0]+'.txt'
     file_ori_list_dict = csv.writer(open(os.path.join(SOUND_OUTPUT_FOLDER, progressfile), "w",encoding='utf-8'))
     i = 1
-    for contents in textlist:
-        file_ori_list_dict.writerow(contents)
-        for content in contents:
+    for line in readlist:
+        file_ori_list_dict.writerow(line)
+        for content in line:
             print(content)
             for k,v in content.items():
                 print(k,v)
@@ -206,19 +227,13 @@ def main():
     for input_file in os.listdir(INPUT_FOLDER):
         if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
             continue
-        if config['filename']['spelling_difficulty'] in input_file:
-            global NEED_READ_SPELLING
-            NEED_READ_SPELLING = True 
-        else:
-            NEED_READ_SPELLING = False
-        textlist,lyriclist = processInputFile(input_file)
+        readlist,lyriclist = processInputFile(input_file)
         clear_sound_folder(SOUND_TEMP_FOLDER)
-        product_sound_separately(textlist,input_file,engine,sound_source='longman')
-        merge_sound(input_file,lyriclist)
+        product_sound_separately(readlist,input_file,engine,sound_source='longman')
+        merge_sound(input_file,readlist,lyriclist)
     
 
     
 
 if __name__ == "__main__":
     main()
-    # determin_LONGMAN_BASE_PATH()
