@@ -9,16 +9,90 @@ VOWELS = eval(config['characters']['vowels'])
 CONSONANTS = eval(config['characters']['consonants'])
 HALF_VOWEL = eval(config['characters']['half_vowel'])
 DOUBLE_CONSONANTS =eval(config['characters']['double_consonants'])
-# print( ['l','d','r'][1:]  in DOUBLE_CONSONANTS)
-# print( ['l','d','r'][1:] )
-# quit()
-def cutbyroot(aword):
-    pass
-    # 基于Lancaster 词干提取算法
-    # lancaster_stemmer = LancasterStemmer(strip_prefix_flag=True)  
-    # stem = lancaster_stemmer.stem(aword)
-    # affixes = aword.split(stem) 
-    # return stem, affixes 
+PREFIXES = [] 
+SUFFIXES = [] 
+
+def get_affix_from_file():
+    global PREFIXES
+    PREFIXES = []
+    global SUFFIXES
+    SUFFIXES = []
+    file = open('prefix.txt','r',encoding='utf-8')
+    for line in file:
+        word = str.strip(line)
+        PREFIXES.append(word)
+    file.close
+    file = open('suffix.txt','r',encoding='utf-8')
+    for line in file:
+        word = str.strip(line)
+        SUFFIXES.append(word)
+    file.close
+
+get_affix_from_file()
+
+
+# def cut_suffix_before(aword:str,n:int):
+#     return aword[0:n]+'.'+aword[n:]
+def cut_prefix_after(aword:str,n:int):
+    return aword[0:n]+'.'+aword[n:]
+
+def pre_process_prefix(aword):
+    # deal with axx 
+    if aword[0:1] == 'a' and aword[1] == aword[2] and aword[1] in CONSONANTS and aword[2] in CONSONANTS :
+        return cut_prefix_after(aword,2)
+    # deal with coxx  co
+    if aword[0:2] == 'co' and aword[2] == aword[3] and aword[2] in CONSONANTS and aword[3] in CONSONANTS :
+        return cut_prefix_after(aword,3) 
+    if aword[0:2] == 'co' and ( aword[2] == 'h' or aword[2:4] =='gn' ):
+        return cut_prefix_after(aword,2)
+    # deal with bin
+    if aword[0:3] == 'bin' and aword[3] in VOWELS:
+        return cut_prefix_after(aword,3)
+    # diff
+    if aword[0:3] == 'dif' and aword[3] == 'f': 
+        return cut_prefix_after(aword,3)
+    # eff e en em 
+    if aword[:2] == 'en' or aword[0:2] == 'em':
+        return cut_prefix_after(aword,2)
+    if aword[:3] == 'eff':  
+        return cut_prefix_after(aword,2)
+    if aword[0] == 'e' and  aword[1] in ['b', 'd', 'g', 'j' 'l' 'm' 'n' 'r' 'v']:
+        return cut_prefix_after(aword,1)
+    # ixx
+    if aword[0:1] == 'i' and aword[1] == aword[2] and aword[1] in CONSONANTS and aword[2] in CONSONANTS :
+        return cut_prefix_after(aword,2) 
+    # occ off opp
+    if aword[:3] == 'occ' or aword[:3] == 'opp' or aword[:3] == 'off':  
+        return cut_prefix_after(aword,2)
+    # red re
+    if aword[:3] == 'red' and aword[3] in VOWELS:
+        return cut_prefix_after(aword,3)
+    # se sed 
+    if aword[:3] == 'red' and aword[3] in VOWELS:
+        return cut_prefix_after(aword,3)
+    # sys
+    if aword[:2] == 'sy' and aword[3] == 's' :
+        return cut_prefix_after(aword,2)
+    # not match
+    return 'not match'
+
+def do_prefix(aword):
+    reslt = pre_process_prefix(aword) 
+    if reslt != 'not match':
+        return reslt
+    else:
+        for prefix in PREFIXES:
+            lenth = len(prefix)
+            if aword[0:lenth] == prefix:
+                return cut_prefix_after(aword,lenth)
+        return aword
+
+def do_suffix(aword):
+    for suffix in SUFFIXES:
+        lenth = len(aword)-len(suffix)
+        if aword[lenth:] == suffix:
+            return cut_prefix_after(aword,lenth)
+    return aword
 
 def isEnglishChar(s):
     try:
@@ -27,6 +101,8 @@ def isEnglishChar(s):
         return False
     else:
         return True
+
+# extract user's manual cut from Anki
 def extract_english_letters(realword,astring):
     contents = astring.split(' ')
     for content in contents:
@@ -121,6 +197,33 @@ def cutbypronuncation(myword):
     # newword = ' '.join(newword)
     return ' '.join(list_newword)
 
+
+def cutbyroot(aword):
+    if len(aword) < 6 :
+        return aword
+    aword = do_prefix(do_suffix(aword))
+    tempword = aword.split('.')
+    if len(tempword) >= 3:
+        if len(tempword[1]) < 3 :
+            all_consonant = True
+            for c in tempword[1]:
+                if c in VOWELS or c in HALF_VOWEL:
+                    all_consonant = False
+            if all_consonant:
+                if tempword[2][0] in VOWELS:
+                    return ''.join(tempword[0])+'.'+''.join(tempword[1:])
+                else: 
+                    return ''.join(tempword[:2])+'.'+''.join(tempword[2:])
+            else:
+                if len(tempword[0]) < len(tempword[2]):
+                    return ''.join(tempword[:2])+'.'+''.join(tempword[2:])
+                else:
+                    return ''.join(tempword[0])+'.'+''.join(tempword[1:])
+        else:
+            return aword
+    else:
+        return aword
+
     
 def main():
     # '''
@@ -143,8 +246,26 @@ def main():
     #         quit()
     #     i+=1
     # aword = 'corpuscle'
-    aword = 'doldrums'
-    print(cutbypronuncation(aword))
+    # print(cutbypronuncation(aword))
+
+
+    # aword = 'eucalyptus'
+    # print(do_suffix(aword)) 
+    # print(do_prefix(aword))
+    # print(do_prefix(do_suffix(aword)))
+
+    file = open('./testwords4cut.txt','r',encoding='utf-8')
+    i=0
+    j=20
+    for line in file:
+        # if i > 1800:
+        if i > 80:
+            aword = str.strip(line)
+            print(cutbyroot(aword))
+            j-=1
+            if j < 0:
+                quit()
+        i+=1
 
 if __name__ == "__main__" :
     main()

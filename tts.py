@@ -77,9 +77,11 @@ def processInputFile(input_file):
         tips = notefields[positions['tips']]
         explain = notefields[positions['explanation']]
         # get letters
+        # letters = cutwords.extract_english_letters(word,tips)
         letters = cutwords.extract_english_letters(word,tips)
         if letters == '':
-            letters = cutwords.cutbypronuncation(word) 
+            # letters = cutwords.cutbypronuncation(word) 
+            letters = cutwords.cutbyroot(word) 
         # process lyric
         aline_lyric = []
         for item in lyric_order:

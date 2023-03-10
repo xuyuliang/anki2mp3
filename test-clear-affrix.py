@@ -1,7 +1,8 @@
 import os
 
-def read_sort_write():
-    file = open('./后缀.txt','r',encoding='utf-8')
+def read_sort_write(filename):
+
+    file = open(filename,'r',encoding='utf-8')
     listword = []
     for line in file:
         word = str.strip(line)
@@ -16,12 +17,12 @@ def read_sort_write():
     listword.sort()
     print(len(listword))
 
-    newfile = open('./aasuffix.txt','w',encoding='utf-8')
+    newfile = open('aa'+filename,'w',encoding='utf-8')
     for word in  listword:
         newfile.write(word+'\n')
 
-def reversed_sort():
-    file = open('./aasuffix.txt','r',encoding='utf-8')
+def reversed_sort(filename):
+    file = open(filename,'r',encoding='utf-8')
     mydict = {} 
     r_list = []
     s_list = []
@@ -35,7 +36,7 @@ def reversed_sort():
         r_list.append(r_word)
     r_list.sort()
 
-    file = open('./suffix.txt','w',encoding='utf-8')
+    file = open(filename,'w',encoding='utf-8')
     for word in r_list:
         s_list.append(mydict[word])
         file.write(mydict[word]+'\n')
@@ -46,5 +47,5 @@ def reversed_sort():
 
 if __name__ == "__main__":
 
-    # read_sort_write()
-    reversed_sort()
+    read_sort_write('前缀.txt')
+    # reversed_sort()

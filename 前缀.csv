@@ -1,51 +1,51 @@
-a,on;in,å¤šå……å½“è¡¨è¯­æˆ–åä½å®šè¯­
+a,on;in,¶à³äµ±±íÓï»òºóÎ»¶¨Óï
 a,not,
-an,not,ç”¨äºå…ƒéŸ³æˆ–ä¸å‘éŸ³çš„hå‰
-ab,away fromï¼Œoff,
-abs,away fromï¼Œoff,ç”¨äºcã€t å‰
-ad,"toï¼Œat ,åŠ å¼ºè¯­æ°”",
-axx,"toï¼Œat ,åŠ å¼ºè¯­æ°”",
-"ack,acq","toï¼Œat ,åŠ å¼ºè¯­æ°”",
+an,not,ÓÃÓÚÔªÒô»ò²»·¢ÒôµÄhÇ°
+ab,away from£¬off,
+abs,away from£¬off,ÓÃÓÚc¡¢t Ç°
+ad,"to£¬at ,¼ÓÇ¿ÓïÆø",
+axx,"to£¬at ,¼ÓÇ¿ÓïÆø",
+"ack,acq","to£¬at ,¼ÓÇ¿ÓïÆø",
 be,to make,
-be,about ï¼Œcompletely,
-com,with ï¼Œtogether,åœ¨bï¼Œpï¼Œmï¼Œf å‰
-co,with ï¼Œtogether,åœ¨å…ƒéŸ³ã€ä¸å‘éŸ³çš„hã€gn å‰
-col,with ï¼Œtogether,åœ¨lå‰
-cor,with ï¼Œtogether,åœ¨rå‰
-con,with ï¼Œtogether,å…¶ä½™
+be,about £¬completely,
+com,with £¬together,ÔÚb£¬p£¬m£¬f Ç°
+co,with £¬together,ÔÚÔªÒô¡¢²»·¢ÒôµÄh¡¢gn Ç°
+col,with £¬together,ÔÚlÇ°
+cor,with £¬together,ÔÚrÇ°
+con,with £¬together,ÆäÓà
 bi,two twice doubly,
-bin,two twice doubly,åœ¨å…ƒéŸ³å‰
-by,secondly ï¼Œnear by,
+bin,two twice doubly,ÔÚÔªÒôÇ°
+by,secondly £¬near by,
 de,"down , away",
 de,to undo,
-di,twice ï¼Œ two,
-dia,throughï¼Œacross,
-di,throughï¼Œacross,åœ¨å…ƒéŸ³å‰
+di,twice £¬ two,
+dia,through£¬across,
+di,through£¬across,ÔÚÔªÒôÇ°
 dis,"no, undo // away",
-dif,"no, undo // away",åœ¨få‰
-di,"no, undo // away",c r s p t å‰
-dys,å,
+dif,"no, undo // away",ÔÚfÇ°
+di,"no, undo // away",c r s p t Ç°
+dys,»µ,
 en,put into // make,
-em,put into // make,b p m å‰
-epi,åœ¨...å‘¨å›´,
-eu,å¥½,
-ex,å‡º //å‰ä»»,c h p q s t å‰
-e,å‡º //å‰ä»»,b d g j l m n r v å‰
-ef,å‡º //å‰ä»»,f å‰
+em,put into // make,b p m Ç°
+epi,ÔÚ...ÖÜÎ§,
+eu,ºÃ,
+ex,³ö //Ç°ÈÎ,c h p q s t Ç°
+e,³ö //Ç°ÈÎ,b d g j l m n r v Ç°
+ef,³ö //Ç°ÈÎ,f Ç°
 for,"away ,forth",
-in,ä¸ï¼Œæ—  //  è¿›å…¥,
-im,ä¸ï¼Œæ—  //  è¿›å…¥,b p m å‰
-il,ä¸ï¼Œæ—  //  è¿›å…¥,lå‰
-ir,ä¸ï¼Œæ—  //  è¿›å…¥,rå‰
-mis,é”™è¯¯ï¼Œå,
+in,²»£¬ÎŞ //  ½øÈë,
+im,²»£¬ÎŞ //  ½øÈë,b p m Ç°
+il,²»£¬ÎŞ //  ½øÈë,lÇ°
+ir,²»£¬ÎŞ //  ½øÈë,rÇ°
+mis,´íÎó£¬»µ,
 ob,"toward, against",
-oc,"toward, against",åœ¨cå‰
-of,"toward, against",åœ¨få‰
-op,"toward, against",åœ¨på‰
+oc,"toward, against",ÔÚcÇ°
+of,"toward, against",ÔÚfÇ°
+op,"toward, against",ÔÚpÇ°
 paleo,old,
-para,"åŠ,ç±»ä¼¼,è¾…åŠ©//é™è½ä¼",
-par,"åŠ,ç±»ä¼¼,è¾…åŠ©//é™è½ä¼",åœ¨å…ƒéŸ³å‰
-pen,è¿‘ä¼¼ï¼Œå·®ä¸å¤š,
+para,"°ë,ÀàËÆ,¸¨Öú//½µÂäÉ¡",
+par,"°ë,ÀàËÆ,¸¨Öú//½µÂäÉ¡",ÔÚÔªÒôÇ°
+pen,½üËÆ£¬²î²»¶à,
 per,"throughout,thoroughly",
 ,to destruction,
 peri,"around, near",
@@ -53,18 +53,18 @@ pro,"forward,forth,",
 ,out,
 ,"in favour of,in place of",
 re,"back, against no ; again",
-red,"back, against no ; again",åœ¨å…ƒéŸ³å‰
+red,"back, against no ; again",ÔÚÔªÒôÇ°
 retro,backward,
 se,"apart , aside, away",
-sed,"apart , aside, away",åœ¨å…ƒéŸ³å‰
-sub,"1ï¼šåœ¨ä¸‹é¢,æ¬¡ä¸€ç­‰,å‰¯æ‰‹",
-suc,2ï¼šæ¥è¿‘ã€é è¿‘,åœ¨cå‰
-suf,,åœ¨få‰
-sup,,åœ¨på‰
-sur,,åœ¨rå‰
-sus,ä¸subä¸€æ ·,ä¸æ˜¯sussç»“æ„
-sur,"è¶…è¿‡,åœ¨ä¸Šé¢",
-syn,å…±åŒã€ç›¸åŒ,
-sym,,b p m å‰
-syl,,lå‰
-sy,,så‰
+sed,"apart , aside, away",ÔÚÔªÒôÇ°
+sub,"1£ºÔÚÏÂÃæ,´ÎÒ»µÈ,¸±ÊÖ",
+suc,2£º½Ó½ü¡¢¿¿½ü,ÔÚcÇ°
+suf,,ÔÚfÇ°
+sup,,ÔÚpÇ°
+sur,,ÔÚrÇ°
+sus,ÓësubÒ»Ñù,²»ÊÇsuss½á¹¹
+sur,"³¬¹ı,ÔÚÉÏÃæ",
+syn,¹²Í¬¡¢ÏàÍ¬,
+sym,,b p m Ç°
+syl,,lÇ°
+sy,,sÇ°
