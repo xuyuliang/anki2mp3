@@ -21,6 +21,9 @@ ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],confi
 SYMBOL_REPLACE ={}
 LONGMAN_BASE_PATH = '' 
 
+# print('totally_forget' in config['customized'])
+# print(type(config['customized']))
+
 def determin_LONGMAN_BASE_PATH():
     paths = eval(config['folders']['LONGMAN_BASE_PATH'])
     print(paths)
@@ -52,15 +55,14 @@ def analyse_filename(filename):
     if option == '':
         option = 'default'
     # print('option:',option)
-    try:
+    if option in config['customized']:
         read_order = eval(config['customized'][option])['read']
         lyric_order = eval(config['customized'][option])['lyric']
-    except(KeyError):
-        print('You configed in "filename" section but not config :',option,'in "customized" section your config.ini ')
-    finally:
+    else:
         option = 'default'
         read_order = eval(config['customized'][option])['read']
         lyric_order = eval(config['customized'][option])['lyric']
+
     return (read_order,lyric_order)
 
 def processInputFile(input_file):
