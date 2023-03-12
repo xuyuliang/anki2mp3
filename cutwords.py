@@ -297,10 +297,9 @@ def main():
     #         if j < 0:
     #             quit()
     #     i+=1
-    aword = 'lanthrop'
+    aword = 'arachnid'
     print(cutbypronuncation(aword))
-    quit()
-    aword = 'philanthropist'
+    aword = 'arachnid'
     print(cutbyroot(aword))
 
 if __name__ == "__main__" :
