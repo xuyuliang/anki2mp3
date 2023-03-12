@@ -183,14 +183,25 @@ def cutbypronuncation(myword):
             offset += 1
         if len(v) == 3:
             if ''.join(v[:2]) in DOUBLE_CONSONANTS:
-                print('前')
+                print('前2')
                 list_newword.insert(offset+k+2,'.')
             elif ''.join(v[1:]) in DOUBLE_CONSONANTS:
-                print('后')
+                print('后2')
                 list_newword.insert(offset+k+1,'.')
             else:
-                # print('3个辅音，没有双辅音，是不是需要检查一下了')
+                # 就当后3辅音 
                 list_newword.insert(offset+k,'.')
+            offset += 1
+        if len(v) == 4:
+            if ''.join(v[:2]) in DOUBLE_CONSONANTS:
+                print('前2')
+                list_newword.insert(offset+k+2,'.')
+            elif ''.join(v[1:]) in DOUBLE_CONSONANTS:
+                print('后3')
+                list_newword.insert(offset+k+1,'.')
+            else:
+                # 算了,就当前2后2
+                list_newword.insert(offset+k+2,'.')
             offset += 1
     # print(''.join(list_newword))
     # newword = list(newword)
@@ -274,21 +285,23 @@ def main():
     # print(do_prefix(aword))
     # print(do_prefix(do_suffix(aword)))
 
-    file = open('./testwords4cut.txt','r',encoding='utf-8')
-    i=0
-    j=20
-    for line in file:
-        # if i > 1800:
-        if i > 80:
-            aword = str.strip(line)
-            print(cutbyroot(aword))
-            j-=1
-            if j < 0:
-                quit()
-        i+=1
-    # aword = 'acarpous'
-    # aword = 'accept'
-    # cutbyroot(aword)
+    # file = open('./testwords4cut.txt','r',encoding='utf-8')
+    # i=0
+    # j=20
+    # for line in file:
+    #     # if i > 1800:
+    #     if i > 80:
+    #         aword = str.strip(line)
+    #         print(cutbyroot(aword))
+    #         j-=1
+    #         if j < 0:
+    #             quit()
+    #     i+=1
+    aword = 'lanthrop'
+    print(cutbypronuncation(aword))
+    quit()
+    aword = 'philanthropist'
+    print(cutbyroot(aword))
 
 if __name__ == "__main__" :
     main()
