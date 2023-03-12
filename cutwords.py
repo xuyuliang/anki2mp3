@@ -220,9 +220,29 @@ def cutbyroot(aword):
                 else:
                     return ''.join(tempword[0])+'.'+''.join(tempword[1:])
         else:
+            if len(tempword[1]) > 5:
+                middle = do_suffix(tempword[1])
+                if not '.' in middle:
+                    middle = cutbypronuncation(middle)
+                aword = tempword[0]+'.'+middle+'.'+tempword[2]
+                return aword
             return aword
+    # only two or one part
     else:
-        return aword
+        if not '.' in aword:
+            aword = cutbypronuncation(aword)
+            return aword
+        else :
+            first = aword.split('.')[0]
+            if len(first) > 5:
+                first = cutbypronuncation(first)
+            last = aword.split('.')[1]
+            if len(last) > 5:
+                last = cutbypronuncation(last)
+            aword = first +'.'+ last
+            return aword
+
+                
 
     
 def main():
@@ -266,6 +286,9 @@ def main():
             if j < 0:
                 quit()
         i+=1
+    # aword = 'acarpous'
+    # aword = 'accept'
+    # cutbyroot(aword)
 
 if __name__ == "__main__" :
     main()

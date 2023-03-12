@@ -11,16 +11,16 @@ import cutwords
 # tts = gtts.gTTS(text,lang="en")
 # tts.save("hello.mp3")
 
-# quit()
-
 # the engine
 engine = pyttsx3.init()
 engine.setProperty("stripPunct",True)
-engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
+# engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Brian22')
 # engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\IVONA 2 Voice Amy22')
-# engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
-engine.setProperty("rate", 00)
-# engine.say('vituperation')
+engine.setProperty('voice','HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ZH-CN_HUIHUI_11.0')
+engine.setProperty("rate", 150)
+engine.say('打搅；试图打断 > disturb')
+engine.runAndWait()
+quit()
 aword = 'astrology'
 newword = cutwords.cutbypronuncation(aword) 
 newword = list(newword)
