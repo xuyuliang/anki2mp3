@@ -31,8 +31,6 @@ def get_affix_from_file():
 get_affix_from_file()
 
 
-# def cut_suffix_before(aword:str,n:int):
-#     return aword[0:n]+'.'+aword[n:]
 def cut_prefix_after(aword:str,n:int):
     return aword[0:n]+'.'+aword[n:]
 
@@ -88,11 +86,21 @@ def do_prefix(aword):
         return aword
 
 def do_suffix(aword):
+    res = []
     for suffix in SUFFIXES:
         lenth = len(aword)-len(suffix)
         if aword[lenth:] == suffix:
-            return cut_prefix_after(aword,lenth)
-    return aword
+            res.append(suffix)
+    maxlen = 0
+    selected = ''
+    for item in res:
+        if len(item) > maxlen:
+            maxlen = len(item)
+            selected = item
+    if selected != '':
+        return cut_prefix_after(aword,len(aword)-maxlen)
+    else:
+        return aword
 
 def isEnglishChar(s):
     try:
@@ -142,6 +150,15 @@ def extract_english_letters(realword,astring):
             return ''
         else:
             return ''
+def cutbypronuncation2(myword):
+    list_CONSONANTS = list(CONSONANTS).extend(list(DOUBLE_CONSONANTS))
+    list_CONSONANTS.sort(key= lambda s:len(s))
+    print(list_CONSONANTS)
+    # for consonant in CONSONANTS:
+    #     if consonant in myword:
+    #         index = myword.find(consonant)
+    #         myword = myword[0:index].append(['.']).append(myword[index:])
+
 
 def cutbypronuncation(myword):
     if len(myword) <= 5:
@@ -297,10 +314,11 @@ def main():
     #         if j < 0:
     #             quit()
     #     i+=1
-    aword = 'arachnid'
-    print(cutbypronuncation(aword))
-    aword = 'arachnid'
-    print(cutbyroot(aword))
+    # aword = 'arachnid'
+    # print(do_suffix(aword))
+    # aword = 'arachnid'
+    # print(cutbyroot(aword))
+    cutbypronuncation2('procrastation')
 
 if __name__ == "__main__" :
     main()
