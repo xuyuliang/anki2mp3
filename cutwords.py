@@ -151,13 +151,34 @@ def extract_english_letters(realword,astring):
         else:
             return ''
 def cutbypronuncation2(myword):
-    list_CONSONANTS = list(CONSONANTS).extend(list(DOUBLE_CONSONANTS))
-    list_CONSONANTS.sort(key= lambda s:len(s))
-    print(list_CONSONANTS)
-    # for consonant in CONSONANTS:
-    #     if consonant in myword:
-    #         index = myword.find(consonant)
-    #         myword = myword[0:index].append(['.']).append(myword[index:])
+    listmyword = [] 
+    all_consonants = CONSONANTS.copy()
+    all_consonants.extend(DOUBLE_CONSONANTS)
+    all_consonants.sort(key= lambda s:len(s))
+    all_consonants.reverse()
+    # print(all_consonants)
+    # process 'y' in the head or tail 
+    def cut_consonant(word_par):
+        for consonant in all_consonants:
+            index = word_par.find(consonant)
+            if index > 0 :
+                print(consonant,index)
+                d_index = index+len(consonant)
+                if d_index < len(word_par):
+                    listmyword.append(word_par[:d_index])
+                else:
+                    print('last consonant')
+                    listmyword.append(word_par)
+                return word_par[index:]
+        # if match nothing, no consonat left
+        return ''
+    rslt = cut_consonant(myword)
+    while rslt  != '':
+        print(rslt)
+        rslt = cut_consonant(rslt)
+
+
+    print(listmyword)
 
 
 def cutbypronuncation(myword):
