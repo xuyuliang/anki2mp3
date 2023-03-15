@@ -352,14 +352,19 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
         # print(syllables[i])
         # pure consonant group found
         if syllables[i] in allconsonants:
+            # first element 
             if i-1 < 0:
-                if syllables[i+1][0] in VOWELS or syllables[i+1][0] in HALF_VOWEL:    
-                    syllables[i] = syllables[i]+syllables[i+1]        
-                    syllables.pop(i+1)
-                    i-=1
+                # if sylables[i+1] exists
+                if len(syllables) > 1:
+                    if syllables[i+1][0] in VOWELS or syllables[i+1][0] in HALF_VOWEL:    
+                        syllables[i] = syllables[i]+syllables[i+1]        
+                        syllables.pop(i+1)
+                        i-=1
+
                 if vowelend:
                     if len(syllables[i]) + len1 < 6:
                         merge_head = True
+            # last element
             if i+1 > len(syllables)-1:
                 if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
                     syllables[i-1] = syllables[i-1]+syllables[i]        
@@ -394,24 +399,18 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
     
     #  merge some small syllables 
     templength = 0
-    stack = []
+    counter =0 
     i = 0
     while i < len(syllables):
         templength = templength + len(syllables[i])
-        stack.append(i) 
-        if len(stack) > 1 and templength <= 6:
-            tempstr = ''
-            tempindex = stack[0]
-            for item in stack:
-                tempstr += syllables[item]
-                syllables.pop(item)
-            syllables.insert(tempindex,tempstr)
+        counter += 1
+        if counter > 1 and templength <= 5:
+            syllables[i-1] = syllables[i-1] + syllables[i] 
+            syllables.pop(i)
+            i-=1
             templength = 0
-            stack = []
-            print('野')
+            counter =0
         i+=1
-        
-
 
     res = '.'.join(syllables)
     # print('ori rest',res)
@@ -449,7 +448,29 @@ def cutbyroot2(aword):
                 vowel_begin =True
                 len2 = len(tempword[2])
             middle= cutbypronuncation3(middle,vowel_end,len1,vowel_begin,len2)
-        aword = tempword[0]+middle+tempword[2]
+            aword = tempword[0]+middle+tempword[2]
+        else:
+            middle0=middle.split('.')[0]
+            middle1=middle.split('.')[1]
+
+            if tempword[0][-1] in VOWELS:
+                vowel_end = True
+                len1 = len(tempword[0])
+            if middle1[0] in VOWELS:
+                vowel_begin =True
+                len2 = len(middle1)
+            middle0= cutbypronuncation3(middle0,vowel_end,len1,vowel_begin,len2)
+
+            if middle0[-1] in VOWELS:
+                vowel_end = True
+                len1 = len(middle0)
+            if tempword[2][0] in VOWELS:
+                vowel_begin =True
+                len2 = len(tempword[2])
+            middle1= cutbypronuncation3(middle1,vowel_end,len1,vowel_begin,len2)
+
+            aword = tempword[0]+middle0+'.'+middle1+tempword[2]
+
         return aword
     # only two or one part
     else:
@@ -469,7 +490,7 @@ def cutbyroot2(aword):
                 vowel_end= True
                 len1 = len(first)
             if not did_suffix:
-                last = cutbypronuncation3(last,vowel_end=vowel_end,len1=len1)
+                last = cutbypronuncation3(last,vowelend=vowel_end,len1=len1)
             aword = first + last
             return aword
 
@@ -504,24 +525,25 @@ def main():
     # print(do_prefix(aword))
     # print(do_prefix(do_suffix(aword)))
 
-    file = open('./testwords4cut.txt','r',encoding='utf-8')
-    i=0
-    j=20
-    for line in file:
-        # if i > 1800:
-        if i > 2110:
-            aword = str.strip(line)
-            print(cutbyroot2(aword))
-            j-=1
-            if j < 0:
-                quit()
-        i+=1
+    # file = open('./testwords4cut.txt','r',encoding='utf-8')
+    # i=0
+    # j=20
+    # for line in file:
+    #     # if i > 1800:
+    #     if i > 2010:
+    #         aword = str.strip(line)
+    #         print(cutbyroot2(aword))
+    #         j-=1
+    #         if j < 0:
+    #             quit()
+    #     i+=1
     # aword = 'arachnid'
     # print(do_suffix(aword))
     # aword = 'allopathy'
     # aword = 'emigrate'
     aword = 'calcium'
     aword = 'caldron'
+    aword = 'concession'
 
     print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))

@@ -83,7 +83,7 @@ def processInputFile(input_file):
         letters = cutwords.extract_english_letters(word,tips)
         if letters == '':
             # letters = cutwords.cutbypronuncation(word) 
-            letters = ' '.join(list(cutwords.cutbyroot(word)))
+            letters = ' '.join(list(cutwords.cutbyroot2(word)))
         # process lyric
         aline_lyric = []
         for item in lyric_order:
