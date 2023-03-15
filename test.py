@@ -22,7 +22,7 @@ engine.say('打搅；试图打断 > disturb')
 engine.runAndWait()
 quit()
 aword = 'astrology'
-newword = cutwords.cutbypronuncation(aword) 
+newword = cutwords.cutbypronuncation3(aword) 
 newword = list(newword)
 newword = ' '.join(newword)
 print(newword)
