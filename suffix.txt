@@ -67,7 +67,6 @@ en
 ain
 kin
 iteon
-ification
 ixation
 faction
 ation
@@ -147,3 +146,7 @@ ability
 ibility
 osity
 ivity
+awn
+ore
+ire
+ole

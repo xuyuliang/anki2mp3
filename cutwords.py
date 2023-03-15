@@ -544,6 +544,7 @@ def main():
     aword = 'calcium'
     aword = 'caldron'
     aword = 'concession'
+    aword = 'ramification'
 
     print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))
