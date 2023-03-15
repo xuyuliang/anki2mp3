@@ -305,9 +305,7 @@ def cutbyroot(aword):
             aword = first +'.'+ last
             return aword
 
-def cutbypronuncation3(word,vowelend=False,vowelbegin=False):
-    # consonants =['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z']
-    # double_consonants =['br','bl','cl','cr','ck','ch','dr','ds','dw','fl','fr','gh','gr','gl','kn','ng','ph','pl','pr','qu','sc','sl','sh','sp','sn','sm','shr','spl','spr','str','scr','squ','sph','sr','st','sw','tch','thr','thw','th','tr','tw']
+def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
     consonants = CONSONANTS
     double_consonants = DOUBLE_CONSONANTS
 
@@ -327,15 +325,12 @@ def cutbypronuncation3(word,vowelend=False,vowelbegin=False):
             if is_triple_consonant(word, pos):
                 new_word = new_word+'.'+ word[pos:pos+3]
                 pos += 3
-                continue
             elif is_double_consonant(word, pos):
                 new_word = new_word+'.'+ word[pos:pos+2]
                 pos += 2
-                continue
             elif is_single_consonant(word, pos):
                 new_word = new_word+'.'+ word[pos]
                 pos += 1
-                continue
             else:
                 new_word += word[pos]
                 pos += 1
@@ -350,69 +345,88 @@ def cutbypronuncation3(word,vowelend=False,vowelbegin=False):
     allconsonants = CONSONANTS.copy()
     allconsonants.extend(DOUBLE_CONSONANTS)
     merge_head, merge_tail = False, False
-    print('range',len(syllables)-1)
-    newsyllables = syllables.copy()
-    for i in range(len(syllables)):
-        # single consonant found
-        print(syllables[i])
+    print('curr word is:',syllables)
+    n = len(syllables)
+    i = 0
+    while i < len(syllables):
+        # print(syllables[i])
+        # pure consonant group found
         if syllables[i] in allconsonants:
             if i-1 < 0:
                 if syllables[i+1][0] in VOWELS or syllables[i+1][0] in HALF_VOWEL:    
-                    newsyllables[i] = newsyllables[i]+newsyllables[i+1]        
-                    newsyllables.pop(i+1)
+                    syllables[i] = syllables[i]+syllables[i+1]        
+                    syllables.pop(i+1)
                     i-=1
-                    continue
-                if vowelbegin:
-                    merge_head = True
-                    continue
+                if vowelend:
+                    if len(syllables[i]) + len1 < 6:
+                        merge_head = True
             if i+1 > len(syllables)-1:
                 if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
-                    newsyllables[i-1] = newsyllables[i-1]+newsyllables[i]        
-                    newsyllables.pop(i)
+                    syllables[i-1] = syllables[i-1]+syllables[i]        
+                    syllables.pop(i)
                     i-=1
-                    continue
-                if vowelend:
-                    merge_tail = True
-                    continue
+                if vowelbegin:
+                    if len(syllables[i]) + len2 < 6:
+                        merge_tail = True
             # 其实不用判断了
             if (i-1 >=0 )  and i+1 < len(syllables):
                 if len(syllables[i-1]) < len(syllables[i+1]):
                     if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
-                        newsyllables[i-1] = newsyllables[i-1]+newsyllables[i]        
-                        newsyllables.pop(i)
+                        syllables[i-1] = syllables[i-1]+syllables[i]        
+                        syllables.pop(i)
                         i-=1
-                        continue
                     else:
                         if syllables[i+1][0] in VOWELS or syllables[i+1][0] in HALF_VOWEL:    
-                            newsyllables[i] = newsyllables[i]+newsyllables[i+1]        
-                            newsyllables.pop(i+1)
+                            syllables[i] = syllables[i]+syllables[i+1]        
+                            syllables.pop(i+1)
                             i-=1
-                            continue
 
                 else:
                     if syllables[i+1][0] in VOWELS or syllables[i+1][0] in HALF_VOWEL:    
-                        newsyllables[i] = newsyllables[i]+newsyllables[i+1]        
-                        newsyllables.pop(i+1)
-                        continue
-                    if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
-                        newsyllables[i-1] = newsyllables[i-1]+newsyllables[i]        
-                        newsyllables.pop(i)
+                        syllables[i] = syllables[i]+syllables[i+1]        
+                        syllables.pop(i+1)
                         i-=1
-                        continue
+                    if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
+                        syllables[i-1] = syllables[i-1]+syllables[i]        
+                        syllables.pop(i)
+                        i-=1
+        i+=1
     
+    #  merge some small syllables 
+    templength = 0
+    stack = []
+    i = 0
+    while i < len(syllables):
+        templength = templength + len(syllables[i])
+        stack.append(i) 
+        if len(stack) > 1 and templength <= 6:
+            tempstr = ''
+            tempindex = stack[0]
+            for item in stack:
+                tempstr += syllables[item]
+                syllables.pop(item)
+            syllables.insert(tempindex,tempstr)
+            templength = 0
+            stack = []
+            print('野')
+        i+=1
+        
+
+
     res = '.'.join(syllables)
-    print('ori rest',res)
+    # print('ori rest',res)
     if not merge_tail:
         res = res + '.'
     if not merge_head:
         res = '.' + res
-    print(res)
+    # print(res)
     return res
 
                 
 def cutbyroot2(aword):
     vowel_begin,vowel_end = False,False
     merge_head,merge_tail = False,False
+    len1,len2 = 0,0
     if len(aword) < 6 :
         return aword
     did_prefix, did_suffix  = False, False
@@ -430,9 +444,11 @@ def cutbyroot2(aword):
         if not '.' in middle:
             if tempword[0][-1] in VOWELS:
                 vowel_end = True
+                len1 = len(tempword[0])
             if tempword[2][0] in VOWELS:
                 vowel_begin =True
-            middle= cutbypronuncation3(middle,vowel_end,vowel_begin)
+                len2 = len(tempword[2])
+            middle= cutbypronuncation3(middle,vowel_end,len1,vowel_begin,len2)
         aword = tempword[0]+middle+tempword[2]
         return aword
     # only two or one part
@@ -444,14 +460,16 @@ def cutbyroot2(aword):
             first = aword.split('.')[0]
             last = aword.split('.')[1]
             if last[0] in VOWELS:
-                vowel_end = True
+                vowel_begin= True
+                len2 = len(last)
             if not did_prefix:
-                first = cutbypronuncation3(first,vowelend=vowel_end)
+                first = cutbypronuncation3(first,vowelbegin=vowel_begin,len2=len2)
 
             if first[-1] in VOWELS:
-                vowel_begin = True
+                vowel_end= True
+                len1 = len(first)
             if not did_suffix:
-                last = cutbypronuncation3(last,vowelbegin=vowel_begin)
+                last = cutbypronuncation3(last,vowel_end=vowel_end,len1=len1)
             aword = first + last
             return aword
 
@@ -486,22 +504,24 @@ def main():
     # print(do_prefix(aword))
     # print(do_prefix(do_suffix(aword)))
 
-    # file = open('./testwords4cut.txt','r',encoding='utf-8')
-    # i=0
-    # j=20
-    # for line in file:
-    #     # if i > 1800:
-    #     if i > 1800:
-    #         aword = str.strip(line)
-    #         print(cutbyroot2(aword))
-    #         j-=1
-    #         if j < 0:
-    #             quit()
-    #     i+=1
-    aword = 'arachnid'
+    file = open('./testwords4cut.txt','r',encoding='utf-8')
+    i=0
+    j=20
+    for line in file:
+        # if i > 1800:
+        if i > 2110:
+            aword = str.strip(line)
+            print(cutbyroot2(aword))
+            j-=1
+            if j < 0:
+                quit()
+        i+=1
+    # aword = 'arachnid'
     # print(do_suffix(aword))
     # aword = 'allopathy'
     # aword = 'emigrate'
+    aword = 'calcium'
+    aword = 'caldron'
 
     print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))
