@@ -11,6 +11,13 @@ import cutwords
 # tts = gtts.gTTS(text,lang="en")
 # tts.save("hello.mp3")
 
+# random price with range
+def random_price():
+  price = random.randint(1,100)
+  return price
+
+
+
 # the engine
 engine = pyttsx3.init()
 engine.setProperty("stripPunct",True)
