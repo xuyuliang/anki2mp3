@@ -168,7 +168,8 @@ def merge_sound(input_filename,readlist,lyriclist):
     export_lyric = input_filename.split('.')[0] +'.lrc'
         
     file_lrc = open(os.path.join(outputmp3_path, export_lyric), "w",encoding='utf-8')
-    file_lrc.write('[re:CompuPhase XYL]\n\n')
+    file_lrc.write('[ar:XYL]\n')
+    file_lrc.write('[ti:'+input_filename.split('.')[0]+']\n')
     m,s,ms = (0,0,0)
     #
     # print('len of list',len(lyriclist))

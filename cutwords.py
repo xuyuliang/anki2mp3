@@ -86,6 +86,8 @@ def do_prefix(aword):
         return aword
 
 def do_suffix(aword):
+    #cut a piece from the end of aword,
+    #match the largest in SUFFIXES 
     res = []
     for suffix in SUFFIXES:
         lenth = len(aword)-len(suffix)
@@ -153,157 +155,7 @@ def extract_english_letters(realword,astring):
 
 
 
-def cutbypronuncation2(word):
-    consonants =['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z']
-    double_consonants =['br','bl','cl','cr','ck','ch','dr','ds','dw','fl','fr','gh','gr','gl','kn','ng','ph','pl','pr','qu','sc','sl','sh','sp','sn','sm','shr','spl','spr','str','scr','squ','sph','sr','st','sw','tch','thr','thw','th','tr','tw']
 
-    new_word = ""
-    count_consonants = 0
-    prev_consonant = False
-    for i in range(len(word)):
-        if word[i] in consonants:
-            count_consonants += 1
-            if count_consonants >= 2 and not prev_consonant:
-                if word[i-1:i+1] not in double_consonants:
-                    new_word += "."
-            if count_consonants >= 3 and prev_consonant:
-                if word[i-2:i+1] not in double_consonants:
-                    new_word += "."
-                new_word += word[i]
-                count_consonants = 1
-            else:
-                new_word += word[i]
-                prev_consonant = True
-        else:
-            # new_word = "."+new_word
-            new_word += word[i]
-            count_consonants = 0
-            prev_consonant = False
-    return new_word
-
-def cutbypronuncation(myword):
-    if len(myword) <= 5:
-        return ' '.join(list(myword))
-    list_myword = list(myword)
-    list_newword = list_myword.copy()
-    vowels_position =[] 
-    for i in range(len(list_myword)):
-        if list_myword[i] in VOWELS:
-            vowels_position.append(i)
-        if (list_myword[i] in HALF_VOWEL) and (i>0) and (i< (len(list_myword)-1)):
-            vowels_position.append(i)
-
-    # print(vowels_position)
-    dict_consonants_group= {}
-    for i in range(len(vowels_position)):
-        if i+1 < len(vowels_position):
-            consonants_group = list_myword[vowels_position[i]+1:vowels_position[i+1]]
-            dict_consonants_group.update({vowels_position[i]+1:consonants_group})
-        # 单词尾部的辅音就不处理了
-        # else:
-        #     consonants_group = list_myword[vowels_position[i]+1:]
-
-        # print('cons',consonants_group)
-    # print(dict_consonants_group)
-    list_newword = list_myword.copy()
-    offset = 0
-    for k in dict_consonants_group:
-        v = dict_consonants_group[k]
-        # print (k,v)
-        if len(v) == 1:
-            list_newword.insert(offset+k,'.')
-            offset += 1
-        if len(v) == 2:
-            if ''.join(v) in DOUBLE_CONSONANTS:
-                list_newword.insert(offset+k,'.')
-            else:
-                list_newword.insert(offset+k+1,'.')
-            offset += 1
-        if len(v) == 3:
-            if ''.join(v[:2]) in DOUBLE_CONSONANTS:
-                print('前2')
-                list_newword.insert(offset+k+2,'.')
-            elif ''.join(v[1:]) in DOUBLE_CONSONANTS:
-                print('后2')
-                list_newword.insert(offset+k+1,'.')
-            else:
-                # 就当后3辅音 
-                list_newword.insert(offset+k,'.')
-            offset += 1
-        if len(v) == 4:
-            if ''.join(v[:2]) in DOUBLE_CONSONANTS:
-                print('前2')
-                list_newword.insert(offset+k+2,'.')
-            elif ''.join(v[1:]) in DOUBLE_CONSONANTS:
-                print('后3')
-                list_newword.insert(offset+k+1,'.')
-            else:
-                # 算了,就当前2后2
-                list_newword.insert(offset+k+2,'.')
-            offset += 1
-    # print(''.join(list_newword))
-    # newword = list(newword)
-    # newword = ' '.join(newword)
-    return ' '.join(list_newword)
-
-
-def cutbyroot(aword):
-    if len(aword) < 6 :
-        return aword
-    did_prefix, did_suffix  = False, False
-    aword = do_suffix(aword)
-    if '.' in aword:
-        did_suffix = True
-    aword = do_prefix(aword)
-    tempword = aword.split('.')
-    if len(tempword) == 3:
-        did_prefix = True
-    if did_prefix and did_suffix:
-        if len(tempword[1]) < 3 :
-            all_consonant = True
-            for c in tempword[1]:
-                if c in VOWELS or c in HALF_VOWEL:
-                    all_consonant = False
-            if all_consonant:
-                if tempword[2][0] in VOWELS:
-                    return ''.join(tempword[0])+'.'+''.join(tempword[1:])
-                else: 
-                    return ''.join(tempword[:2])+'.'+''.join(tempword[2:])
-            else:
-                if len(tempword[0]) < len(tempword[2]):
-                    return ''.join(tempword[:2])+'.'+''.join(tempword[2:])
-                else:
-                    return ''.join(tempword[0])+'.'+''.join(tempword[1:])
-        else:
-            if len(tempword[1]) > 5:
-                middle = do_suffix(tempword[1])
-                if not '.' in middle:
-                    if tempword[0][-1] in VOWELS:
-                        vowel_end = True
-                    if tempword[2][0] in VOWELS:
-                        vowel_begin =True
-                    middle = cutbypronuncation3(middle,vowel_end,vowel_begin)
-                aword = tempword[0]+'.'+middle+'.'+tempword[2]
-                return aword
-            return aword
-    # only two or one part
-    else:
-        if not '.' in aword:
-            aword = cutbypronuncation3(aword)
-            return aword
-        else :
-            first = aword.split('.')[0]
-            last = aword.split('.')[1]
-            if len(first) > 5:
-                if last[0] in VOWELS:
-                     vowel_end = True
-                first = cutbypronuncation3(first,vowelend=vowel_end)
-            if len(last) > 5:
-                if first[-1] in VOWELS:
-                    vowel_begin = True
-                last = cutbypronuncation3(last,vowelbegin=vowel_begin)
-            aword = first +'.'+ last
-            return aword
 
 def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
     consonants = CONSONANTS
@@ -469,7 +321,7 @@ def cutbyroot2(aword):
                 len2 = len(tempword[2])
             middle1= cutbypronuncation3(middle1,vowel_end,len1,vowel_begin,len2)
 
-            aword = tempword[0]+middle0+'.'+middle1+tempword[2]
+            aword = tempword[0]+middle0+middle1+'.'+tempword[2]
 
         return aword
     # only two or one part
@@ -530,7 +382,7 @@ def main():
     # j=20
     # for line in file:
     #     # if i > 1800:
-    #     if i > 2010:
+    #     if i > 1010:
     #         aword = str.strip(line)
     #         print(cutbyroot2(aword))
     #         j-=1
@@ -541,10 +393,11 @@ def main():
     # print(do_suffix(aword))
     # aword = 'allopathy'
     # aword = 'emigrate'
-    aword = 'calcium'
-    aword = 'caldron'
-    aword = 'concession'
-    aword = 'ramification'
+    # aword = 'calcium'
+    # aword = 'caldron'
+    # aword = 'concession'
+    # aword = 'ramification'
+    aword = 'inadvertently'
 
     print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))
