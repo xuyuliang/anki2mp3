@@ -5,16 +5,11 @@ import gtts
 import eyed3
 from eyed3.id3 import Tag 
 import cutwords
-# from playsound import playsound
-# text = 'apple cat british english vituperation fracas unguent'
-# text = "'pɜrs(ə)nɪdʒ"
-# tts = gtts.gTTS(text,lang="en")
-# tts.save("hello.mp3")
-
-# random price with range
-def random_price():
-  price = random.randint(1,100)
-  return price
+from playsound import playsound
+text = 'apple cat british english vituperation fracas unguent'
+text = "hello I'm google ,how are you? "
+tts = gtts.gTTS(text,lang="en")
+tts.save("hello.mp3")
 
 
 

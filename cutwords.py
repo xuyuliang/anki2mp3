@@ -253,6 +253,16 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
     templength = 0
     counter =0 
     i = 0
+    # while i < len(syllables):
+    #     templength = templength + len(syllables[i])
+    #     counter += 1
+    #     if counter > 1 and templength <= 5:
+    #         syllables[i-1] = syllables[i-1] + syllables[i] 
+    #         syllables.pop(i)
+    #         i-=1
+    #         templength = 0
+    #         counter =0
+    #     i+=1
     while i < len(syllables):
         templength = templength + len(syllables[i])
         counter += 1
@@ -397,7 +407,8 @@ def main():
     # aword = 'caldron'
     # aword = 'concession'
     # aword = 'ramification'
-    aword = 'inadvertently'
+    # aword = 'inadvertently'
+    aword = 'parenthesis'
 
     print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))

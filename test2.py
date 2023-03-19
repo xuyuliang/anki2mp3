@@ -1,28 +1,38 @@
-import os
-import sys
-import anki
-from anki import Collection
-from anki import aqt
+# Import boto3 library
+import boto3
 
-# open anki database and open a deck named '双向' and filter 'rated:1:1'
-# open anki i
-deck = aqt.mw.col.decks.byName('双向')
-db = anki.storage.Collection()
+# Create a session object with a socket 5 proxy at 127.0.0.1:1080
+# session = requests.Session()
+# session.proxies = {
+#   'http': 'socks5://127.0.0.1:1080',
+#   'https': 'socks5://127.0.0.1:1080'
+# }
+# Create a client object for Amazon Polly service
+client = boto3.client('polly',region_name='us-east-1')
 
-# filter by 'rated:1:1'
-db.decks.select(deck['id'])
-# export to csv
-db.exportCSV(os.path.join(os.path.expanduser('~'), 'Desktop', 'test.csv'))  # 将数据导出到csv文件   
-# import csv
-# with open('test.csv') as f:
-#     reader = csv.reader(f)
-#     for row in reader:
-#         print(row)
-# quit()
-# import csv
-# with open('test.csv') as f:
-#     reader = csv.reader(f)
-#     for row in reader:
-#         print(row)
-# quit()
+# Define the text to synthesize
+text = "Hello, this is a test of Amazon Text to Speech Polly."
 
+# Define the voice ID and output format parameters
+voice_id = "Joanna"
+# voice_id = "Brian"
+
+output_format = "mp3"
+
+# Call the synthesize_speech method with the text and other parameters
+response = client.synthesize_speech(Text=text, VoiceId=voice_id, OutputFormat=output_format)
+
+# Check if the request was successful
+if response["ResponseMetadata"]["HTTPStatusCode"] == 200:
+  # Get the audio stream from the response as bytes
+  audio_stream = response["AudioStream"].read()
+
+  # Write the bytes to a file
+  with open("output.mp3", "wb") as f:
+    f.write(audio_stream)
+
+  # Print a success message
+  print("Audio file saved as output.mp3")
+else:
+  # Print an error message
+  print("Request failed: ", response["ResponseMetadata"]["HTTPErrorMessage"])
