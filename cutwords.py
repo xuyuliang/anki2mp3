@@ -253,16 +253,6 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
     templength = 0
     i = 0
     counter = 0
-    # while i < len(syllables):
-    #     templength = templength + len(syllables[i])
-    #     counter += 1
-    #     if counter > 1 and templength <= 5:
-    #         syllables[i-1] = syllables[i-1] + syllables[i] 
-    #         syllables.pop(i)
-    #         i-=1
-    #         templength = 0
-    #         counter =0
-    #     i+=1
     while i < len(syllables):
         curr_index = len(syllables)-i-1
         counter += 1
@@ -387,30 +377,33 @@ def main():
     # print(do_prefix(aword))
     # print(do_prefix(do_suffix(aword)))
 
-    file = open('./testwords4cut.txt','r',encoding='utf-8')
-    i=0
-    j=20
-    for line in file:
-        # if i > 1800:
-        if i > 1080:
-            aword = str.strip(line)
-            print(cutbyroot2(aword))
-            j-=1
-            if j < 0:
-                quit()
-        i+=1
+    # file = open('./testwords4cut.txt','r',encoding='utf-8')
+    # i=0
+    # j=20
+    # for line in file:
+    #     # if i > 1800:
+    #     if i > 1080:
+    #         aword = str.strip(line)
+    #         print(cutbyroot2(aword))
+    #         j-=1
+    #         if j < 0:
+    #             quit()
+    #     i+=1
     # aword = 'arachnid'
     # print(do_suffix(aword))
-    # aword = 'allopathy'
-    # aword = 'emigrate'
-    # aword = 'calcium'
-    # aword = 'caldron'
-    # aword = 'concession'
-    # aword = 'ramification'
-    # aword = 'inadvertently'
-    aword = 'parenthesis'
+    aword = []
+    aword.append('allopathy')
+    aword.append('emigrate')
+    aword.append('calcium')
+    aword.append('caldron')
+    aword.append('concession')
+    aword.append('ramification')
+    aword.append('inadvertently')
+    aword.append('parenthesis')
+    aword.append('psychosis')
+    for word in aword:
+        print(cutbyroot2(word))
 
-    print(cutbyroot2(aword))
     # print(cutbypronuncation3('propcastation'))
 
 if __name__ == "__main__" :
