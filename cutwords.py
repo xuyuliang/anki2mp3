@@ -217,7 +217,7 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
                     if len(syllables[i]) + len1 < 6:
                         merge_head = True
             # last element
-            if i+1 > len(syllables)-1:
+            if i+1 > len(syllables)-1 and len(syllables) > 1:
                 if syllables[i-1][-1] in VOWELS or syllables[i-1][-1] in HALF_VOWEL:    
                     syllables[i-1] = syllables[i-1]+syllables[i]        
                     syllables.pop(i)
@@ -275,6 +275,7 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
 
                 
 def cutbyroot2(aword):
+    print(aword)
     vowel_begin,vowel_end = False,False
     merge_head,merge_tail = False,False
     len1,len2 = 0,0
@@ -392,15 +393,16 @@ def main():
     # aword = 'arachnid'
     # print(do_suffix(aword))
     aword = []
-    aword.append('allopathy')
-    aword.append('emigrate')
-    aword.append('calcium')
-    aword.append('caldron')
-    aword.append('concession')
-    aword.append('ramification')
-    aword.append('inadvertently')
-    aword.append('parenthesis')
-    aword.append('psychosis')
+    # aword.append('allopathy')
+    # aword.append('emigrate')
+    # aword.append('calcium')
+    # aword.append('caldron')
+    # aword.append('concession')
+    # aword.append('ramification')
+    # aword.append('inadvertently')
+    # aword.append('parenthesis')
+    # aword.append('psychosis')
+    aword.append('requite')
     for word in aword:
         print(cutbyroot2(word))
 
