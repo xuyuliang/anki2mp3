@@ -293,7 +293,11 @@ def cutbyroot2(aword):
         did_prefix = True
     if did_prefix and did_suffix:
         middle = do_suffix(tempword[1])
-        if not '.' in middle:
+        # only 1 '.' in the beginning
+        if middle[0] == '.' and not '.' in middle[1:]:
+            aword = tempword[0]+middle+'.'+tempword[2]
+            return aword
+        if not '.' in middle :
             if tempword[0][-1] in VOWELS:
                 vowel_end = True
                 len1 = len(tempword[0])
@@ -393,16 +397,17 @@ def main():
     # aword = 'arachnid'
     # print(do_suffix(aword))
     aword = []
-    # aword.append('allopathy')
-    # aword.append('emigrate')
-    # aword.append('calcium')
-    # aword.append('caldron')
-    # aword.append('concession')
-    # aword.append('ramification')
-    # aword.append('inadvertently')
-    # aword.append('parenthesis')
-    # aword.append('psychosis')
+    aword.append('allopathy')
+    aword.append('emigrate')
+    aword.append('calcium')
+    aword.append('caldron')
+    aword.append('concession')
+    aword.append('ramification')
+    aword.append('inadvertently')
+    aword.append('parenthesis')
+    aword.append('psychosis')
     aword.append('requite')
+    aword.append('penitent')
     for word in aword:
         print(cutbyroot2(word))
 
