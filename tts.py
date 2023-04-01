@@ -3,7 +3,7 @@ import os
 import shutil
 import sqlite3
 import pyttsx3
-import gtts
+# import gtts
 import csv
 import configparser
 import cutwords
