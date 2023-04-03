@@ -190,8 +190,9 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
             #     new_word += "."
         return new_word
     res = add_dots(word)
-    if (res[0] == '.'):
-        res = res[1:]
+    if '.' in res:
+        if (res[0] == '.'):
+            res = res[1:]
     # merge syllable
     syllables = res.split('.')
     allconsonants = CONSONANTS.copy()
@@ -397,17 +398,18 @@ def main():
     # aword = 'arachnid'
     # print(do_suffix(aword))
     aword = []
-    aword.append('allopathy')
-    aword.append('emigrate')
-    aword.append('calcium')
-    aword.append('caldron')
-    aword.append('concession')
-    aword.append('ramification')
-    aword.append('inadvertently')
-    aword.append('parenthesis')
-    aword.append('psychosis')
-    aword.append('requite')
-    aword.append('penitent')
+    # aword.append('allopathy')
+    # aword.append('emigrate')
+    # aword.append('calcium')
+    # aword.append('caldron')
+    # aword.append('concession')
+    # aword.append('ramification')
+    # aword.append('inadvertently')
+    # aword.append('parenthesis')
+    # aword.append('psychosis')
+    # aword.append('requite')
+    # aword.append('penitent')
+    aword.append('faction')
     for word in aword:
         print(cutbyroot2(word))
 
