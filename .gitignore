@@ -69,3 +69,12 @@ dist/tts/VCRUNTIME140.dll
 dist/tts/pywin32_system32/pythoncom310.dll
 dist/tts/pywin32_system32/pywintypes310.dll
 >>>>>>> acfc67de414f534cd7a87e98437de935a92124a3
+build/tts/Analysis-00.toc
+build/tts/base_library.zip
+build/tts/EXE-00.toc
+build/tts/PKG-00.toc
+build/tts/PYZ-00.pyz
+build/tts/tts.pkg
+build/tts/warn-tts.txt
+build/tts/xref-tts.html
+dist/tts.exe
