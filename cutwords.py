@@ -295,7 +295,7 @@ def cutbyroot2(aword):
     if did_prefix and did_suffix:
         middle = do_suffix(tempword[1])
         # only 1 '.' in the beginning
-        if len(middle[0]) > 0:
+        if len(middle) > 0:
             if middle[0] == '.' and not '.' in middle[1:]:
                 aword = tempword[0]+middle+'.'+tempword[2]
                 return aword
@@ -411,7 +411,7 @@ def main():
     # aword.append('requite')
     # aword.append('penitent')
     # aword.append('faction')
-    aword.append('')
+    aword.append('penance')
     for word in aword:
         print(cutbyroot2(word))
 
