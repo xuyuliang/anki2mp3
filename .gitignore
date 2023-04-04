@@ -84,3 +84,4 @@ build/tts/localpycs/pyimod02_importers.pyc
 build/tts/localpycs/pyimod03_ctypes.pyc
 build/tts/localpycs/pyimod04_pywin32.pyc
 build/tts/localpycs/struct.pyc
+tts.exe
