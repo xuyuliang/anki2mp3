@@ -86,9 +86,8 @@ def processInputFile(input_file):
             # letters = cutwords.cutbypronuncation(word) 
             # letters = ' '.join(list(cutwords.cutbyroot2(word)))
             letters =  cutwords.extract_english_letters(word,full_explain)
-            print('真正调用了',letters)
-            if letters == '': # if not,means it's a one syllabel word ,so, use the word
-                letters = word
+            if letters == '': # if no . there , means it's a one syllabel word ,then use the word as it is.
+                letters = ' '.join(list(word))
         # process lyric
         aline_lyric = []
         for item in lyric_order:
