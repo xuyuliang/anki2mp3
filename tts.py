@@ -17,7 +17,7 @@ INPUT_FOLDER= config['folders']['INPUT_FOLDER']
 EXPLAIN_ENGINE = config['engines']['explanation'] 
 WORD_ENGINE = config['engines']['word'] 
 SPELLING_ENGINE = config['engines']['spelling'] 
-ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],config['Anki_fields']['explanation'])
+ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],config['Anki_fields']['explanation'],config['Anki_fields']['fullexplanation'])
 SYMBOL_REPLACE ={}
 LONGMAN_BASE_PATH = '' 
 
@@ -66,8 +66,8 @@ def analyse_filename(filename):
     return (read_order,lyric_order)
 
 def processInputFile(input_file):
-    p_word,p_tip,p_explanation = ANKI_FIELDS
-    positions = {'word':int(p_word)-1,'tips':int(p_tip)-1,'explanation':int(p_explanation)-1}
+    p_word,p_tip,p_explanation,p_fullexplanation = ANKI_FIELDS
+    positions = {'word':int(p_word)-1,'tips':int(p_tip)-1,'explanation':int(p_explanation)-1,'fullexplanation':int(p_fullexplanation)-1}
     file = open(os.path.join(INPUT_FOLDER, input_file), "r",encoding='utf-8')
     readlist = [] 
     lyriclist =[]
@@ -78,12 +78,17 @@ def processInputFile(input_file):
         word = notefields[positions['word']]
         tips = notefields[positions['tips']]
         explain = notefields[positions['explanation']]
+        full_explain = notefields[positions['fullexplanation']]
         # get letters
         # letters = cutwords.extract_english_letters(word,tips)
         letters = cutwords.extract_english_letters(word,tips)
         if letters == '':
             # letters = cutwords.cutbypronuncation(word) 
-            letters = ' '.join(list(cutwords.cutbyroot2(word)))
+            # letters = ' '.join(list(cutwords.cutbyroot2(word)))
+            letters =  cutwords.extract_english_letters(word,full_explain)
+            print('真正调用了',letters)
+            if letters == '': # if not,means it's a one syllabel word ,so, use the word
+                letters = word
         # process lyric
         aline_lyric = []
         for item in lyric_order:

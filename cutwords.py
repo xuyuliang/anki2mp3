@@ -274,7 +274,6 @@ def cutbypronuncation3(word,vowelend=False,len1=0,vowelbegin=False,len2=0):
         res = '.' + res
     return res
 
-                
 def cutbyroot2(aword):
     print(aword)
     vowel_begin,vowel_end = False,False
