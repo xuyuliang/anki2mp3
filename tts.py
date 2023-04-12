@@ -83,11 +83,14 @@ def processInputFile(input_file):
         # letters = cutwords.extract_english_letters(word,tips)
         letters = cutwords.extract_english_letters(word,tips)
         if letters == '':
-            # letters = cutwords.cutbypronuncation(word) 
             # letters = ' '.join(list(cutwords.cutbyroot2(word)))
             letters =  cutwords.extract_english_letters(word,full_explain)
-            if letters == '': # if no . there , means it's a one syllabel word ,then use the word as it is.
-                letters = ' '.join(list(word))
+            if letters == '': # if no . there , means it's a one syllabel word or just get nothing ,then try use the word as it is.
+                if len(word) < 7:
+                    letters = word
+                    letters = ' '.join(list(word))
+                else:
+                    letters = ' '.join(list(cutwords.cutbyroot2(word)))
         # process lyric
         aline_lyric = []
         for item in lyric_order:
@@ -247,6 +250,13 @@ def main():
         clear_sound_folder(SOUND_TEMP_FOLDER)
         product_sound_separately(readlist,input_file,engine,sound_source='longman')
         merge_sound(input_file,readlist,lyriclist)
+    # program normally finished
+    print("program normally finished, have a nice day")
+    print("press 'Enter' key to exit")
+    # wait for user input
+    input()
+    engine.stop()
+    
     
 
     
