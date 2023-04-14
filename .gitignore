@@ -47,3 +47,4 @@ build/tts/localpycs/pyimod03_ctypes.pyc
 build/tts/localpycs/pyimod04_pywin32.pyc
 build/tts/localpycs/struct.pyc
 build/tts/PYZ-00.toc
+.vscode/extensions.json
