@@ -33,6 +33,10 @@ def determin_LONGMAN_BASE_PATH():
            LONGMAN_BASE_PATH = path
            break
 
+# parse a cvs file , ignore lines begin with '#' ,print every line
+
+
+
 
 def symboltocn(currword,text):
     for item in config['symbol_pronounce']:
