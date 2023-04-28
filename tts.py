@@ -244,7 +244,7 @@ def main():
     engine = pyttsx3.init()
     engine.setProperty("stripPunct",True)
     engine.setProperty("rate", 100)
-    engine.setProperty("volume", 1.2)
+    engine.setProperty("volume", 1.4)
     # list_voices(engine)
     determin_LONGMAN_BASE_PATH()
     for input_file in os.listdir(INPUT_FOLDER):
