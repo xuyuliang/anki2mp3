@@ -1,0 +1,162 @@
+   
+    <script type="text/javascript">
+    (function(){
+        //请注意设置成移动端无效，我怕这些程序在移动端不兼容
+        function getAbsoluteLocation(el) {
+            var el2 = el;
+            var curtop = 0;
+            var curleft = 0;
+            if (document.getElementById || document.all) {
+                do {
+                    curleft += el.offsetLeft - el.scrollLeft;
+                    curtop += el.offsetTop - el.scrollTop;
+                    el = el.offsetParent;
+                    el2 = el2.parentNode;
+                    while (el2 != el) {
+                        curleft -= el2.scrollLeft;
+                        curtop -= el2.scrollTop;
+                        el2 = el2.parentNode;
+                    }
+                } while (el.offsetParent);
+
+            } else if (document.layers) {
+                curtop += el.y;
+                curleft += el.x;
+            }
+
+            return { top: curtop, left: curleft };
+        }
+
+
+
+        function biaoyu(op, sentence) {
+            if (op == "init") {
+                mengban.style.background = "#9D9D9D";
+                mengban.style.width = "100%";
+                mengban.style.height = "100%";
+                mengban.style.top = 0;
+                mengban.style.left = 0;
+                mengban.innerHTML = sentence;
+                mengban.style.opacity = 0.7;
+                mengban.style.zIndex = 1;
+                mengban.style.position = "fixed";
+                mengban.style.fontSize = "6em";
+                mengban.style.paddingTop = "10%";
+                mengban.style.textAlign = "center";
+                mengban.style.display = 'block';
+                mengban.style.color = '#8B0000';
+                document.body.appendChild(mengban);
+            }
+            if (op == "close") {
+                console.log("准备正常关闭了");
+                if(window.xyltimer != undefined){
+                  self.clearInterval(xyltimer);
+                }
+                document.documentElement.scrollTop = 0;
+                mengban.style.display = 'none';
+            }
+            if (op == "error") {
+                mengban.style.fontSize = "3em";
+                mengban.innerHTML = sentence;
+            }
+            
+        }
+
+        function beginDrag() {
+            mengban = document.createElement("div");
+            console.log("预检，若不需要加载控件就算了");
+            biaoyu("init", "请稍候");
+            var flag = "flag初始值";
+            var wordtoolbar = document.getElementById("missiveButtonDiv");
+                
+            console.log("wordtoolbar:"+wordtoolbar);
+            if (wordtoolbar == undefined) {
+                console.log("控件不需要打开");
+                flag = "不需要继续运行了";
+                biaoyu("close", ""); //我们认为这是正常的不展开iWebOffice控件的情形
+            }
+
+            if (flag == "不需要继续运行了") {
+                console.log("不是IE或者本次不需要展开iWebOffice控件，程序到此为止了");
+                return;
+            }
+            // 如果程序还继续运行到了这里，说明本页面需要展开
+            var wordtoolbar = document.getElementById("missiveButtonDiv");
+            console.log("启动clock定时器");
+            xyltimer = self.setInterval(function () { clock(); }, 500);
+            var currHeight = 0;
+            var iDrag = 0; var iStay = 0;
+            function clock() {
+                console.log("第" + iDrag + "尝试打开控件");
+                iDrag++;
+                console.log("网页正文全文高： " + document.body.scrollHeight);
+                console.log("网页可见区域高： " + document.body.offsetHeight);
+                console.log("屏幕分辨率的高： " + window.screen.height);
+                console.log("垂直方向滚动的值：" + document.documentElement.scrollTop);
+
+                var actualY = getAbsoluteLocation(wordtoolbar).top;
+                console.log("actural Y:" + actualY + " move to :" + (actualY - window.screen.height * 0.7));
+                document.documentElement.scrollTop = (actualY - window.screen.height * 0.7) + iDrag * window.screen.height*0.4;
+                try {
+                    var xu_wordobj = document.getElementById("JGWebOffice_zrtgContract");
+                    console.log(" word工具栏：" + wordtoolbar);
+                    if (xu_wordobj == undefined) { //控件没打开
+                        console.log("控件完全没打开");
+                        biaoyu("error", "页面加载不完整，请重新刷新页面试试，或者打电话2345"); //未知原因的不展开iWebOffice控件的情形
+                    } else { //控件已经打开了
+                        if (iStay >= 6) {
+                            biaoyu("close", "");
+                        }
+                        iStay++;
+
+                        /*
+                        var xuarr = Object.getOwnPropertyNames(xu_wordobj);
+                        console.log("word控件的属性数量：" + xuarr.length);
+                        if (xuarr.length == 42 || xuarr.length == 41  || xuarr.length == 46) { //42是新建，41是后续审批
+                        if (xuarr.length > 9) { // 算了，就胡乱写点吧
+                            if (iStay >= 2) {
+                                biaoyu("close", "");
+                            }
+                            iStay++;
+                        } else {
+                            biaoyu("error", "控件已存在但是没有正确加载，请打电话2345"); //控件打开但是数量不对。
+                        }
+                        */
+                    }
+                } catch (err) { //完全找不到控件在dom中的id
+                    biaoyu("error", "在页面中找不到控件，请重新刷新页面试试，或者打电话2345");
+                    console.error(err);
+                }
+
+            }
+        }
+
+        document.ready = function (callback) {
+            /// 兼容Firefox, Google
+            if (document.addEventListener) {
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.removeEventListener('DOMContentLoaded', arguments.callee, false);
+                    callback();
+                }, false)
+            }
+            // 兼容IE
+            else if (document.attachEvent) {
+                document.attachEvent('onreadystatechange', function () {
+                    if (document.readyState == "complete") {
+                        document.detachEvent("onreadystatechange", arguments.callee);
+                        callback();
+                    }
+                })
+            }
+            else if (document.lastChild == document.body) {
+                callback();
+            }
+        }
+
+        document.ready(function () {
+            console.log('正在进入Document ready 队列');
+            beginDrag();
+        });
+
+    }());
+    </script>
