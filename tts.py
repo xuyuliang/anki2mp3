@@ -1,4 +1,5 @@
 import datetime
+import html2text
 import os
 import shutil
 import sqlite3
@@ -110,7 +111,8 @@ def processInputFile(input_file):
             if item == 'word':
                 aline_readtext.append({'word':(word +'. ')*3})
             if item == 'explanation':
-                explain = symboltocn(word,explain)
+                # read as html
+                explain = symboltocn(word,html2text.html2text(explain))
                 aline_readtext.append({'explanation':explain})
             if item == 'spelling':
                 aline_readtext.append({'spelling':letters})
