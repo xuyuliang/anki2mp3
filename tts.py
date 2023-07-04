@@ -109,10 +109,12 @@ def processInputFile(input_file):
         aline_readtext = []
         for item in read_order:
             if item == 'word':
+                # replace '.' with ' ' in item becauce of some bug in somewhere I don't know.
+                word = word.replace('.',' ')
                 aline_readtext.append({'word':(word +'. ')*3})
             if item == 'explanation':
                 # read as html
-                explain = symboltocn(word,html2text.html2text(explain))
+                explain = symboltocn(word,explain)
                 aline_readtext.append({'explanation':explain})
             if item == 'spelling':
                 aline_readtext.append({'spelling':letters})
