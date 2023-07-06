@@ -162,6 +162,10 @@ def text_to_sound(k,v,engine,filename,sound_source):
             row = cur.fetchone()
             if row != None:
                 shutil.copyfile(os.path.join(LONGMAN_BASE_PATH,row[0],row[1]),currpath)
+                combined = AudioSegment.empty()
+                sound = AudioSegment.from_file(currpath)
+                combined = sound * 2
+                combined.export(currpath, format="mp3")
             else:
                 print(word,'在longman 库中找不到 只好tts')
                 text2mp3('spelling',engine,currpath,v)
