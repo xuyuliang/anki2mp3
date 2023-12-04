@@ -1,23 +1,22 @@
 import asyncio
 import edge_tts
 
-TEXT = "Hello World! 你真好"
 VOICE = "en-GB-SoniaNeural"
-OUTPUT_FILE = "test.mp3"
 
+async def communicate_async(text, outputfile):
+    """异步函数用于文本到语音的转换"""
+    communicate = edge_tts.Communicate(text, VOICE)
+    await communicate.save(outputfile)
 
-async def amain() -> None:
-    """Main function"""
-    communicate = edge_tts.Communicate(TEXT, VOICE)
-    await communicate.save(OUTPUT_FILE)
-
-def do_edgetts(text,outputfile):
-    
-    loop = asyncio.get_event_loop_policy().get_event_loop()
-    try:
-        loop.run_until_complete(amain())
-    finally:
-        loop.close()
+def process_text(text, outputfile):
+    """处理文本到语音的转换"""
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(communicate_async(text, outputfile))
+    loop.close()
 
 if __name__ == "__main__":
-    do_edgetts(TEXT,OUTPUT_FILE)
+    myTEXT = ["Hello", "World", "pantry", "plane"]
+    myOUTPUT_FILE = "test.mp3"
+    for i, text in enumerate(myTEXT, start=1):
+        process_text(text, str(i) + myOUTPUT_FILE)
