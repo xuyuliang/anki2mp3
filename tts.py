@@ -4,6 +4,9 @@ import os
 import shutil
 import sqlite3
 import pyttsx3
+import asyncio
+import edge_tts
+from testEdgeTTS import process_text 
 import gtts
 import csv
 import configparser
@@ -139,6 +142,8 @@ def text2mp3(type,engine,path,v):
         engine.setProperty('voice',EXPLAIN_ENGINE)
     engine.save_to_file(v,path)
     engine.runAndWait()
+
+
 def text_to_sound(k,v,engine,filename,sound_source):
     currpath = os.path.join(SOUND_TEMP_FOLDER,filename)
     print(currpath)
@@ -152,6 +157,11 @@ def text_to_sound(k,v,engine,filename,sound_source):
         if k=='explanation':
             tts = gtts.gTTS(v,lang="zh")
             tts.save(currpath)
+    if sound_source=='edge':
+        if k=='word':
+            process_text(v,currpath)
+        else:
+            text2mp3(k,engine,currpath,v)
     if sound_source=='longman':
         if k=='word':
             con= sqlite3.connect("./sound_vocabulary.db")
@@ -176,6 +186,8 @@ def text_to_sound(k,v,engine,filename,sound_source):
 
     if sound_source == 'localTTS':
         text2mp3(k,engine,currpath,v)
+
+
 
 def merge_sound(input_filename,readlist,lyriclist):
     tempmp3_path,outputmp3_path = SOUND_TEMP_FOLDER , SOUND_OUTPUT_FOLDER
@@ -260,7 +272,8 @@ def main():
             continue
         readlist,lyriclist = processInputFile(input_file)
         clear_sound_folder(SOUND_TEMP_FOLDER)
-        product_sound_separately(readlist,input_file,engine,sound_source='longman')
+        product_sound_separately(readlist,input_file,engine,sound_source='edge')
+        # product_sound_separately(readlist,input_file,engine,sound_source='longman')
         merge_sound(input_file,readlist,lyriclist)
     # program normally finished
     print("program normally finished, have a nice day")
