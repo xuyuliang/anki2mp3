@@ -4,8 +4,6 @@ import os
 import shutil
 import sqlite3
 import pyttsx3
-import asyncio
-import edge_tts
 from testEdgeTTS import process_text 
 import gtts
 import csv
