@@ -5,7 +5,7 @@ VOICE = "en-GB-SoniaNeural"
 
 async def communicate_async(text, outputfile):
     """异步函数用于文本到语音的转换"""
-    communicate = edge_tts.Communicate(text, VOICE)
+    communicate = edge_tts.Communicate(text, VOICE,rate="-30%")
     await communicate.save(outputfile)
 
 def process_text(text, outputfile):
