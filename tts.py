@@ -130,7 +130,8 @@ def processInputFile(input_file):
 def text2mp3(type,engine,path,v):
 
     if type == 'word':
-        engine.setProperty("rate", 150)
+        engine.setProperty("rate", 120)
+        engine.setProperty("volumn", 1.2)
         engine.setProperty('voice',WORD_ENGINE)
     if type == 'spelling':
         engine.setProperty("rate", 120)
@@ -270,8 +271,8 @@ def main():
             continue
         readlist,lyriclist = processInputFile(input_file)
         clear_sound_folder(SOUND_TEMP_FOLDER)
-        product_sound_separately(readlist,input_file,engine,sound_source='edge')
-        # product_sound_separately(readlist,input_file,engine,sound_source='longman')
+        # product_sound_separately(readlist,input_file,engine)
+        product_sound_separately(readlist,input_file,engine,sound_source='longman')
         merge_sound(input_file,readlist,lyriclist)
     # program normally finished
     print("program normally finished, have a nice day")
