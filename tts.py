@@ -135,9 +135,11 @@ def text2mp3(type,engine,path,v):
         engine.setProperty('voice',WORD_ENGINE)
     if type == 'spelling':
         engine.setProperty("rate", 120)
+        engine.setProperty("volumn", 1)
         engine.setProperty('voice',SPELLING_ENGINE)
     if type == 'explanation':
         engine.setProperty("rate", 150)
+        engine.setProperty("volumn", 1)
         engine.setProperty('voice',EXPLAIN_ENGINE)
     engine.save_to_file(v,path)
     engine.runAndWait()
