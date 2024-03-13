@@ -1,6 +1,7 @@
 import datetime
 # import html2text
 import os
+import re
 import shutil
 import sqlite3
 import pyttsx3
@@ -70,6 +71,17 @@ def analyse_filename(filename):
         lyric_order = eval(config['customized'][option])['lyric']
 
     return (read_order,lyric_order)
+def detect_hash_with_spaces(string):
+  """Returns True if the string begins with a # character, including spaces."""
+
+  # Compile the regular expression pattern.
+  pattern = re.compile(r'^[ \t]*#') 
+
+  # Match the pattern against the string.
+  match = pattern.match(string)
+
+  # Return True if there is a match, False otherwise.
+  return match is not None
 
 def processInputFile(input_file):
     p_word,p_tip,p_explanation,p_fullexplanation = ANKI_FIELDS
@@ -80,6 +92,9 @@ def processInputFile(input_file):
     read_order,lyric_order =  analyse_filename(input_file)
     print(lyric_order)
     for line in file:
+        #escape first 2 lines if begin with '#'
+        if detect_hash_with_spaces(line):
+            continue
         notefields =line.split("\t") 
         word = notefields[positions['word']]
         tips = notefields[positions['tips']]
