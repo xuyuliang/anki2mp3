@@ -114,3 +114,5 @@ dist/tts/pywin32_system32/pywintypes310.dll
 3test.mp3
 4test.mp3
 dist/tts.exe
+tts.exe
+dist/tts.exe
