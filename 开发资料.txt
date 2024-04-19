@@ -1,0 +1,2 @@
+anki的数据库结构
+https://gist.github.com/sartak/3921255

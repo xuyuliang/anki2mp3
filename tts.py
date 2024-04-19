@@ -1,5 +1,7 @@
+import ast
 import datetime
 # import html2text
+import json
 import os
 import re
 import shutil
@@ -90,16 +92,25 @@ def processInputFile(input_file):
     readlist = [] 
     lyriclist =[]
     read_order,lyric_order =  analyse_filename(input_file)
-    print(lyric_order)
-    for line in file:
-        #escape first 2 lines if begin with '#'
-        if detect_hash_with_spaces(line):
-            continue
-        notefields =line.split("\t") 
-        word = notefields[positions['word']]
-        tips = notefields[positions['tips']]
-        explain = notefields[positions['explanation']]
-        full_explain = notefields[positions['fullexplanation']]
+    # print(read_order)
+    # print(lyric_order)
+    # input()
+    # print(input_file)
+    outerlist = json.load(file)
+    for notefields in outerlist:
+        # print(notefields)
+        # a = str(positions['word'])
+        word = notefields[positions['word']][str(positions['word'])]
+        # a='0'
+        # word = notefields[positions['word']][a]
+        print("============")
+        print(word)
+        # word = notefields[positions['word']]['1']
+        tips = notefields[positions['tips']][str(positions['tips'])]
+        explain = notefields[positions['explanation']][str(positions['explanation'])]
+        full_explain = notefields[positions['fullexplanation']][str(positions['fullexplanation'])]
+
+
         # get letters
         # letters = cutwords.extract_english_letters(word,tips)
         letters = cutwords.extract_english_letters(word,tips)
@@ -118,7 +129,10 @@ def processInputFile(input_file):
             if item == 'spelling':
                 aline_lyric.append({'spelling':letters})
             else:
-                aline_lyric.append({item:notefields[positions[item]]})
+                aline_lyric.append({item:notefields[positions[item]][str(positions[item])]})
+        print('lylic begin')
+        print(aline_lyric)
+        print('lylic end')
         lyriclist.append(aline_lyric)
 
         # process textlist
@@ -139,8 +153,8 @@ def processInputFile(input_file):
         readlist.append(aline_readtext)
             
     file.close
-    # print( readlist)
-    # print(lyriclist)
+    print(readlist)
+    print(lyriclist)
     return readlist,lyriclist
 def text2mp3(type,engine,path,v):
 
@@ -254,18 +268,33 @@ def merge_sound(input_filename,readlist,lyriclist):
 
 def product_sound_separately(readlist,input_filename,engine,sound_source='localTTS'):
 
-    progressfile = 'get_sound_progress'+input_filename.split('.')[0]+'.txt'
-    file_ori_list_dict = csv.writer(open(os.path.join(SOUND_OUTPUT_FOLDER, progressfile), "w",encoding='utf-8'))
+    progressfilename = 'get_sound_progress'+input_filename.split('.')[0]+'.json'
+    # check if the file exists
+    progressfile = os.path.join(SOUND_OUTPUT_FOLDER, progressfilename)
+    if os.path.exists(progressfile)  :
+        print('old file exist, delete it')
+        os.remove(progressfile)
+
+    # create progressfile
+    f = open(progressfile, "w",encoding='utf-8')
+    with f:
+        json.dump(readlist, f, ensure_ascii=False, indent=4)
+    f.close()
+
+
+    # input(progressfile+'has created,you can manully modify it'+' press enter to continue')
     i = 1
-    for line in readlist:
-        file_ori_list_dict.writerow(line)
+    file_ori_list_dict = []
+    # read from the file, create seperated mp3s
+    file_ori_list_dict = json.load(open(progressfile, "r",encoding='utf-8'))
+    for line in file_ori_list_dict:
         for content in line:
-            print(content)
             for k,v in content.items():
                 print(k,v)
                 print('-------')
                 text_to_sound(k,v,engine,str(i)+'.mp3',sound_source)
                 i+=1
+
 
 
 def clear_sound_folder(sound_folder):
