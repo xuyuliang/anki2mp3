@@ -141,7 +141,8 @@ def processInputFile(input_file):
             if item == 'word':
                 # replace '.' with ' ' in item becauce of some bug in somewhere I don't know.
                 word = word.replace('.',' ')
-                aline_readtext.append({'word':(word +'. ')*3})
+                # aline_readtext.append({'word':(word +'. ')*3})
+                aline_readtext.append({'word':word})
             if item == 'explanation':
                 # read as html
                 explain = symboltocn(word,explain)
@@ -196,7 +197,8 @@ def text_to_sound(k,v,engine,filename,sound_source):
         if k=='word':
             con= sqlite3.connect("./sound_vocabulary.db")
             cur= con.cursor()
-            word= str.strip(v.split('.')[0]) #因为TTS默认念3遍，words已经预处理了 * 3
+            word= v
+            # word= str.strip(v.split('.')[0]) #因为TTS默认念3遍，words已经预处理了 * 3
             # print(word)
             cur.execute('select pathname,filename from wordslocation where word=? and attrib="BRI"', (word,))
             row = cur.fetchone()

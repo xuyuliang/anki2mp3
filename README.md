@@ -9,13 +9,13 @@ At least, you should point out which fields should export to be converted to sou
 
 
 1. Export your cards(notes). 
+you should mark some cards in Anki first (use short-cut key Ctrl-1 for Red , Ctrl-2 for Orange ... )
+run readcolored.py (or readcolored.exe)first. 
+There will be new some files created in folder ./selectednotes ,like 2.json, 3.json 
+2. if something wrong, open and setup config.ini.
+I personally ignored Red cards, only export other colored cards.
 
-<img src="https://user-images.githubusercontent.com/1154464/221409427-82f0bda5-06d5-4cc9-bd53-d0fe7cf714de.png" width=40%>.</img>
-
-<img src="https://user-images.githubusercontent.com/1154464/221409436-79768655-3e74-4fc9-a007-6673b78315e6.png" width=40%>.</img>
-2.open and setup config.ini for yourself.
-
-3.save this exported files to "./selectednotes" folder. Please rename the default filename (Selected Notes.txt) to someother names. Different filename brings different kind of mp3. For example, if the filename have letter "o" (eg. "2o.txt") will have extra spelling pronuncation.
+3. Different filename brings different kind of mp3. For example, if the filename have letter "4" (eg. "4.json") it will contain explanations.
 
 4.run tts.py (after you setup venv and install all the required imports)
 
