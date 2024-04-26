@@ -17,13 +17,24 @@ tmp_database_path = "mytempanki.db"
 import configparser
 config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
-anki_database_path = eval(config['folders']['anki_database_path'])
+anki_database_path = '' 
 ignore_colors = eval(config['filename']['ignore_filenames'])
 inputfile_path = config['folders']['INPUT_FOLDER']
 ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],config['Anki_fields']['explanation'],config['Anki_fields']['fullexplanation'])
 p_word,p_tip,p_explanation,p_fullexplanation = ANKI_FIELDS
 positions = {'word':int(p_word)-1,'tips':int(p_tip)-1,'explanation':int(p_explanation)-1,'fullexplanation':int(p_fullexplanation)-1}
 #
+def determin_anki_database_path():
+    paths = eval(config['folders']['anki_database_path'])
+    # print('paths:',paths)
+    for path in paths:
+        if os.path.isfile(path):
+           global anki_database_path 
+           anki_database_path = path
+        #    print(anki_database_path)
+           break
+
+
 def recopy_temp_database():
     #copy to current temp directory
     # if file exist ,delete it
@@ -107,6 +118,7 @@ def export_json_by_color(color):
 # the main function
 
 def main():
+    determin_anki_database_path()
     recopy_temp_database()
     # print(ignore_colors)
     allcolors = find_all_color()

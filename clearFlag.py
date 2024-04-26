@@ -18,20 +18,31 @@ tmp_database_path = r'.\mytempanki.db'
 import configparser
 config = configparser.RawConfigParser()
 config.read("config.ini",encoding='utf-8')
-anki_database_path = eval(config['folders']['anki_database_path'])
+anki_database_path = '' 
 ignore_colors = eval(config['filename']['ignore_filenames'])
 inputfile_path = config['folders']['INPUT_FOLDER']
 ANKI_FIELDS = (config['Anki_fields']['word'],config['Anki_fields']['tips'],config['Anki_fields']['explanation'],config['Anki_fields']['fullexplanation'])
 p_word,p_tip,p_explanation,p_fullexplanation = ANKI_FIELDS
 positions = {'word':int(p_word)-1,'tips':int(p_tip)-1,'explanation':int(p_explanation)-1,'fullexplanation':int(p_fullexplanation)-1}
 #
-def recopy_temp_database():
+def determin_anki_database_path():
+    paths = eval(config['folders']['anki_database_path'])
+    # print('paths:',paths)
+    for path in paths:
+        if os.path.isfile(path):
+           global anki_database_path 
+           anki_database_path = path
+        #    print(anki_database_path)
+           break
+
+def backup_database():
     #copy to current temp directory
     # if file exist ,delete it
     if os.path.exists(tmp_database_path):
-        print("tmp_database exist,delete it and copy a new one.")
+        # print("tmp_database exist,delete it and copy a new one.")
         os.remove(tmp_database_path)
     shutil.copy(anki_database_path, tmp_database_path)
+    print("your dababase has been backuped in:"+tmp_database_path)
 
 def find_all_color():
     # 连接到 Anki 的 SQLite 数据库
@@ -47,7 +58,7 @@ def find_all_color():
         cursor1.execute(query1)
         # 获取所有结果
         colors = cursor1.fetchall()
-        print("the count of colored(flag) cards:"+str(colors[0][0]))
+        print(str(colors[0][0])," colored(flaged) cards is going to been set uncolored...")
         # convert to normal list
         cursor2.execute(query2)
         conn.commit()
@@ -66,7 +77,8 @@ def find_all_color():
 
 def main():
     # backup db
-    recopy_temp_database()
+    determin_anki_database_path()
+    backup_database()
     # print(ignore_colors)
     find_all_color()
 

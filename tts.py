@@ -31,12 +31,13 @@ LONGMAN_BASE_PATH = ''
 
 def determin_LONGMAN_BASE_PATH():
     paths = eval(config['folders']['LONGMAN_BASE_PATH'])
-    print(paths)
+    # print(paths)
     for path in paths:
         if os.path.isdir(path):
            global LONGMAN_BASE_PATH
            LONGMAN_BASE_PATH = path
            break
+    
 
 # parse a cvs file , ignore lines begin with '#' ,print every line
 
