@@ -124,9 +124,11 @@ def extract_english_letters(realword,astring):
                 firstword +='.'
         # print('firstword:',firstword)
         bigword = firstword.replace('.','')
+        # print(bigword)
         if realword in bigword:
             #find tail
             listword = firstword.split('.')
+            print(listword)
             # 其实没写分隔符号，只是提及了这个单词
             if listword[0] == realword :
                 return ''

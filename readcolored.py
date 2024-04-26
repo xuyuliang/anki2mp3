@@ -91,7 +91,7 @@ def export_json_by_color(color):
             for fld in flds:
                 if sn == 0:
                     print(fld)
-                fldtext =BeautifulSoup(fld, 'html.parser').get_text()
+                fldtext =BeautifulSoup(fld, 'html.parser').get_text(separator=" ")
                 dictlist.append({sn:fldtext})            
                 sn += 1
             outerlist.append(dictlist)
