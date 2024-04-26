@@ -1,17 +1,17 @@
-from ctypes import sizeof
+# from ctypes import sizeof
 import json
 import os
 import sqlite3
 import shutil
 from bs4 import BeautifulSoup
-import html2text
 
 
 
 # 假设数据库文件位于 Anki 用户数据目录下，您需要根据实际情况调整路径
 # 例如，Windows 系统上的路径可能类似于 'C:\\Users\\YourUsername\\.Anki2\collection.anki2-id\profiles\\default\colpkg.sqlite'
 # anki_database_path = r'C:\Users\user\AppData\Roaming\Anki2\User 1\collection.anki2'
-tmp_database_path = r'.\mytempanki.db'
+# tmp_database_path = r".\mytempanki.db"
+tmp_database_path = "mytempanki.db"
 # inputfile_path = r".\selectednotes"
 # config.ini
 import configparser

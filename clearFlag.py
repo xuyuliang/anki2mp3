@@ -29,7 +29,7 @@ def recopy_temp_database():
     #copy to current temp directory
     # if file exist ,delete it
     if os.path.exists(tmp_database_path):
-        print("tmp_database exist,delete it")
+        print("tmp_database exist,delete it and copy a new one.")
         os.remove(tmp_database_path)
     shutil.copy(anki_database_path, tmp_database_path)
 
@@ -51,6 +51,7 @@ def find_all_color():
         # convert to normal list
         cursor2.execute(query2)
         conn.commit()
+        input("Done!,press 'Enter' to exit")
 
 
     except sqlite3.Error as e:

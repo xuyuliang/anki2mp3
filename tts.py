@@ -160,7 +160,7 @@ def processInputFile(input_file):
 def text2mp3(type,engine,path,v):
 
     if type == 'word':
-        engine.setProperty("rate", 120)
+        engine.setProperty("rate", 100)
         engine.setProperty("volumn", 1.2)
         engine.setProperty('voice',WORD_ENGINE)
     if type == 'spelling':
@@ -171,7 +171,10 @@ def text2mp3(type,engine,path,v):
         engine.setProperty("rate", 150)
         engine.setProperty("volumn", 1)
         engine.setProperty('voice',EXPLAIN_ENGINE)
-    engine.save_to_file(v,path)
+    if type == 'word':
+        engine.save_to_file((v+' . ')*2,path)
+    else:
+        engine.save_to_file(v,path)
     engine.runAndWait()
 
 
@@ -210,7 +213,7 @@ def text_to_sound(k,v,engine,filename,sound_source):
                 combined.export(currpath, format="mp3")
             else:
                 print(word,'在longman 库中找不到 只好tts')
-                text2mp3('spelling',engine,currpath,v)
+                text2mp3('word',engine,currpath,v)
             cur.close()
             con.close()
         else:
