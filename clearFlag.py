@@ -44,7 +44,7 @@ def backup_database():
     shutil.copy(anki_database_path, tmp_database_path)
     print("your dababase has been backuped in:"+tmp_database_path)
 
-def find_all_color():
+def clear_all_color():
     # 连接到 Anki 的 SQLite 数据库
     conn = sqlite3.connect(anki_database_path)
     cursor1 = conn.cursor()
@@ -62,8 +62,8 @@ def find_all_color():
         # convert to normal list
         cursor2.execute(query2)
         conn.commit()
-        input("Done!,press 'Enter' to exit")
-
+        #不能在这里暂停，会带来异常，不commit，而且也不报错。
+        # input("Done!,press 'Enter' to exit")
 
     except sqlite3.Error as e:
         print(f"An error occurred: {e}")
@@ -80,7 +80,8 @@ def main():
     determin_anki_database_path()
     backup_database()
     # print(ignore_colors)
-    find_all_color()
+    clear_all_color()
+    input("Done!,press 'Enter' to exit")
 
 if __name__ == "__main__":
     main()
