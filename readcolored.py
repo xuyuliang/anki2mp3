@@ -50,7 +50,6 @@ def find_all_color():
 
     # 假设 'cards' 表格中有一个名为 'flags' 的字段，用于标识卡片的颜色
     query = "SELECT distinct flags from cards where flags != 0"
-    print('here!')
     try:
         # 执行查询
         cursor.execute(query)
