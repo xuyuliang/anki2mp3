@@ -1,11 +1,13 @@
 
 from ctypes import sizeof
+import datetime
 import json
 import os
 import sqlite3
 import shutil
 from bs4 import BeautifulSoup
 import html2text
+import time
 
 
 
@@ -51,13 +53,19 @@ def clear_all_color():
     cursor2 = conn.cursor()
 
     # 假设 'cards' 表格中有一个名为 'flags' 的字段，用于标识卡片的颜色
-    import time
 
     # Get the current Unix epoch time，and update usn to notice server that this card has been modified
     current_time = int(time.time())
     print(current_time) 
+    # Get the current timestamp with microsecond precision
+    current_timestamp = datetime.datetime.now().timestamp()
+    # convert current_timestamp to str, remove "." and cut last 3 digits
+    current_timestamp_str = str(current_timestamp)
+    current_timestamp_str = current_timestamp_str[:10] + current_timestamp_str[11:14] 
+    longtimestamp = int(current_timestamp_str)
     query1= "select count(*) as cnt from cards where flags != 0"
     query2 = f"update cards set flags = 0, mod={current_time}, usn=usn+1  where flags != 0"
+    query3 = f"update col set ls = {longtimestamp}, mod={longtimestamp}, usn=usn+1  where id = 1"
     try:
         # 执行查询
         cursor1.execute(query1)
@@ -68,6 +76,8 @@ def clear_all_color():
         # convert to normal list
         input()
         cursor2.execute(query2)
+        conn.commit()
+        cursor2.execute(query3)
         conn.commit()
         #不能在这里暂停，会带来异常，不commit，而且也不报错。
         # input("Done!,press 'Enter' to exit")
@@ -87,7 +97,6 @@ def main():
     determin_anki_database_path()
     backup_database()
     clear_all_color()
-    
     input("Done!,press 'Enter' to exit")
 
 if __name__ == "__main__":
