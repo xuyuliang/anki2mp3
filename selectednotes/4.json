@@ -1,51 +1,25 @@
 [
     [
         {
-            "0": "remission"
+            "0": "pledge"
         },
         {
-            "1": "英 [rɪ'mɪʃ(ə)n] "
+            "1": "美 [pledʒ] "
         },
         {
-            "2": "n.（重病的）缓解期=convalescence  n. (  BrE )  减刑； n.（应付费用的）减免；"
+            "2": "n. 誓言；诺言 = commitment  短语：~ to do sth. 保证去做某事 n. 抵押品"
         },
         {
-            "3": "`1`remission`2`★来自拉丁语 remittere ,松开，松懈，减轻，送走，来自 re -,向后，往回， mittere ,送出，送走，词源同 emit , remit .- ss ,过去分词格，- ion ,名词后缀。引申词义减少，减轻等。`3` re \t★来自拉丁语 re ,关于，就有关事项，来自 res  的离格，来自 res ,事情，事物，词源同 real . re - 向后，往回，相对，相反，再，表强调来自拉丁语 re ,向后，往回，相对，相反，再。作为强调有时仅表强调。`3` emit \t★ e -,向外，- mit ,派遣，发送，见 mission , commit .`3` remit \t★来自拉丁语 remittere ,松开，松懈，减轻，送走，来自 re -,向后，往回， mittere ,送出，送走，词源同 emit , remiss .即送走，送回，送回应属职权范围，引申词义免除，赦免。后用于经济学术语汇付，付款，特指国际汇付。`3` ion \t★来自希腊语 ion ,走，来自 PIE * ei ,走，上路，词源同 ire (拉丁语，现在主动不定式格), iter (拉丁语，过去分词格), exit , itinerary .后1834 年，英国物理学家 Michael   Faraday  借用该词来表示电磁的电离子。"
+            "3": "`1`pledge`2`★来自古法语 plege ,保证，来自 Proto - Germanic * plego ,责任，担保，来自 PIE * dlegh ,忙于，从事于，责任，承诺，来自 PIE * del ,长的，词源同 long , play , plight .引申词义请求，许诺，誓言等。 plen - 全体的，全部的来自拉丁语 plenus ,满的，来自 PIE * pele ,装满，填满，词源同 full , fill .`3` long \t★来自古英语 lang ,长的，来自 PIE * dlonghos ,来自 PIE * del  的扩大形式，长的，字母 d  脱落，词源同 indulgent , play , pledge .引申词义渴望。`3` play \t★来自古英语 plegan ,忙于，从事，演奏音乐，玩耍，来自 West   Germanic * plegan ,忙于，从事于，来自 PIE * dlegh ,忙于，从事于，来自 PIE * del ,长的，词源同 long , indulgent , pledge .并引申诸相关词义。`3` plight \t★来自古英语 pliht ,有风险的承诺，危险，风险，来自 Proto - Germanic * pleg ,承诺，责任，担保，来自 PIE * dlegh ,忙于，从事于，责任，承诺，来自 PIE * del ,长的，词源同 long , play , pledge .引申词义誓言，誓约，特别是郑重的誓言，如订婚。 ★来自古法语 pleit ,情况，来自拉丁语 plicare ,卷入，卷进，词源同 ply , complex .后主要用于指坏的情况，引申词义苦难，困境。词义部分受到上一词义的影响。`3` full \t★来自 PIE * pele ,装满，词源同 fill , plenary .`3` fill \t★来自 full  的动词形式。"
         },
         {
-            "4": "Online Etymology Dictionary remission n. c.1200, \"forgiveness or pardon (of sins),\" from Old French  remission  \"forgiveness (of sins), relief\" (12c.), from Latin  remissionem  (nominative  remissio ) \"relaxation, diminishing,\" lit. \"a sending back, sending away,\" noun of action from past participle stem of  remittere  \"slacken, let go, abate\" (see  remit ). Used of diseases since early 15c."
+            "4": "Online Etymology Dictionary pledge v. c.1400, \"to promise\" (something to someone), \"to give over as security for repayment,\" also \"promise faith to,\" from  pledge ,  n.  and from Old French  plegier , from  plege  (n.). From mid-15c. as \"to stand surety for, be responsible for;\" late 15c. as \"to mortgage.\" Meaning \"put (someone) under oath\" is from 1570s; sense of \"to solemnly promise or guarantee\" is from 1590s, as is sense \"to drink a toast.\" Related:  Pledged ;  pledging . n. mid-14c., \"surety, bail,\" from Old French  plege  (Modern French  pleige ) \"hostage, security, bail,\" probably from Frankish  *plegan  \"to guarantee,\" from  *pleg- , a West Germanic root meaning \"have responsibility for\" (cognates: Old Saxon  plegan  \"vouch for,\" Middle Dutch  plien  \"to answer for, guarantee,\" Old High German  pflegan  \"to care for, be accustomed to,\" Old English  pleon  \"to risk the loss of, expose to danger;\" see  plight ,  v. ). Meaning \"allegiance vow attested by drinking with another\" is from 1630s. Sense of \"solemn promise\" first recorded 1814, though this notion is from 16c. in the verb. Weekley notes the \"curious contradiction\" in  pledge  (v.) \"to toast with a drink\" (1540s) and  pledge  (n.) \"the vow to abstain from drinking\" (1833). Meaning \"student who has agreed to join a fraternity or sorority\" dates from 1901."
         },
         {
-            "5": "      re·mis·sion     /   rɪˈmɪʃn     ;           NAmE     rɪˈmɪʃn     /         noun         [ uncountable         ,    countable         ]         1     a period during which a serious illness improves for a time and the patient seems to get better           （重病的）缓解期，减轻期         ◆   The patient has been           in remission for the past six months.           在过去的六个月中，病人的病情已经有所缓解。       ◆   The symptoms reappeared after only a short remission.   短暂的康复之后，症状再次出现。         2     (           BrE )           a reduction in the amount of time sb spends in prison, especially because they have behaved well           减刑；减少服刑时间           3     (           formal )           an act of reducing or cancelling the amount of money that sb has to pay           （应付费用的）减少，免除         ◆   New businesses may qualify for tax remission.   新的企业有资格享受税收减免。       ◆   There is a partial remission of fees for overseas students.   对留学生可以减免部份费用。         remission   remissions           re·mis·sion     /   rɪˈmɪʃn     ;           NAmE     rɪˈmɪʃn     /      "
+            "5": "      pledge     /   pledʒ     ;           NAmE     pledʒ     /         noun     ,     verb           pledge   pledges   pledged   pledging               noun         1     a serious promise           保证；诺言；誓约         SYN         commitment             pledge (of sth)           ◆   a pledge of support   支援的许诺       pledge (to do sth)           ◆   Will the government           honour its election           pledge not to raise taxes?           政府会履行其竞选诺言，不增加税收吗？       pledge (that…)           ◆   Management has           given a pledge that there will be no job losses this year.           资方保证今年不会削减工作职位。         2     a sum of money or sth valuable that you leave with sb to prove that you will do sth or pay back money that you owe           抵押；质钱；抵押品           IDIOM     sign/take the ˈpledge       (               old-fashioned )               to make a promise never to drink alcohol               发誓戒酒                       verb         1     [ transitive         ]       to formally promise to give or do sth           保证给予（或做）；正式承诺         pledge sth           ◆   Japan has pledged $100 million in humanitarian aid.   日本已承诺提供一亿元人道主义援助。       ◆   The government           pledged their support for the plan.           政府保证支持这项计划。       pledge sth to sb/sth           ◆   We all had to           pledge allegiance to the flag           (= state that we are loyal to our country).     我们都必须对国旗宣誓效忠。       pledge to do sth           ◆   The group has pledged to continue campaigning.   这个组织发誓继续投入运动。       pledge (that)…           ◆   The group has pledged that they will continue campaigning.   这个组织发誓他们将继续投入运动。         2     [ transitive         ]       to make sb or yourself formally promise to do sth           使保证；使发誓         SYN         swear             pledge sb/yourself (to sth)           ◆   They were all pledged to secrecy.   他们都宣誓保密。       pledge sb/yourself to do sth           ◆   The government has pledged itself to root out corruption.   政府已承诺铲除腐败。         3     [ transitive         ]       pledge sth           to leave sth with sb as a           pledge                ( 2               )       抵押；典当           4     [ intransitive         ,    transitive         ]       (           NAmE )           to promise to become a junior member of a           fraternity or           sorority   宣誓参加美国大学生联谊会         ◆   Do you think you'll pledge this semester?   这学期你会加入大学生联谊会吗？       pledge sth           ◆   My brother pledged Sigma Nu.   我哥哥宣誓加入 Σ NU 联谊会。             pledge     /   pledʒ     ;           NAmE     pledʒ     /      "
         },
         {
-            "6": "这三个意思都是“缓解” remiss 懈怠的 mission 任务、使团 intermission 幕间休息；间歇 与remit 相比，remission只取了免除这一个意思"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "perquisite"
-        },
-        {
-            "1": "英 [ˈpɜːkwɪzɪt] "
-        },
-        {
-            "2": "n. （往往复数）额外补贴 = perk n. ~ of sb. （属于sb.的）特权"
-        },
-        {
-            "3": "`1`perquisite`2`★ per -,完全的，- quis ,寻求，要求，探索，词源同 question , exquisite .引申词义过分要求，特权。后也用于指额外补贴，津贴。`3` per \t★来自拉丁语 per ,穿过，通过，凭借，方式，每，来自 PIE * per ,向前，前进。 per - 通过，完全的，整个的，表强调来自拉丁语 per ,穿过，通过，来自 PIE * per ,向前，前进。引申词义完全的，整个的，或表强调，少数情况下表否定。`3` question \t★来自 quest ,探索，疑问。引申词义问题。`3` exquisite \t★ ex -,表强调，- quis ,要求，探寻，词源同 inquiry , question .引申词义反复要求，精益求精。 ex - service  退伍的 ex ,从前，前任， service ,服役。"
-        },
-        {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 perquisite n. mid-15c., \"property acquired other than by inheritance,\" from Medieval Latin  perquisitum  \"thing gained, profit,\" in classical Latin, \"thing sought after,\" noun use of neuter past participle of  perquirere  \"to seek, ask for,\" from  per-  \"thoroughly\" (see  per ) +  quærere  \"to seek\" (see  query ,  v. ). For Latin vowel change, see  acquisition . General meaning \"fee or profit on top of regular wages\" first recorded 1560s. 〔李〕[per-;quisit;-e] n.临时津贴； 临时收入    ←quir,quisit (L quirere,quisitus)=to seek or ask 寻求"
-        },
-        {
-            "5": "      per·quis·ite     /   ˈpɜːkwɪzɪt     ;           NAmE     ˈpɜːrkwɪzɪt     /         noun       (         formal )             1     [ usually plural         ]     =               perk               2     perquisite (of sb)           something to which sb has a special right because of their social position           特权；利益         ◆   Politics used to be the perquisite of the property-owning classes.   政治曾经是有产阶级的特权。         perquisite   perquisites           per·quis·ite     /   ˈpɜːkwɪzɪt     ;           NAmE     ˈpɜːrkwɪzɪt     /      "
-        },
-        {
-            "6": "perk  n.补贴 v.使振作 比较：pre.rog.ative 特权 ex.quis.ite 精美的；剧烈的（疼痛等） per.quis.ite 补贴；特权 re.quis.ite 必须的； disquisition 专题讨论"
+            "6": "bridge"
         },
         {
             "7": ""
@@ -53,51 +27,25 @@
     ],
     [
         {
-            "0": "chandler"
+            "0": "smudge"
         },
         {
-            "1": "美 ['tʃændlər] "
+            "1": "英 [smʌdʒ] "
         },
         {
-            "2": "n. 船用杂货店"
+            "2": "v. 把…擦模糊（或弄得看不清楚）； n. （模糊的）污迹"
         },
         {
-            "3": "`1`chandler`2`★来自 candle ,蜡烛，即卖蜡烛的人，后词义外延扩大。`3` candle \t★来自 cand -,照明，进一步来自 PIE * skai ,照耀，见 shine ."
+            "3": "`1`smudge`2`★来自动词 smogen ,弄脏，弄黑，玷污，可能来自 PIE * sme ,涂抹，词源同 smear .拼写受- dge  影响俗化。`3` smear \t★来自古英语 smerian ,涂抹，抹油，傅油，来自 Proto - Germanic * smerwjan ,抹油，来自 PIE * smeru ,油脂，脂肪，来自 PIE * sme ,涂抹，词源同 smut ,污迹。"
         },
         {
-            "4": "Online Etymology Dictionary chandler n. \"maker or seller of candles,\" late 14c., attested as a surname from late 13c. (also, from early 14c. \"candle-holder;\" see  chandelier ), from Old French  chandelier  (n.2) \"candle-maker, candle-seller; person in charge of lighting a household, monastery, etc.,\" from Latin  candelarius , from  candela  \"candle\" (see  candle ). Native  candleman  is attested from mid-13c."
+            "4": "Online Etymology Dictionary smudge v. early 15c.,  smogen  \"to soil, stain, blacken,\" of obscure origin. Related:  Smudged ;  smudging . Meaning \"make a smoky fire\" is from 1860, hence  smudge-pot  (1903). The noun meaning \"a stain, spot, smear\" is first attested 1768, from the verb."
         },
         {
-            "5": "      chand·ler     /   ˈtʃɑːndlə(r)     ;           NAmE     ˈtʃændlər     /       (   also   ˈship's chandler   )         noun           a person or shop/store that sells equipment for ships         船用杂货商（或杂货店）         chandler   chandlers           chand·ler     /   ˈtʃɑːndlə(r)     ;           NAmE     ˈtʃændlər     /      "
+            "5": "      smudge     /   smʌdʒ     ;           NAmE     smʌdʒ     /         noun     ,     verb           smudge   smudges   smudged   smudging               noun         a dirty mark with no clear shape         （模糊的）污迹，污痕         SYN         smear             ◆   a smudge of lipstick on a cup   留在杯子上的口红印               verb         1     [ transitive         ,    intransitive         ]       smudge (sth)           to touch or rub sth, especially wet ink or paint, so that it is no longer clear; to become not clear in this way           把…擦模糊（或弄得看不清楚）；变模糊         ◆   He had smudged his signature with his sleeve.   他用袖子把自己的签字擦得看不清了。       ◆   Tears had smudged her mascara.   她的睫毛膏被泪水弄糊了。       ◆   Her lipstick had smudged.   她的口红糊了。         2     [ transitive         ]       smudge sth           to make a dirty mark on a surface           弄脏；留下污迹         SYN         smear             ◆   The mirror was smudged with fingerprints.   镜子上有脏手印。             smudge     /   smʌdʒ     ;           NAmE     smʌdʒ     /      "
         },
         {
-            "6": "chand.ler    船上用品杂货店 chan玄de的li丽er  : [.ʃændə'lɪr]  枝形吊灯 "
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "patrician"
-        },
-        {
-            "1": "美 [pə'trɪʃ(ə)n] "
-        },
-        {
-            "2": "adj. 贵族的；上流社会的  n. 贵族；有教养的人 反义词：plebeian 同义词：aristocratic"
-        },
-        {
-            "3": "`1`patrician`2`★来自拉丁语 patricius ,像父亲的，高贵的，贵族的，来自 pater ,父亲，词源同 father .引申词义上流社会的。`3` father \t★来自 PIE * pater ,父亲，通常认为是来自婴儿最早能发的音 pa ,词源同 pope , paternal . father - in - law  岳父即法律意义上的父亲。"
-        },
-        {
-            "4": "Online Etymology Dictionary patrician n. early 15c., \"member of the ancient Roman noble order,\" from Middle French  patricien , from Latin  patricius  \"of the rank of the nobles, of the senators; of fatherly dignity,\" from  patres conscripti  \"Roman senators,\" literally \"fathers,\" plural of  pater  \"father\" (see  father ,  n. ). Contrasted, in ancient Rome, with  plebeius . Applied to noble citizens and higher orders of free folk in medieval Italian and German cities (sense attested in English from 1610s); hence \"nobleman, aristocrat\" in a modern sense (1630s). As an adjective, attested from 1610s, from the noun."
-        },
-        {
-            "5": "      pa·tri·cian     /   pəˈtrɪʃn     ;           NAmE     pəˈtrɪʃn     /         adjective       (         formal )             connected with or typical of the highest social class         贵族的；上流社会的         SYN         aristocratic                 ▶     pa·tri·cian     noun           ☞ compare                 plebeian                 patrician   patricians           pa·tri·cian     /   pəˈtrɪʃn     ;           NAmE     pəˈtrɪʃn     /      "
-        },
-        {
-            "6": "Patri.ck patriot patri- 父亲"
+            "6": "s死mud泥ge smear 抹黑 smirk 坏笑（因为知道秘密）"
         },
         {
             "7": ""
@@ -105,77 +53,25 @@
     ],
     [
         {
-            "0": "epigram"
+            "0": "extortion"
         },
         {
-            "1": "美 ['epɪ.ɡræm] "
+            "1": "英 [ɪk'stɔː(r)ʃ(ə)n] "
         },
         {
-            "2": "n.  （讲道理的）诙谐短诗或者隽语；"
-        },
-        {
-            "3": "`1`epigram`2`★ epi -,在上，在中，- gram ,写，词源同 telegram .与 epigraph  在词源上没有区别，词义更多来自人为区别。`3` gram \t★来自 PIE * gerbh ,刮，刻，切，词源同 carve , graph .后指文字，字母。并在法国于1799 年用于公制重量体系，克。`3` telegram \t★ tele -,远的，- gram ,写，记录，衍生自- graph .引申词义电报。`3` epigraph \t★ epi -,在上，在中，- graph ,写，词源同 telegraph ."
-        },
-        {
-            "4": "Online Etymology Dictionary epigram n. also  epigramme , mid-15c., from Middle French  épigramme , from Latin  epigramma  \"an inscription,\" from Greek  epigramma  \"inscription (especially in verse) on a tomb, public monument, etc.; a written estimate,\" from  epigraphein  \"to write on, inscribe\" (see  epigraph ). \"The term was afterward extended to any little piece of verse expressing with precision a delicate or ingenious thought\" [Century Dictionary]. Related:  Epigrammatist ."
-        },
-        {
-            "5": "      epi·gram     /   ˈepɪɡræm     ;           NAmE     ˈepɪɡræm     /         noun           a short poem or phrase that expresses an idea in a clever or amusing way         诙谐短诗；警句；隽语             ▶     epi·gram·mat·ic     /   ˌepɪɡrəˈmætɪk     ;             NAmE     ˌepɪɡrəˈmætɪk     /       adjective             epigram   epigrams           epi·gram     /   ˈepɪɡræm     ;           NAmE     ˈepɪɡræm     /         epi·gram·mat·ic     /   ˌepɪɡrəˈmætɪk     ;           NAmE     ˌepɪɡrəˈmætɪk     /      "
-        },
-        {
-            "6": "eclogue 短诗，尤其是田园题材 epigram 是一些有趣或者聪明的话或者诗句， aphorism 不见得广为人知 saying 广为人知的 maxim 广为人知的生活法则，该做什么不该做什么，偏向警句 adage  广为人知的传了很多代的俗话，偏向真理"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "gestation"
-        },
-        {
-            "1": "美 [dʒə'steɪʃ(ə)n] "
-        },
-        {
-            "2": "n. 妊娠期；妊娠； n. 构思、酝酿（过程）"
+            "2": "n. 敲诈 勒索；"
         },
         {
             "3": ""
         },
         {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 gestation n. \"action or process of carrying young in the womb,\" 1610s, earlier (1530s) \"riding on horseback, etc., as a form of exercise,\" from Latin  gestationem  (nominative  gestatio ) \"a carrying,\" noun of action from past participle stem of  gestare  \"bear, carry, gestate,\" frequentative of  gerere  (past participle  gestus ) \"to bear, carry, bring forth\" (see  gest ). Meaning \"action or process of carrying young in the womb\" is from 1610s. 〔李〕[gest=to carry携带；-ation n.=the condition表行为状况→“the condition of carrying young inside the body 怀胎的状况”→] n. the period during which the unborn young must be carried怀孕期，妊娠期"
+            "4": "Online Etymology Dictionary 词根李平武蒋争 extortion n. c.1300, from Latin  extortionem  (nominative  extortio ) \"a twisting out, extorting,\" noun of action from past participle stem of  extorquere  \"wrench out, wrest away, to obtain by force,\" from  ex-  \"out\" (see  ex- ) +  torquere  \"to twist\" (see  torque ,  n. ). 〔蒋〕[tort扭，-ion名词后缀] 强取，逼取，敲诈，勒索"
         },
         {
-            "5": "      ges·ta·tion     /   dʒeˈsteɪʃn     ;           NAmE     dʒeˈsteɪʃn     /         noun           1     [ uncountable         ,    singular         ]       the time that the young of a person or an animal develops inside its mother's body until it is born; the process of developing inside the mother's body           妊娠（期）；怀孕（期）         ◆   a baby born at 38 weeks' gestation   怀孕 38 周时出生的婴儿       ◆   The           gestation period of a horse is about eleven months.           马的怀孕期大约为十一个月。         2     [ uncountable         ]       (           formal )           the process by which an idea or a plan develops           （想法、计划的）构思，酝酿，孕育         SYN         development                   ges·ta·tion     /   dʒeˈsteɪʃn     ;           NAmE     dʒeˈsteɪʃn     /      "
+            "5": ""
         },
         {
-            "6": "digestion [daɪˈdʒestʃən] 消化 gesture"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "pusillanimous"
-        },
-        {
-            "1": "/ˌpjuːsɪˈlænɪməs/"
-        },
-        {
-            "2": "(  formal )  frightened to take risks  胆怯的；怯懦的 =coward  craven ( 词根：小心的 )"
-        },
-        {
-            "3": "`1`pusillanimous`2`★来自拉丁语 pusillis , 非常弱小的， 瘦弱的， 来自 pullus  的不规则小词形式， 词源同 pullet , foal .- anim ,呼吸，勇气，词源同 animal .引申词义胆怯的。`3` pullet \t★来自古法语 poule ,小母鸡，来自拉丁语 pullus ,小动物，家禽，来自 PIE * pulo ,小动物，来自 PIE * pau ,小的，少的，词源同 few , foal , filly .- et ,小词后缀。`3` foal \t★来自 PIE * pulo ,小的，小动物，词源同 pullet , pupil , filly .`3` animal \t★来自 anim -,呼吸，风，灵魂，有生命。"
-        },
-        {
-            "4": ""
-        },
-        {
-            "5": "      pu·sil·lan·im·ous     /   ˌpjuːsɪˈlænɪməs     ;           NAmE     ˌpjuːsɪˈlænɪməs     /         adjective       (         formal )             frightened to take risks         胆怯的；怯懦的         SYN         cowardly                 pu·sil·lan·im·ous     /   ˌpjuːsɪˈlænɪməs     ;           NAmE     ˌpjuːsɪˈlænɪməs     /      "
-        },
-        {
-            "6": "pu.sill+ani.mous craven 也是 formal -animous  词根：想法 un.animous  /juˈnænɪməs 意见一致的 magn.animous  仁慈的，宽大的"
+            "6": "extort 动词 torture  n.v.拷打 比较：exertion 所付出的努力"
         },
         {
             "7": ""
@@ -183,51 +79,25 @@
     ],
     [
         {
-            "0": "punctilious"
+            "0": "croak"
         },
         {
-            "1": "/pʌŋkˈtɪliəs/"
+            "1": "美 [kroʊk] "
         },
         {
-            "2": "（正式）小心正确履行职责的；循规蹈矩的 > conscientious"
+            "2": "vi vt. 发出青蛙一样的低沉粗糙的说话声 vi. (slang) 死亡 n. （像青蛙发出的）低沉沙哑的声音"
         },
         {
-            "3": "`1`punctilious`2`★来自拉丁语 punctum ,点，刺点，来自 pungere ,刺，击，词源同 pungent , point .引申词义一丝不苟的。`3` pungent \t★来自拉丁语 pungere ,刺，叮，咬，来自 PIE * pung ,刺，击，打，词源同 point , puncture .引申词义刺鼻的，一针见血的等。`3` point \t★来自古法语 point ,点，刺点，斑点，勾缝，来自拉丁语 punctum ,刺点，来自拉丁语 pungere ,刺，- ct ,过去分词格，来自 PIE * peug ,刺，词源同 pugnacious , puncture .并引申诸相关词义。 point - blank  直截了当的射击行话，来自 point ,点， blank ,白。即直中靶心，引申词义直截了当的。"
+            "3": "`1`croak`2`★拟声词。"
         },
         {
-            "4": "Online Etymology Dictionary punctilious adj. 1630s, probably from Italian  puntiglioso,  from  puntiglio  \"fine point,\" from Latin  punctum  \"prick\" (see  point ,  n. ). Related:  Punctiliously ;  punctiliousness ."
+            "4": "Online Etymology Dictionary croak v. early 14c.,  crouken , imitative or related to Old English  cracian  (see  crack ,  v. ). Slang meaning \"to die\" is first recorded 1812, from sound of death rattle. Related:  Croaked ;  croaking . n. 1560s, from  croak ,  v. ."
         },
         {
-            "5": "      punc·tili·ous     /   pʌŋkˈtɪliəs     ;           NAmE     pʌŋkˈtɪliəs     /         adjective       (         formal )             very careful to behave correctly or to perform your duties exactly as you should         一丝不苟的；循规蹈矩的         ◆   a punctilious host   一丝不苟的主人           ▶     punc·tili·ous·ly     /   pʌŋkˈtɪliəsli     ;             NAmE     pʌŋkˈtɪliəsli     /       adverb               punc·tili·ous·ness     /   pʌŋkˈtɪliəsnəs     ;             NAmE     pʌŋkˈtɪliəsnəs     /       noun       [ uncountable           ]                 punc·tili·ous     /   pʌŋkˈtɪliəs     ;           NAmE     pʌŋkˈtɪliəs     /         punc·tili·ous·ly     /   pʌŋkˈtɪliəsli     ;           NAmE     pʌŋkˈtɪliəsli     /         punc·tili·ous·ness     /   pʌŋkˈtɪliəsnəs     ;           NAmE     pʌŋkˈtɪliəsnəs     /      "
+            "5": "      croak     /   krəʊk     ;           NAmE     kroʊk     /         verb     ,     noun           croak   croaks   croaked   croaking               verb         1     [ intransitive         ]       to make a rough low sound, like the sound a           frog makes           发出（像青蛙的）低沉刺耳声；呱呱地叫           2     [ intransitive         ,    transitive         ]       to speak or say sth with a rough low voice           用低沉而沙哑的声音说话         ◆   I had a sore throat and could only croak.   我喉咙痛，只能哑着嗓子说话。       croak sth           ◆   He managed to croak a greeting.   他勉强用沙哑的嗓音打招呼。     + speech     ◆   ‘I'm fine,’ she croaked.   “我没事。”她哑着嗓子说。         3     [ intransitive         ]       (           slang )           to die           死；咽气                   noun         a rough low sound made in the throat, like the sound made by a         frog   （像青蛙发出的）低沉沙哑的声音，呱呱的叫声             croak     /   krəʊk     ;           NAmE     kroʊk     /      "
         },
         {
-            "6": "punct.il.ous punct.uate v. 打断 ；加标点 meticulous  细心的 周详的"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "skimp"
-        },
-        {
-            "1": "/skɪmp/"
-        },
-        {
-            "2": "vi.  ~ on sth. 在...上节约 =scrimp"
-        },
-        {
-            "3": "`1`skimp`2`★可能改写自 scrimp ,节省，吝惜。`3` scrimp \t★来自 scrimp ,缩写的，不足的，来自 Proto - Germanic * skrimp ,收缩，缩小，来自 PIE * sker ,弯，转，词源同 shrink , shrimp .引申动词词义节省，缩紧等。"
-        },
-        {
-            "4": ""
-        },
-        {
-            "5": "      skimp     /   skɪmp     ;           NAmE     skɪmp     /         verb             [ intransitive         ]       skimp (on sth)             to try to spend less time, money, etc. on sth than is really needed         节省，吝惜（时间、钱等）         ◆   Older people should not skimp on food or heating.   老人吃饭和取暖不应吝惜。       skimp   skimps   skimped   skimping           skimp     /   skɪmp     ;           NAmE     skɪmp     /      "
-        },
-        {
-            "6": "skim 撇去"
+            "6": "cloak 斗篷； oak 橡树"
         },
         {
             "7": ""
@@ -235,51 +105,77 @@
     ],
     [
         {
-            "0": "apprehensive"
+            "0": "sly"
         },
         {
-            "1": "/ˌæprɪˈhensɪv/"
+            "1": "/slaɪ/"
         },
         {
-            "2": "忧虑的；担心的；"
+            "2": "adj. 狡诈的 = cunning adj. 诡秘的（表示自己知道别人不知道的秘密） 短语：on the ~  偷偷地"
         },
         {
-            "3": ""
+            "3": "`1`sly`2`★来自中古英语 sly ,来自古诺斯语 sloegr ,狡猾的，狡诈的，可能来自 Proto - Germanic * slogiz ,活泼的，敏捷的，狡猾的，来自 PIE * slak ,击打，攻击，词源同 slay , sleight .`3` sly \t★来自中古英语 sly ,来自古诺斯语 sloegr ,狡猾的，狡诈的，可能来自 Proto - Germanic * slogiz ,活泼的，敏捷的，狡猾的，来自 PIE * slak ,击打，攻击，词源同 slay , sleight .`3` slay \t★来自古英语 slean ,杀，屠宰，来自 Proto - Germanic * slog ,击，砍，来自 PIE * slak ,击，砍，可能来自 PIE * skel ,砍，劈，切，词源同 scale , shale , shell .`3` sleight \t★来自 sly ,狡猾的，敏捷的，- eight ,构成名词，比较 weight , height .常见于习语 sleight   of   hand ,敏捷手法，用于指玩魔术或其它等的技巧，后引申词义把戏，花招。"
         },
         {
-            "4": ""
+            "4": "Online Etymology Dictionary sly adj. c.1200, \"skillful, clever, dexterous,\" from Old Norse  sloegr  \"cunning, crafty, sly,\" from Proto-Germanic  *slogis  (cognates: Low German  slu  \"cunning, sly,\" German  schlau ), probably from base  *slak-  \"to strike, hit\" (see  slay ,  v. ), with an original notion of \"able to hit.\" Compare German  verschlagen  \"cunning, crafty, sly,\"  schlagfertig  \"quick-witted,\" literally \"strike-ready,\" from  schlagen  \"to strike.\" A non-pejorative use of the word lingered in northern English dialect until 20c.  On the sly  \"in secret\" is recorded from 1812.  Sly-boots  \"a seeming Silly, but subtil Fellow\" is in the 1700 \"Dictionary of the Canting Crew.\""
         },
         {
-            "5": "      ap·pre·hen·sive     /   ˌæprɪˈhensɪv     ;           NAmE     ˌæprɪˈhensɪv     /         adjective           worried or frightened that sth unpleasant may happen         忧虑的；担心的；疑惧的；恐惧的         ◆   an         apprehensive face/glance/look     忧虑的面容╱一瞥╱目光       apprehensive about/of sth         ◆   I was a little apprehensive about the effects of what I had said.   我有点担忧我说的话所带来的影响。       ◆   You have no reason to be apprehensive of the future.   你不必忧虑未来。       apprehensive that…         ◆   She was deeply apprehensive that something might go wrong.   她很担心可能要出什么差错。           ▶     ap·pre·hen·sive·ly     /   ˌæprɪˈhensɪvli     ;             NAmE     ˌæprɪˈhensɪvli     /       adverb                 ap·pre·hen·sive     /   ˌæprɪˈhensɪv     ;           NAmE     ˌæprɪˈhensɪv     /         ap·pre·hen·sive·ly     /   ˌæprɪˈhensɪvli     ;           NAmE     ˌæprɪˈhensɪvli     /      "
-        },
-        {
-            "6": "reprehensible 应受谴责的 comprehensive 全面的"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "proactive"
-        },
-        {
-            "1": "美 [prəʊˈæktɪv] "
-        },
-        {
-            "2": "adj. （人或政策）积极主动的，主动出击的；"
-        },
-        {
-            "3": "`1`proactive`2`★ pro -,在前，向前， active ,积极的。 pro - am  职业和业务选手缩写自 professional   and   amateur .`3` am \t★来自 PIE * esmi ,是，存在，来自* es ,是，词源同 is , essence .`3` professional \t★来自 profession ,职业，专业。`3` and \t★词源同 anti -,相对，对立。原指相对的，后指两边加起来。`3` amateur \t★ am -,爱，爱好，词源同 amiable ,- eur ,人。"
-        },
-        {
-            "4": "Online Etymology Dictionary proactive adj. also  pro-active , of persons or policies, as an opposition to  reactive , 1921, from  pro-  +  active . From 1933, in psychology (learning theory). Related:  Proactively ;  proactiveness ;  proactivity ."
-        },
-        {
-            "5": "      pro·active     /   ˌprəʊˈæktɪv     ;           NAmE     ˌproʊˈæktɪv     /         adjective             ( of a person or policy         人或政策   )         controlling a situation by making things happen rather than waiting for things to happen and then reacting to them         积极主动的；主动出击的；先发制人的         ☞ compare             reactive          ( 1           )               ▶     pro·active·ly     /   ˌprəʊˈæktɪvli     ;             NAmE     ˌproʊˈæktɪvli     /       adverb                 pro·active     /   ˌprəʊˈæktɪv     ;           NAmE     ˌproʊˈæktɪv     /         pro·active·ly     /   ˌprəʊˈæktɪvli     ;           NAmE     ˌproʊˈæktɪvli     /      "
+            "5": "      sly     /   slaɪ     ;           NAmE     slaɪ     /         adjective           1     (           disapproving )           acting or done in a secret or dishonest way, often intending to trick people           诡诈的；狡诈的         SYN         cunning             ◆   a sly political move   诡诈的政治手段       ◆   (           humorous )           You sly old devil! How long have you known?   你这个老滑头！你知道有多久了？         2     [ usually before noun         ]       suggesting that you know sth secret that other people do not know           诡秘的（表示自己知道别人不知道的秘密）         SYN         knowing             ◆   a           sly smile/grin/look/glance, etc.     诡秘的微笑、咧嘴一笑、神色、一瞥等             ▶     slyly     /   slaɪli     ;             NAmE     slaɪli     /       adverb           ◆   He glanced at her slyly.   他诡秘地朝她瞥了一眼。             sly·ness     /   slaɪnəs     ;             NAmE     slaɪnəs     /       noun       [ uncountable           ]             IDIOM     on the ˈsly       secretly; not wanting other people to discover what you are doing               秘密地；偷偷地；背地里         ◆   He has to visit them on the sly.   他只得偷偷地去看望他们。             sly   slyer   slyest           sly     /   slaɪ     ;           NAmE     slaɪ     /         slyly     /   slaɪli     ;           NAmE     slaɪli     /         sly·ness     /   slaɪnəs     ;           NAmE     slaɪnəs     /      "
         },
         {
             "6": ""
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "impugn"
+        },
+        {
+            "1": "/ɪmˈpjuːn/"
+        },
+        {
+            "2": "v. 质疑    SYN   challenge"
+        },
+        {
+            "3": "`1`impugn`2`★ im -,进入，使，- pugn ,打，击，刺，词源同 pugnacious , pungent .引申词义怀疑，质疑。`3` pugnacious \t★来自拉丁语 pugnus ,拳头，来自 pungere ,刺，击，词源同 point , pungent .引申词义好斗的。`3` pungent \t★来自拉丁语 pungere ,刺，叮，咬，来自 PIE * pung ,刺，击，打，词源同 point , puncture .引申词义刺鼻的，一针见血的等。"
+        },
+        {
+            "4": ""
+        },
+        {
+            "5": "      im·pugn     /   ɪmˈpjuːn     ;           NAmE     ɪmˈpjuːn     /         verb             impugn sth             (         formal )         to express doubts about whether sth is right, honest, etc.         对…表示怀疑；质疑   SYN         challenge             impugn   impugns   impugned   impugning           im·pugn     /   ɪmˈpjuːn     ;           NAmE     ɪmˈpjuːn     /      "
+        },
+        {
+            "6": "impute 归咎于"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "whack"
+        },
+        {
+            "1": "/wæk/"
+        },
+        {
+            "2": "（informal） vt.n. 重打；猛击； vt. 草草放下 n.  (  BrE )  一份; 份额 短语： out of ~ 不对头；不正常"
+        },
+        {
+            "3": "`1`whack`2`★拟声词。"
+        },
+        {
+            "4": "Online Etymology Dictionary whack v. \"to strike sharply,\" 1719, probably of imitative origin. The noun is from 1737. The word in  out of whack  (1885) is perhaps the slang meaning \"share, just portion\" (1785), which may be from the notion of the blow that divides, or the rap of the auctioneer's hammer. To  have  (or  take )  a whack at  something \"make an attempt\" is from 1891. Related:  Whacked ;  whacking .  Whacked out  is from 1969."
+        },
+        {
+            "5": "      whack     /   wæk     ;           NAmE     wæk     /         verb     ,     noun           whack   whacks   whacked   whacking               verb         1     whack sb/sth           (           informal )           to hit sb/sth very hard           猛打；重击；狠揍         ◆   She whacked him with her handbag.   她用手提包狠狠地打他。       ◆   James whacked the ball over the net.   詹姆斯猛力把球击过网去。         2     whack sth + adv./prep.           (           informal )           to put sth somewhere without much care           草草放下         ◆   Just whack your bags in the corner.   就把你的包丢在角落里吧。         3     whack sb           (           NAmE ) (           slang )           to murder sb           谋杀                   noun         [ usually singular       ]     (       informal )         1     the act of hitting sb/sth hard; the sound made by this           重击；重击声         ◆   He gave the ball a good whack.   他猛击了一下球。       ◆   I heard the whack of the bullet hitting the wood.   我听到子弹砰的一声击中了木头。         2     (           BrE )           a share of sth; an amount of sth           份儿；一份；量         ◆   Don't leave all the work to her. Everyone should do their fair whack.   别把所有的工作都让她做。大家应合理地分担一下。       ◆   You have to pay the full whack. There are no reductions.   你得付全额。没有折扣。       ◆   He charges           top whack   (= the highest amount possible).     他索要最高价。         IDIOM     out of ˈwhack   (           informal ) (           especially NAmE )             1     no longer correct or working properly               不对头；有毛病；运行不正常         ◆   The system is clearly out of whack.   这个系统明显是运行不正常。       ◆   All the traveling had thrown my body out of whack.   这一路旅行已经使我的身体出了毛病。         2     not agreeing with or the same as sth else               不一致；不一样         ◆   Expectations and reality got out of whack.   期望和现实之间出现了差距。                 whack     /   wæk     ;           NAmE     wæk     /      "
+        },
+        {
+            "6": "联想：out of whack 是重打打偏了，不正常。 草草放下，一人一份 smack  v.n.  （用巴掌）打； 使劲一扔；使劲撞； 短语：~ of  sth. 含有sth. 的意味 adv. 正好地，不偏不倚地；猛然作声地"
         },
         {
             "7": ""

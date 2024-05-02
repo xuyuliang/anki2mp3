@@ -51,15 +51,22 @@ def clear_all_color():
     cursor2 = conn.cursor()
 
     # 假设 'cards' 表格中有一个名为 'flags' 的字段，用于标识卡片的颜色
+    import time
+
+    # Get the current Unix epoch time，and update usn to notice server that this card has been modified
+    current_time = int(time.time())
+    print(current_time) 
     query1= "select count(*) as cnt from cards where flags != 0"
-    query2 = "update cards set flags = 0 where flags != 0"
+    query2 = f"update cards set flags = 0, mod={current_time}, usn=usn+1  where flags != 0"
     try:
         # 执行查询
         cursor1.execute(query1)
         # 获取所有结果
         colors = cursor1.fetchall()
         print(str(colors[0][0])," colored(flaged) cards is going to been set uncolored...")
+        print("press 'Enter' to continue")
         # convert to normal list
+        input()
         cursor2.execute(query2)
         conn.commit()
         #不能在这里暂停，会带来异常，不commit，而且也不报错。
@@ -79,8 +86,8 @@ def main():
     # backup db
     determin_anki_database_path()
     backup_database()
-    # print(ignore_colors)
     clear_all_color()
+    
     input("Done!,press 'Enter' to exit")
 
 if __name__ == "__main__":
