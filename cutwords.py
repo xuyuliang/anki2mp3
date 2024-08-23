@@ -417,6 +417,12 @@ def main():
         print(cutbyroot2(word))
 
     # print(cutbypronuncation3('propcastation'))
+def test2():
+    realword = 'acquiesce'
+    text='ac.qui安静esce动词后缀  ac.qui.esc.ence  名词 acquire v. 获得 ac.quaint.ance 熟人 acquit v. 宣判无罪；acquittal n. 无罪判决 -esce 构成动词，表述动作的开始'
+    # text = 'ac.qui安静esce动词后缀  ac.qui.esc.ence  名词 acquire v. 获得 ac.quaint.ance 熟人 acquit v. 宣判无罪；acquittal n. 无罪判决 -esce 构成动词，表述动作的开始'
+    extract_english_letters(realword,text)
 
 if __name__ == "__main__" :
     main()
+    test2()
