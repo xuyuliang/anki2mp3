@@ -1,25 +1,129 @@
 [
     [
         {
-            "0": "neurosis"
+            "0": "syntax"
         },
         {
-            "1": "英 [njʊ'rəʊsɪs] "
+            "1": "英 ['sɪntæks] "
         },
         {
-            "2": "n. ( medical 医 )神经官能症 => 过分的恐惧/焦虑"
+            "2": "n. 句法；"
         },
         {
-            "3": "`1`neurosis`2`★ neuro -,神经，- osis ,疾病症状。"
+            "3": "`1`syntax`2`★ syn -,一起，- tax ,接触，安排，词源同 tactics , tax , taxidermy .用于语法格指句法，句法规则。`3` tax \t★来自拉丁语 taxare ,评估，估计，征税，反复格于 tangere ,接触，安排，来自 PIE * tag ,接触，触摸，词源同 tangent , task .后引申词义征税，课税，及名词词义税收，税款等。`3` tactics \t★来自 tactic ,战术，策略，- ics ,学说。`3` tax \t★来自拉丁语 taxare ,评估，估计，征税，反复格于 tangere ,接触，安排，来自 PIE * tag ,接触，触摸，词源同 tangent , task .后引申词义征税，课税，及名词词义税收，税款等。`3` taxidermy \t★来自希腊语 taxis ,安排，排列，分类，- derm ,皮肤，词源同 dermatology ."
         },
         {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 neurosis n. 1776, \"functional derangement arising from disorders of the nervous system,\" coined by Scottish physician William Cullen (1710-1790) from Greek  neuron  \"nerve\" (see  neuro- ) + Modern Latin  -osis  \"abnormal condition.\" Used in a general psychological sense since 1871; clinical use in psychiatry dates from 1923. 〔李〕[neur;-osisn.] n.神经机能病； 恐惧症    ←neur (GK neuron)=nerve 神经 〔李〕n. 神经（机能）病　[neur- =nerve]     ←-osis [L，GK] 表示“疾病；其他生理状态”"
+            "4": "Online Etymology Dictionary syntax n. c.1600, from French  syntaxe  (16c.) and directly from Late Latin  syntaxis , from Greek  syntaxis  \"a putting together or in order, arrangement, a grammatical construction,\" from stem of  syntassein  \"put in order,\" from  syn-  \"together\" (see  syn- ) +  tassein  \"arrange\" (see  tactics )."
         },
         {
-            "5": "      neur·osis     /   njʊəˈrəʊsɪs     ;           NAmE     nʊˈroʊsɪs     /         noun         [ countable         ,    uncountable         ]       (     plural   neur·oses     /   njʊəˈrəʊsiːz     ;               NAmE     nʊˈroʊsiːz     /       )         1     (           medical             医   )           a mental illness in which a person suffers strong feelings of fear and worry           神经机能病；神经官能症；恐惧症           2     any strong fear or worry           过分的恐惧（或焦虑）         SYN         anxiety               neurosis   neuroses           neur·osis     /   njʊəˈrəʊsɪs     ;           NAmE     nʊˈroʊsɪs     /         neur·oses     /   njʊəˈrəʊsiːz     ;           NAmE     nʊˈroʊsiːz     /      "
+            "5": "      syn·tax     /   ˈsɪntæks     ;           NAmE     ˈsɪntæks     /         noun         [ uncountable         ]         1     (           linguistics             语言   )           the way that words and phrases are put together to form sentences in a language; the rules of grammar for this           句法；句法规则         ☞ compare               morphology          ( 2             )             2     (           computing             计   )           the rules that state how words and phrases must be used in a computer language           句法；语构               syn·tax     /   ˈsɪntæks     ;           NAmE     ˈsɪntæks     /      "
         },
         {
-            "6": ""
+            "6": "syn合成tax税"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "paleography"
+        },
+        {
+            "1": "美 [ˌpeɪlɪ'ɒgrəfɪ] "
+        },
+        {
+            "2": "n. 古文字学；"
+        },
+        {
+            "3": "`1`paleography`2`★ paleo -,远古的，- graphy ,写，文字。"
+        },
+        {
+            "4": "词根李平武蒋争 〔李〕n.古文书（学）；古字体　[-graphy=the science of]     ←pale（o）-[GK] =ancient古"
+        },
+        {
+            "5": ""
+        },
+        {
+            "6": "pale.o.graphy. 只有考古学是 archae- ,其他都是paleo-"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "tether"
+        },
+        {
+            "1": "美 [ˈteðər] "
+        },
+        {
+            "2": "n. （栓牲口的） 绳子 链子 v. （用绳或链） 拴 （牲畜） ~ sth. to sth."
+        },
+        {
+            "3": "`1`tether`2`★可能来自古诺斯语 tjothr ,拴绳，来自 Proto - Germanic * teudran ,绳子，来自 PIE * deu ,绑紧，系牢，* tro ,工具格后缀，词源同 rudder .`3` rudder \t★来自古英语 rothor ,舵，来自 Proto - Germanic * rothru ,舵，来自* ro ,划，划船，词源同 row ,- thor ,工具格后缀，词源同 tether , weather .古英语- th -简化为- d -,比较 burden ,来自古英语 byrthen ."
+        },
+        {
+            "4": "Online Etymology Dictionary tether n. late 14c., \"rope for fastening an animal,\" not found in Old English, probably from a Scandinavian source akin to Old Norse  tjoðr  \"tether,\" from Proto-Germanic  *teudran  (cognates: Danish  tøir , Old Swedish  tiuther , Swedish  tjuder , Old Frisian  tiader , Middle Dutch  tuder , Dutch  tuier  \"line, rope,\" Old High German  zeotar  \"pole of a cart\"), from PIE root  *deu-  \"to fasten\" + instrumentive suffix  *-tro- . Figurative sense of \"measure of one's limitations\" is attested from 1570s. v. late 14c. (implied in  tethering ), \"confine by a tether,\" originally of grazing animals, from  tether ,  n. . Figurative use also from late 14c. Related:  Tethered ."
+        },
+        {
+            "5": "      tether     /   ˈteðə(r)     ;           NAmE     ˈteðər     /         verb     ,     noun           tether   tethers   tethered   tethering               verb         tether sth (to sth)         to tie an animal to a post so that it cannot move very far         拴（牲畜）                 noun         a rope or chain used to tie an animal to sth, allowing it to move around in a small area         （拴牲畜的）拴绳，拴链         IDIOM see             end           n.             tether     /   ˈteðə(r)     ;           NAmE     ˈteðər     /      "
+        },
+        {
+            "6": "电击枪 taser [ˈteɪzə(r)]"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "sandal"
+        },
+        {
+            "1": "/ˈsænd(ə)l/"
+        },
+        {
+            "2": "n. 凉鞋；"
+        },
+        {
+            "3": "`1`sandal`2`★来自古法语 sandale ,凉鞋，来自拉丁语 sandalium  草鞋，木屐，来自希腊语 sandalon ,草鞋，木屐，可能来自梵语 candana ,檀香木。"
+        },
+        {
+            "4": "Online Etymology Dictionary sandal n. type of shoe, late 14c., from Old French  sandale , from Latin  sandalium  \"a slipper, sandal,\" from Greek  sandalion , diminutive of  sandalon  \"sandal,\" of unknown origin, perhaps from Persian. Related:  Sandals ."
+        },
+        {
+            "5": "      san·dal     /   ˈsændl     ;           NAmE     ˈsændl     /         noun                 a type of light open shoe that is worn in warm weather. The top part consists of leather bands that attach the         sole to your foot.         凉鞋         sandal   sandals   sandalled   sandaled   sandalling   sandaling           san·dal     /   ˈsændl     ;           NAmE     ˈsændl     /      "
+        },
+        {
+            "6": "檀香，檀香木  sandalwood "
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "cardigan"
+        },
+        {
+            "1": "/ˈkɑːdɪɡən/"
+        },
+        {
+            "2": "n.  开襟羊毛衫"
+        },
+        {
+            "3": "`1`cardigan`2`★因英国将军 Cardigan  伯爵 James   Thomas   Brudenell  在19 世纪指挥英俄克里米亚战争时穿着而得名。`3` James \t★常见人名，来自拉丁语 Jacobus ,即圣经人物 Jacob ,拼写英语化为 James  或 Jack ."
+        },
+        {
+            "4": "Online Etymology Dictionary cardigan n. 1868, from James Thomas Brudenell (1797-1868), 7th Earl of  Cardigan , English general distinguished in the Crimean War, who set the style, in one account supposedly wearing such a jacket while leading the Charge of the Light Brigade at Balaclava (1854). The place name is an anglicization of Welsh  Ceredigion , literally \"Ceredig's land.\" Ceredig lived 5c."
+        },
+        {
+            "5": "      car·di·gan     /   ˈkɑːdɪɡən     ;           NAmE     ˈkɑːrdɪɡən     /       (     NAmE also     ˌcardigan ˈsweater   )         noun                 a knitted jacket made of wool, usually with no         collar and fastened with buttons at the front         （无领）开襟毛衣         cardigan   cardigans           car·di·gan     /   ˈkɑːdɪɡən     ;           NAmE     ˈkɑːrdɪɡən     /      "
+        },
+        {
+            "6": "cardi卡的gan敢"
         },
         {
             "7": ""
