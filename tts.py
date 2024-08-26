@@ -102,6 +102,8 @@ def processInputFile(input_file):
         # print(notefields)
         # a = str(positions['word'])
         word = notefields[positions['word']][str(positions['word'])]
+        # trim left and right of word
+        word = word.strip()
         # a='0'
         # word = notefields[positions['word']][a]
         print("============")
@@ -124,6 +126,11 @@ def processInputFile(input_file):
                     letters = ' '.join(list(word))
                 else:
                     letters = ' '.join(list(cutwords.cutbyroot2(word)))
+                    print('\n')
+                    print('===== 没办法 no choice, try use the wordcut function :',word,' ',letters)
+                    print(tips,'\n')
+                    print(full_explain,'\n')
+                    print('\n')
         # process lyric
         aline_lyric = []
         for item in lyric_order:
