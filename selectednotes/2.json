@@ -1,51 +1,25 @@
 [
     [
         {
-            "0": "relinquish"
+            "0": "simile"
         },
         {
-            "1": "英 [rɪˈlɪŋkwɪʃ ] "
+            "1": "/ˈsɪməli/"
         },
         {
-            "2": "v. （尤指不情愿地）放弃"
+            "2": "明喻"
         },
         {
-            "3": "`1`relinquish`2`★来自拉丁语 relinquere ,留下，留给，来自 re -,向后，往回， linquere ,留下，留给，词源同 delinquency , relic .引申诸相关词义。`3` re \t★来自拉丁语 re ,关于，就有关事项，来自 res  的离格，来自 res ,事情，事物，词源同 real . re - 向后，往回，相对，相反，再，表强调来自拉丁语 re ,向后，往回，相对，相反，再。作为强调有时仅表强调。`3` delinquency \t★来自 delinquent ,不良青少年。`3` relic \t★来自古法语 relique ,遗留物，来自拉丁语 reliquiae (- e ,复数)，来自 relinquere ,留下，留给，来自 re -,向后，往回， linquere ,留下，留给，词源同 delinquency , relinquish .引申诸相关词义。"
+            "3": "`1`simile`2`★来自拉丁语 simile ,比较，类似，相似之物，来自 similis ,相似的，词源同 similar .用于语言学指明喻，直喻。`3` simile \t★来自拉丁语 simile ,比较，类似，相似之物，来自 similis ,相似的，词源同 similar .用于语言学指明喻，直喻。`3` similar \t★来自拉丁语 similis ,相似的，类似的，来自 PIE * sem ,一，一样，词源同 same , simple ."
         },
         {
-            "4": "Online Etymology Dictionary relinquish v. mid-15c., \"desert, abandon;\" late 15c., \"give up, desist,\" from Old French  relinquiss- , present participle stem of  relinquir  (12c.), from Latin  relinquere  \"leave behind, forsake, abandon, give up,\" from  re-  \"back\" (see  re- ) +  linquere  \"to leave,\" from PIE  *linkw- , from root  *leikw-  \"to leave behind\" (cognates: Sanskrit  reknas  \"inheritance, wealth,\"  rinakti  \"leaves;\" Greek  leipein  \"to leave;\" Gothic  leihvan,  Old English  lænan  \"to lend;\" Old High German  lihan  \"to borrow;\" Old Norse  lan  \"loan\"). Related:  Relinquished ;  relinquishing ."
+            "4": "Online Etymology Dictionary 词根李平武蒋争 simile n. late 14c., from Latin  simile  \"a like thing; a comparison, likeness, parallel,\" neuter of  similis  \"like\" (see  similar ). Both things must be mentioned and the comparison directly stated. To Johnson, \"A simile, to be perfect, must both illustrate and ennoble the subject.\" 〔李〕[simil;-e] n.直喻，明喻    ←simil,sembl (L similes)=like, alike 相像的"
         },
         {
-            "5": "      re·lin·quish     /   rɪˈlɪŋkwɪʃ     ;           NAmE     rɪˈlɪŋkwɪʃ     /         verb       (         formal )             to stop having sth, especially when this happens unwillingly         （尤指不情愿地）放弃         SYN       give up           relinquish sth         ◆   He was forced to relinquish control of the company.   他被迫放弃对公司的控制权。       ◆   They had relinquished all hope that she was alive.   他们已经完全不指望她还活着了。       relinquish sth to sb         ◆   She relinquished possession of the house to her sister.   她将房子让给了她的妹妹。       relinquish   relinquishes   relinquished   relinquishing           re·lin·quish     /   rɪˈlɪŋkwɪʃ     ;           NAmE     rɪˈlɪŋkwɪʃ     /      "
+            "5": "      sim·ile     /   ˈsɪməli     ;           NAmE     ˈsɪməli     /         noun         [ countable         ,    uncountable         ]     (         technical           术语   )             a word or phrase that compares sth to sth else, using the words         like or         as, for example         a face like a mask or         as white as snow; the use of such words and phrases         明喻；明喻的运用         ☞ compare             metaphor             simile   similes           sim·ile     /   ˈsɪməli     ;           NAmE     ˈsɪməli     /      "
         },
         {
-            "6": "re离.linqu.ish 不情愿地放弃 de弟.linqu.ent  不良少年 de弟.linqu.ency （不良少年的）违法行为"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "necropsy"
-        },
-        {
-            "1": "英 ['nekrɒpsi] "
-        },
-        {
-            "2": "n.（尤指对动物的）尸体剖验"
-        },
-        {
-            "3": ""
-        },
-        {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 necropsy n. \"post-mortem examination,\" 1839, from  necro-  +  opsis  \"a sight\" (see  eye ,  n. ). As a verb, recorded from 1889. 〔李〕n.尸体剖检，验尸　[opsy=aviewing]     ←necr（o）-[GK] =deadbody死尸；death死"
-        },
-        {
-            "5": "      nec·ropsy     /   ˈnekrɒpsi     ;           NAmE     ˈnekrɑːpsi     /         noun         (     plural   nec·ropsies     )     (         NAmE )             an official examination of a dead body (especially that of an animal) in order to discover the cause of death         （尤指对动物的）尸体剖验，尸检         SYN         autopsy                 nec·ropsy     /   ˈnekrɒpsi     ;           NAmE     ˈnekrɑːpsi     /      "
-        },
-        {
-            "6": "听发音像 necro+pathy 其实对应 auto.psy necromancer 死灵法师"
+            "6": "metaphor 暗喻 facsimile 摹本；传真本；复制本"
         },
         {
             "7": ""
@@ -53,77 +27,25 @@
     ],
     [
         {
-            "0": "infraction"
+            "0": "perfunctory"
         },
         {
-            "1": "英 [ɪn'frækʃ(ə)n] "
+            "1": "/pəˈfʌŋktəri/"
         },
         {
-            "2": "n.违规、违法 = contravention"
+            "2": "( formal) (指行为 ) 敷衍的；例行公事般的；潦草的 =cursory slapdash"
         },
         {
-            "3": "`1`infraction`2`★ in -,进入，使，- fract ,破开，词源同 break , fraction .引申词义破坏协议，犯规，违法等。`3` in \t★来自古英语 in ,里面，上面，中间，进入，来自 PIE * en ,进入。词义上面已由 on  替代。`3` break \t★来自 PIE * bhreg ,破开，词源同 fraction ,碎片。`3` fraction \t★来自 PIE * bhreg ,分开，破开，词源同 break , fragment .即破开的部分，少量。"
+            "3": "`1`perfunctory`2`★ per -,完全的，- funct ,功能，职责，词源同 function , functionary .字面意思即完全的履行公事，词义贬义化，引申词义例行公事的，潦草的，不负责任的等。`3` per \t★来自拉丁语 per ,穿过，通过，凭借，方式，每，来自 PIE * per ,向前，前进。 per - 通过，完全的，整个的，表强调来自拉丁语 per ,穿过，通过，来自 PIE * per ,向前，前进。引申词义完全的，整个的，或表强调，少数情况下表否定。`3` function \t★来自拉丁语 functio ,履行，执行。`3` functionary \t★来自 function ,功能。用于指公职人员。"
         },
         {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 infraction n. mid-15c., \"the breaking of an agreement,\" from Middle French  infraction  and directly from Latin  infractionem  (nominative  infractio ) \"a breaking, weakening,\" noun of action from past participle stem of  infringere  \"to break, crush\" (see  infringe ). 〔李〕[in-=in 入；fract=to break 破；-ion n.=the act 表行为→“breaking in law or rule破坏法律，侵犯规则”→] n. violation of law;breach违犯；违背"
+            "4": "Online Etymology Dictionary perfunctory adj. 1580s, from Late Latin  perfunctorius  \"careless, negligent,\" literally \"like one who wishes to get through a thing,\" from Latin  perfungus , past participle of  perfungi  \"discharge, busy oneself, get through,\" from  per-  \"through\" +  fungi  \"perform\" (see  function ,  n. ). Related:  Perfunctorily ."
         },
         {
-            "5": "      in·frac·tion     /   ɪnˈfrækʃn     ;           NAmE     ɪnˈfrækʃn     /         noun         [ countable         ,    uncountable         ]     (         formal )             an act of breaking a rule or law         犯规；违法         SYN         infringement             ◆   minor infractions of EU regulations   对欧盟规定的轻微触犯       infraction   infractions           in·frac·tion     /   ɪnˈfrækʃn     ;           NAmE     ɪnˈfrækʃn     /      "
+            "5": "      per·func·tory     /   pəˈfʌŋktəri     ;           NAmE     pərˈfʌŋktəri     /         adjective       (         formal )               ( of an action         行为   )         done as a duty or habit, without real interest, attention or feeling         敷衍的；例行公事般的；潦草的         ◆   a perfunctory nod/smile   敷衍的点头╱微笑       ◆   They only made a perfunctory effort.   他们只是敷衍了事。           ▶     per·func·tor·ily     /   pəˈfʌŋktrəli     ;             NAmE     pərˈfʌŋktrəli     /       adverb           ◆   to nod/smile perfunctorily   漫不经心地点头╱微笑               per·func·tory     /   pəˈfʌŋktəri     ;           NAmE     pərˈfʌŋktəri     /         per·func·tor·ily     /   pəˈfʌŋktrəli     ;           NAmE     pərˈfʌŋktrəli     /      "
         },
         {
-            "6": "区别：inflict 给...造成伤害 区别：红外线的： infr.ared fraction 分数。小碎片 refractory 很难治疗的；难以驾驭的fracture 骨折 infraction 犯规、违法=  infringement refraction 折射"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "idyll"
-        },
-        {
-            "1": "美 ['aɪdil] "
-        },
-        {
-            "2": "n. （文学）（尤指乡下的）愉快恬静的地方、经历 n. 描述这些内容的短诗或短文；=ec.logue"
-        },
-        {
-            "3": "`1`idyll`2`★来自拉丁语 idyllium ,田园诗，田园画，词源同 idea , ideal .引申词义理想的田园生活。`3` idea \t★来自拉丁语 idea ,想象，想法，想象中的上帝的模样，来自 PIE * weid ,看，字母 w  脱落，词源同 video , evident .引申词义看，幻想，现用于指主意，想法。`3` ideal \t★来自 idea ,想象，想法。引申词义想象中的，理想的，完美的。"
-        },
-        {
-            "4": "Online Etymology Dictionary idyll n. also  idyl , c.1600, \"picturesque pastoral poem,\" from Latin  idyllium , from Greek  eidyllion  \"short, descriptive poem, usually of rustic or pastoral type,\" literally \"a little picture,\" diminutive of  eidos  \"form\" (see  -oid )."
-        },
-        {
-            "5": "      idyll     /   ˈɪdɪl     ;           NAmE     ˈaɪdl     /         noun           1     (           literary )           a happy and peaceful place, event or experience, especially one connected with the countryside           （尤指乡下的）愉快恬静的地方（或事情、经历）           2     a short poem or other piece of writing that describes a peaceful and happy scene           描述恬静愉快情景的短诗（或短文）；田园诗           idyll   idylls           idyll     /   ˈɪdɪl     ;           NAmE     ˈaɪdl     /      "
-        },
-        {
-            "6": "idle : 闲暇的 ；idol 爱豆、偶像"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "stratum"
-        },
-        {
-            "1": "/ˈstrɑːtəm/"
-        },
-        {
-            "2": "n. 岩层；地层 n. 阶层"
-        },
-        {
-            "3": "`1`stratum`2`★来自拉丁语 stratum ,展开物，覆盖，铺盖，道路，中性格于 stratus ,展开，展开的，铺开的，过去分词格于 sternere ,展开，铺开，伸展，来自 PIE * ster ,展开，伸展，词源同 strew , street .后用于科学术语指岩层，地层等。`3` stratum \t★来自拉丁语 stratum ,展开物，覆盖，铺盖，道路，中性格于 stratus ,展开，展开的，铺开的，过去分词格于 sternere ,展开，铺开，伸展，来自 PIE * ster ,展开，伸展，词源同 strew , street .后用于科学术语指岩层，地层等。`3` stratus \t★来自拉丁语 stratus ,展开。用于科学术语指层云。`3` strew \t★来自古英语 strewian ,布满，散播，来自 Proto - Germanic * strawjana ,散开，散播，来自 PIE * ster ,展开，伸出，词源同 straw , stratum , structure .`3` street \t★来自古英语 straet ,街道，大路，来自 Proto - Germanic * strato ,街道，来自拉丁语 via   strata ,路面，铺好的路，阴性格于 stratus ,展开的，铺开的，过去分词格于 sternere ,展开，铺开，词源同 stratum , structure ."
-        },
-        {
-            "4": "Online Etymology Dictionary stratum n. \"horizontal layer,\" 1590s, from Modern Latin special use of Latin  stratum  \"thing spread out, coverlet, beadspread, horse-blanket; pavement,\" noun uses of neuter of  stratus  \"prostrate, prone,\" past participle of  sternere  \"to spread out, lay down, stretch out,\" from PIE  *stre-to-  \"to stretch, extend,\" from root  *stere-  \"to spread, extend, stretch out\" (see  structure ,  n. )."
-        },
-        {
-            "5": "      stra·tum     /   ˈstrɑːtəm     ;           NAmE     ˈstreɪtəm     /         noun         (     plural   strata     /   ˈstrɑːtə     ;               NAmE     ˈstreɪtə     /       )         1     (           geology             地   )           a layer or set of layers of rock, earth, etc.           层；岩层；地层           2     (           formal )           a class in a society           阶层         ◆   people from all social strata   来自不同社会阶层的人         stratum   strata           stra·tum     /   ˈstrɑːtəm     ;           NAmE     ˈstreɪtəm     /         strata     /   ˈstrɑːtə     ;           NAmE     ˈstreɪtə     /      "
-        },
-        {
-            "6": "strat.ify 使分层 stratigraphy 地层学"
+            "6": ""
         },
         {
             "7": ""
