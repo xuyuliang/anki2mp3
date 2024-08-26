@@ -152,9 +152,9 @@ def extract_english_letters(realword,astring):
                         oldc = myc
                     return ' '.join(list(resultword))
             return ''
-        else:
-            return ''
-
+        # else:
+        #     return ''
+    return ''  # 整个for都结束，也没有结果
 
 
 
@@ -357,61 +357,7 @@ def cutbyroot2(aword):
 
     
 def main():
-    # '''
-    # word,text = 'tantrum',' tan晒黑+trum没有p，trump是川普、胜出 的意思。联想：小孩晒黑了发脾气'
-    # word,text = 'apocalypse','apo.ca.lyp.se'
-    # word,text = 'tantrum','tan.trum'
-    # word,text = 'tantrum','tantrum 是什么[`tantrum]'
-    # res = extract_english_letters(word,text)
-    # print('result:',res)
-    # '''
-
-    # file = open('./testwords4cut.txt','r',encoding='utf-8')
-    # i=0
-    # for line in file:
-    #     aword = str.strip(line)
-    #     print(aword)
-    #     print(cutbypronuncation(aword))
-    #     # print(cutbyroot(aword))
-    #     if i > 20:
-    #         quit()
-    #     i+=1
-    # aword = 'corpuscle'
-    # print(cutbypronuncation(aword))
-
-
-    # aword = 'eucalyptus'
-    # print(do_suffix(aword)) 
-    # print(do_prefix(aword))
-    # print(do_prefix(do_suffix(aword)))
-
-    # file = open('./testwords4cut.txt','r',encoding='utf-8')
-    # i=0
-    # j=20
-    # for line in file:
-    #     # if i > 1800:
-    #     if i > 1080:
-    #         aword = str.strip(line)
-    #         print(cutbyroot2(aword))
-    #         j-=1
-    #         if j < 0:
-    #             quit()
-    #     i+=1
-    # aword = 'arachnid'
-    # print(do_suffix(aword))
     aword = []
-    # aword.append('allopathy')
-    # aword.append('emigrate')
-    # aword.append('calcium')
-    # aword.append('caldron')
-    # aword.append('concession')
-    # aword.append('ramification')
-    # aword.append('inadvertently')
-    # aword.append('parenthesis')
-    # aword.append('psychosis')
-    # aword.append('requite')
-    # aword.append('penitent')
-    # aword.append('faction')
     aword.append('penance')
     for word in aword:
         print(cutbyroot2(word))
@@ -423,6 +369,17 @@ def test2():
     # text = 'ac.qui安静esce动词后缀  ac.qui.esc.ence  名词 acquire v. 获得 ac.quaint.ance 熟人 acquit v. 宣判无罪；acquittal n. 无罪判决 -esce 构成动词，表述动作的开始'
     extract_english_letters(realword,text)
 
+def test3():
+    realword = 'vaccine'
+    text='      vac·cine     /   ˈvæksiːn     ;           NAmE     vækˈsiːn     /         noun         [ countable         ,    uncountable         ]         a substance that is put into the blood and that protects the body from a disease         疫苗；菌苗         ◆   a measles vaccine   麻疹疫苗       ◆   There is no vaccine against HIV infection.   现在还没有防止感染艾滋病病毒的疫苗。       vaccine   vaccines           vac·cine     /   ˈvæksiːn     ;           NAmE     vækˈsiːn     /      '
+    extract_english_letters(realword,text)
+
+def test4():
+    realword = 'aroma'
+    text='      aroma     /   əˈrəʊmə     ;           NAmE     əˈroʊmə     /         noun           a pleasant, noticeable smell         芳香；香味         ◆   the aroma of fresh coffee   新鲜咖啡的香味       aroma   aromas           aroma     /   əˈrəʊmə     ;           NAmE     əˈroʊmə     /      '
+    extract_english_letters(realword,text)
 if __name__ == "__main__" :
     main()
     test2()
+    test3()
+    test4() #测试不分段的短单词
