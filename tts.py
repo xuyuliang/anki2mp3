@@ -325,6 +325,8 @@ def main():
     engine.setProperty("volume", 1.4)
     # list_voices(engine)
     determin_LONGMAN_BASE_PATH()
+    #把旧的输出mp3目录清空
+    clear_sound_folder(SOUND_OUTPUT_FOLDER)
     for input_file in os.listdir(INPUT_FOLDER):
         if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
             continue
