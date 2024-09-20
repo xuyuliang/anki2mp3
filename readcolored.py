@@ -33,6 +33,13 @@ def determin_anki_database_path():
            anki_database_path = path
         #    print(anki_database_path)
            break
+def delete_old_files():
+    # delete all files in inputfile_path
+    for filename in os.listdir(inputfile_path):
+        file_path = os.path.join(inputfile_path, filename)
+        os.remove(file_path)
+
+
 
 
 def recopy_temp_database():
@@ -120,6 +127,7 @@ def main():
     determin_anki_database_path()
     recopy_temp_database()
     # print(ignore_colors)
+    delete_old_files()
     allcolors = find_all_color()
     colors_todo = list(set(allcolors) - set(ignore_colors))
     for color in colors_todo:

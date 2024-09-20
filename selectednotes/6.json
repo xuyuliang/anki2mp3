@@ -1,51 +1,25 @@
 [
     [
         {
-            "0": "arithmetic"
+            "0": "squeamish"
         },
         {
-            "1": "美 [.erɪθ'metɪk] "
+            "1": "英 ['skwiːmɪʃ] "
         },
         {
-            "2": "n.算术； n.算术运算；四则运算"
+            "2": "n. adj.易心烦意乱的；看到恶心场面易恶心的；容易晕血的； n. （怕事的）老实人 adj.老实的"
         },
         {
-            "3": "`1`arithmetic`2`★ arith -,计算，词源同 read , reason .- m ,插入鼻音字母。`3` read \t★来自古英语 raedan ,建议，顾问，劝说，解释，阅读，来自 PIE * redan ,建议，解释，来自 PIE * rei ,思考，考虑，论证，词源同 reason , rate .现词义主要为阅读，朗读。`3` reason \t★来自古法语 raison ,原因，理由，思考，来自拉丁语 rationem ,思考，考虑，动机，来自 PIE * rei ,思考，辩理，词源同 rate , read ."
+            "3": "squeeze 挤，压 `1`squeamish`2`★词源不详。"
         },
         {
-            "4": "Online Etymology Dictionary arithmetic n. mid-13c.,  arsmetike , from Old French  arsmetique  (12c.), from Latin  arithmetica , from Greek  arithmetike (tekhne)  \"(the) counting (art),\" fem. of  arithmetikos  \"of or for reckoning, arithmetical,\" from  arithmos  \"number, counting, amount,\" from PIE root  *re(i)-  \"to reason, count\" (cognates: Old English, Old High German  rim  \"number;\" Old Irish  rim  \"number,\"  dorimu  \"I count;\" Latin  ritus  \"religious custom;\" see  read ). Originally in English also  arsmetrik , on folk etymology from Medieval Latin  ars metrica ; spelling corrected early 16c. Replaced native  tælcræft , literally \"tell-craft.\""
+            "4": "Online Etymology Dictionary squeamish adj. late 14c., variant (with  -ish ) of  squoymous  \"disdainful, fastidious\" (early 14c.), from Anglo-French  escoymous , which is of unknown origin. Related:  Squeamishly ;  squeamishness . He was somdel squaymous Of fartyng, and of speche daungerous [Chaucer, \"Miller's Tale,\" c.1386]"
         },
         {
-            "5": "      arith·met·ic     /   əˈrɪθmətɪk     ;           NAmE     əˈrɪθmətɪk     /         noun         [ uncountable         ]         1     the type of mathematics that deals with the adding, multiplying, etc. of numbers           算术         ◆   He's not very good at arithmetic.   他不太擅长算术。         2     sums involving the adding, multiplying, etc. of numbers           算术运算；四则运算         ◆   a quick bit of           mental arithmetic   (= sums you do in your head, without writing anything down)     心算       ◆   I think there's something wrong with your arithmetic.   我认为你的计算有错。             arith·met·ic     /   əˈrɪθmətɪk     ;           NAmE     əˈrɪθmətɪk     /      "
+            "5": "      squeam·ish     /   ˈskwiːmɪʃ     ;           NAmE     ˈskwiːmɪʃ     /         adjective           1     easily upset, or made to feel sick by unpleasant sights or situations, especially when the sight of blood is involved           易心烦意乱的；易恶心的；神经脆弱的           2     not wanting to do sth that might be considered dishonest or immoral           诚实谨慎的；正派的           3   the squeamish     noun       [ plural         ]       people who are           squeamish   易心烦意乱的人；神经脆弱的人         ◆   This movie is not for the squeamish.   这部电影不是给神经脆弱的人看的。             ▶     squeam·ish·ness     /   ˈskwiːmɪʃnəs     ;             NAmE     ˈskwiːmɪʃnəs     /       noun       [ uncountable           ]                 squeam·ish     /   ˈskwiːmɪʃ     ;           NAmE     ˈskwiːmɪʃ     /         squeam·ish·ness     /   ˈskwiːmɪʃnəs     ;           NAmE     ˈskwiːmɪʃnəs     /      "
         },
         {
-            "6": "mathematics  结尾不同 matics"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "embryo"
-        },
-        {
-            "1": "美 [ˈɛmbriˌoʊ] "
-        },
-        {
-            "2": "n.  胚胎; 人类8周内的胚胎"
-        },
-        {
-            "3": "`1`embryo`2`★ em -,进入，使，-  bryo ,膨胀，发芽，词源可能同 breast , browse .`3` breast \t★来自 PIE * bhreus ,膨胀，鼓起，词源同 brisket ,胸肉。`3` browse \t★来自 PIE * bhreus ,膨胀，生长，词源同 breast ,胸部。指长出来的嫩芽，蓓蕾，后引申为牛羊吃草，浏览。"
-        },
-        {
-            "4": "Online Etymology Dictionary embryo n. \"fetus in utero at an early stage of development,\" mid-14c., from Medieval Latin  embryo , properly  embryon , from Greek  embryon  \"a young one,\" in Homer, \"young animal,\" later, \"fruit of the womb,\" literally \"that which grows,\" from assimilated form of  en  \"in\" (see  en- (2)) +  bryein  \"to swell, be full.\""
-        },
-        {
-            "5": "      em·bryo     /   ˈembriəʊ     ;           NAmE     ˈembrioʊ     /         noun         (     plural   em·bryos     )         a young animal or plant in the very early stages of development before birth, or before coming out of its egg or seed, especially a human egg in the first eight weeks after         fertilization   胚；胚胎；（尤指受孕后八周内的）人类胚胎         ◆   human embryos   人的胚胎       ◆   (         figurative )         the embryo of an idea   一种想法的雏形       ◆   an embryo politician         (= one who is not yet very experienced)     尚未成熟的政治家       IDIOM     in embryo       existing but not yet fully developed               在胚胎阶段；在萌芽时期；尚未成熟         ◆   The idea already existed in embryo in his earlier novels.   这个想法在他早期的小说中已初见端倪。             embryo   embryos           em·bryo     /   ˈembriəʊ     ;           NAmE     ˈembrioʊ     /      "
-        },
-        {
-            "6": "联想：em嵌入在bry带来o zygote 受精卵 (联想：goat 受惊） enzyme 酶"
+            "6": "squeak v. 短促的尖叫 skittish 易受惊吓的 skirmish 小规模战斗"
         },
         {
             "7": ""
@@ -53,51 +27,25 @@
     ],
     [
         {
-            "0": "profligate"
+            "0": "drab"
         },
         {
-            "1": "美 [ˈprɒflɪɡət ] "
+            "1": "/dræb/"
         },
         {
-            "2": "adjective (  formal )  挥霍的；浪费的   SYN   wasteful  prodigal  词根：打击"
+            "2": "adj. n. 单调乏味的；无色彩的。无趣的"
         },
         {
-            "3": "`1`profligate`2`★ pro -,向前，- flig ,击，打，词源同 afflict , conflict .比喻用法。`3` afflict \t★ af -,去，往，- flict ,击打，词源同 conflict ,冲突。`3` conflict \t★ con -,表强调，- flict ,鞭子，击打，词源同 flagellate , afflict ."
+            "3": "`1`drab`2`★来自 drape ,布匹，未浸染着色过的布匹。引申词义单调的。`3` drape \t★来自 PIE * dhrebh ,击，打，即对棉花，麻布等原材料的初步加工及弹制，其原义见 drab .后该词词义通用化，也用来指加工过的帘子，帷幕等。"
         },
         {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 profligate adj. 1520s, \"overthrown, routed\" (now obsolete in this sense), from Latin  profligatus  \"destroyed, ruined, corrupt, abandoned, dissolute,\" past participle of  profligare  \"to cast down, defeat, ruin,\" from  pro-  \"down, forth\" (see  pro- ) +  fligere  \"to strike\" (see  afflict ). Main modern meaning \"recklessly extravagant\" is 1779, via notion of \"ruined by vice\" (1640s, implied in a use of  profligation ). Related:  Profligately . As a noun from 1709. 〔李〕[pro-;flig;-atea.] a.放荡的 n.放荡的人    ←flig,flict (L fligere,flictum)=to strike 打击"
+            "4": "Online Etymology Dictionary drab n. 1680s, \"color of natural, undyed cloth,\" from Middle French  drap  \"cloth, piece of cloth\" (see  drape ,  v. ). Figurative sense is c.1880. Apparently not related to earlier word  drab , meaning \"a dirty, untidy woman\" (1510s), \"a prostitute\" (1520s), which might be related to Irish  drabog , Gaelic  drabag  \"dirty woman,\" or perhaps it is connected with Low German  drabbe  \"dirt;\" compare  drabble  (Middle English  drabelen ) \"to soil (something); trail in the mud or on the ground\" (c.1400). Ultimately perhaps from PIE  *dher-  (1) \"to make muddy.\" Meaning \"small, petty debt\" (the sense in  dribs and drabs ) is 1828, of uncertain connection to the other senses."
         },
         {
-            "5": "      prof·li·gate     /   ˈprɒflɪɡət     ;           NAmE     ˈprɑːflɪɡət     /         adjective       (         formal,   disapproving )             using money, time, materials, etc. in a careless way         挥霍的；浪费的         SYN         wasteful             ◆   profligate spending   恣意挥霍的开支           ▶     prof·li·gacy     /   ˈprɒflɪɡəsi     ;             NAmE     ˈprɑːflɪɡəsi     /       noun       [ uncountable           ]             profligate   profligates           prof·li·gate     /   ˈprɒflɪɡət     ;           NAmE     ˈprɑːflɪɡət     /         prof·li·gacy     /   ˈprɒflɪɡəsi     ;           NAmE     ˈprɑːflɪɡəsi     /      "
+            "5": "      drab     /   dræb     ;           NAmE     dræb     /         adjective         (     drab·ber   ,   drab·best     )         without interest or colour; dull and boring         单调乏味的；无光彩的；无生气的         ◆   a cold drab little office   冷冰冰的小办公室       ◆   drab women, dressed in browns and greys   身着棕灰二色衣服毫无光彩的女人           ▶     drab·ness     /   dræbnəs     ;             NAmE     dræbnəs     /       noun       [ uncountable           ]             drab   drabber   drabbest           drab     /   dræb     ;           NAmE     dræb     /         drab·ness     /   dræbnəs     ;           NAmE     dræbnəs     /      "
         },
         {
-            "6": "afflict 、 inflict vt. 使遭受痛苦 conflict n.v. 冲突 g=ct , flig = flict 护卫舰 frigate"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "complement"
-        },
-        {
-            "1": "英 ['kɒmplɪment] "
-        },
-        {
-            "2": "vt. 补足，使完美 n. 补足； n. 补语；"
-        },
-        {
-            "3": "`1`complement`2`★来自 complete ,完整的。`3` complete \t★ com -,表强调，- ple ,装满，满的，词源同 full , fulfill ."
-        },
-        {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 complement n. late 14c., \"that which completes,\" from Old French  compliement  \"accomplishment, fulfillment\" (14c., Modern French  complément ), from Latin  complementum  \"that which fills up or completes,\" from  complere  \"fill up\" (see  complete ,  adj. ). Originally also having senses which were taken up c.1650-1725 by  compliment . v. 1610s, \"exchange courtesies,\" from  complement ,  n. . Meaning \"make complete\" is from 1640s. Related:  Complemented ;  complementing . 〔李〕[com- = together 一起；ple = to fill 装满；-ment n. = the means表手段→“the means of filling together一起填满的手段”→]Ⅰn. something that completes or makes perfect补充，补充物"
-        },
-        {
-            "5": "      com·ple·ment     AWL         verb     ,     noun           complement   complements   complemented   complementing               verb               /   ˈkɒmplɪment     ;         NAmE     ˈkɑːmplɪment     /       complement sth         to add to sth in a way that improves it or makes it more attractive         补充；补足；使完美；使更具吸引力         ◆   The excellent menu is complemented by a good wine list.   佳肴佐以美酒，堪称完美无缺。       ◆   The team needs players who         complement each other.     球队需要能够相互取长补短的队员。       ☞ note at             compliment                     noun         /   ˈkɒmplɪmənt     ;         NAmE     ˈkɑːmplɪmənt     /       1     complement (to sth)           a thing that adds new qualities to sth in a way that improves it or makes it more attractive           补充物；补足物           2     the complete number or quantity needed or allowed           足数；足额         ◆   We've taken our full complement of trainees this year.   我们今年接收的实习生已满员。         3     (           grammar             语法   )           a word or phrase, especially an adjective or a noun, that is used after linking verbs such as           be and           become, and describes the subject of the verb. In some descriptions of grammar it is used to refer to any word or phrase which is           governed by a verb and usually comes after the verb in a sentence.           补足语；补语         ◆   In the sentences ‘I'm angry’ and ‘He became a politician’, ‘angry’ and ‘politician’ are complements.   在句子 I'm angry 和 He became a politician 中，angry 和 politician 为补语。             com·ple·ment     /   ˈkɒmplɪment     ;           NAmE     ˈkɑːmplɪment     /      "
-        },
-        {
-            "6": "这里是-ple-完成 complete sup.ple.ment 补充（增补）<= 维生素、矿物质等补品是用这个词的。 compliment  [ˈkɒmplɪmənt] n.v.赞美 与compliance （服从）同源"
+            "6": ""
         },
         {
             "7": ""
@@ -105,155 +53,25 @@
     ],
     [
         {
-            "0": "encomium"
+            "0": "lumber"
         },
         {
-            "1": "英 [ɪn'kəʊmiəm] "
+            "1": "美 [ˈlʌmbər] "
         },
         {
-            "2": "n.  ( formal) 颂辞；歌颂的演说（或文章）；"
+            "2": "( NAmE )  木料   =  timber    (  BrE )  废旧家具；不用的大件物品 vi.  缓慢吃力地移动 vt.  [  usually passive ]  (  informal )  ~ sb. with sth.  迫使担负（职责等）"
         },
         {
-            "3": "`1`encomium`2`★ en -,进入，使，- com ,欢乐，颂歌，词源同 comedy , comic .`3` comedy \t★ com -,缩写自希腊语 komos ,欢乐，伴侣，- edy ,唱，歌，词源同 ode ,颂诗，颂歌。 come - hither  调情的 come ,来， hither ,来自 here  古词拼写。`3` comic \t★来自 comedy ,喜悦。"
+            "3": "`1`lumber`2`★来自 lame ,跛的，- er ,表反复，引申词义吃力的走。木材义词源不详，可能来自 timber ,字母 t , l 音变，比较 language , tongue ,并由木材引申词义大件物品等。`3` lame \t★来自 PIE * lem ,击，打，词源同 lam , lambaste .引申词义打跛，跛的。 ★来自拉丁语 lamina ,层，薄片，词源同 laminate , omelet .用于指金银锦缎织物。`3` timber \t★来自古英语 timber ,房屋，建筑物，来自 Proto - Germanic * timran ,建筑物，来自 PIE * deme ,建造，修建，来自 PIE * dom ,屋子，住所，词源同 dome , domicile .后引申词义建筑材料，树木，木材，木料等。`3` language \t★来自拉丁语 lingua ,舌头，语言，词源同 tongue , linguist .`3` tongue \t★来自古英语 tunge ,舌头，来自 Proto - Germanic * tungon ,舌头，来自 PIE * tnghwa ,舌头，词源同 language , lingual .字母 d , l  音变，比较 tear , lachrymose .引申词义语言。 tongue - lash  严厉批评 tongue ,舌头，语言， lash ,鞭子，鞭打。"
         },
         {
-            "4": "Online Etymology Dictionary encomium n. \"discriminating expression of approval,\" 1580s, from Late Latin  encomium , from Greek  enkomion (epos)  \"laudatory (ode), eulogy,\" from  en  \"in\" (see  en- (2)) +  komos  \"banquet, procession, merrymaking\" (see  comedy )."
+            "4": "Online Etymology Dictionary lumber n. \"timber sawn into rough planks,\" 1660s, American English (Massachusetts), earlier \"disused bit of furniture; heavy, useless objects\" (1550s), probably from  lumber ,  v. , perhaps influenced by  Lombard , from the Italian immigrants famous as pawnbrokers and money-lenders in England (see  Lombard ).  Lumbar ,  Lumbard  were old alternative forms of  Lombard  in English. The evolution of sense then would be because a  lumber-house  (\"pawn shop\") naturally accumulates odds and ends of furniture. Live Lumber, soldiers or passengers on board a ship are so called by the sailors. [Grose, \"Dictionary of the Vulgar Tongue,\" 1785] LUMBER HOUSE. A house appropriated by thieves for the reception of their stolen property.  [\"Dictionary of Buckish Slang, University Wit, and Pickpocket Eloquence,\" London, 1811] v. \"to move clumsily,\" c.1300,  lomere , probably from a Scandinavian source (compare dialectal Swedish  loma  \"move slowly, walk heavily,\" Old Norse  lami  \"lame\"), ultimately cognate with  lame ,  adj. . Related:  Lumbered ;  lumbering ."
         },
         {
-            "5": "      en·co·mium     /   enˈkəʊmiəm     ;           NAmE     enˈkoʊmiəm     /         noun         (     plural   en·co·miums   or   en·co·mia     /   enˈkəʊmiə     ;               NAmE     enˈkoʊmiə     /       )     (         formal )             a speech or piece of writing that praises sb or sth highly         高度赞扬的话（或文章）；颂辞         encomium   encomiums   encomia           en·co·mium     /   enˈkəʊmiəm     ;           NAmE     enˈkoʊmiəm     /         en·co·mia     /   enˈkəʊmiə     ;           NAmE     enˈkoʊmiə     /      "
+            "5": "      lum·ber     /   ˈlʌmbə(r)     ;           NAmE     ˈlʌmbər     /         noun     ,     verb           lumber   lumbers   lumbered   lumbering               noun         [ uncountable       ]       1   (         especially NAmE )         =               timber          ( 2             )             2     (           BrE )           pieces of furniture, and other large objects that you do not use any more           废旧家具；不用的大件物品         ◆   a           lumber room   (= for storing             lumber in)               杂物贮藏室                 verb         1     [ intransitive         ]     + adv./prep.     to move in a slow, heavy and awkward way           缓慢吃力地移动；笨拙地行进         ◆   A family of elephants lumbered by.   一群大象迈着缓慢而沉重的步子从旁边经过。         2     [ transitive         ,    usually passive         ]       lumber sb (with sb/sth)           (           informal )           to give sb a responsibility, etc, that they do not want and that they cannot get rid of           迫使担负（职责等）         ◆   When our parents went out, my sister got lumbered with me for the evening.   父母外出时，晚上姐姐就得照管我。             lum·ber     /   ˈlʌmbə(r)     ;           NAmE     ˈlʌmbər     /      "
         },
         {
-            "6": "联想：en使com一起ium 谐音：en.commie.um 阿共 com:com.ic、com.edy 对比：eu.phem.ism 委婉语; decorum 社交中得体的行为 eulogy 悼词。欢送的颂词"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "census"
-        },
-        {
-            "1": "英 ['sensəs] "
-        },
-        {
-            "2": "n. （官方的）统计，调查（尤指人口普查）"
-        },
-        {
-            "3": "`1`census`2`★来自 PIE * kens ,庄严的宣布，通知，评估，检查。最早来自古罗马氏族社会时期依据个人的财产，地位，收入等进行公民社会等级划分，第一任审查官为公元前6 世纪古罗马带有传奇色彩的伟大首领 Servius   Tullius .更多参照 class  词源。`3` class \t★来自 PIE * kele ,呼喊，呼叫，词源同 call , claim .最早来自公元前6 世纪古罗马具有传奇色彩的伟大首领 Servius   Tullius  对公民的财产，地位，收入等进行评估（参照 census  词源），并依据评估结果对公民划分社会阶级（ classify ），最终形成6 个阶级。前5 个阶级具有响应国家军事号召参军入伍的资格，而最低等的阶级即马克思理论的无产阶级（参照 proletarian  词源）是不具有这种资格的，他们唯一的使命是为罗马帝国繁衍后代，在罗马帝国新占领的领土上移民聚居。这一改革的结果废除了古罗马原有的3 个部落氏族（参照 tribe  词源），使罗马由氏族部落过渡到奴隶社会，军事实力大增。并引申诸多词义。"
-        },
-        {
-            "4": "Online Etymology Dictionary census n. 1610s, from Latin  census  \"the enrollment of the names and property assessments of all Roman citizens,\" originally past participle of  censere  \"to assess\" (see  censor ,  n. ). The modern census begins in the U.S., 1790., and Revolutionary France. Property for taxation was the primary purpose in Rome, hence Latin  census  also was used for \"one's wealth, one's worth, wealthiness.\""
-        },
-        {
-            "5": "      cen·sus     /   ˈsensəs     ;           NAmE     ˈsensəs     /         noun         (     plural   cen·suses     )         the process of officially counting sth, especially a country's population, and recording various facts         （官方的）统计；人口普查；人口调查         census   censuses   censused   censusing           cen·sus     /   ˈsensəs     ;           NAmE     ˈsensəs     /      "
-        },
-        {
-            "6": "cen=ken 看；  censor （对书籍等的）审查 sensor 传感器"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "peripheral"
-        },
-        {
-            "1": "/pəˈrɪfərəl/"
-        },
-        {
-            "2": "adj. 次要的；附带的 adj. 外围的，周边的"
-        },
-        {
-            "3": "`1`peripheral`2`★来自 periphery ,外围，边缘。引申词义外围的，不重要的。`3` periphery \t★ peri -,在周围，- pher ,带来，词源同 bring , pheromone .引申词义外围，边缘。"
-        },
-        {
-            "4": "Online Etymology Dictionary peripheral adj. 1803, from  periphery  +  -al (1). An earlier formation was  peripherial  (1670s). Related:  Peripherally . As a noun,  peripherals , \"peripheral devices of a computer,\" is from 1966."
-        },
-        {
-            "5": "      per·iph·eral     /   pəˈrɪfərəl     ;           NAmE     pəˈrɪfərəl     /         adjective     ,     noun           peripheral   peripherals               adjective         1     (           formal )           not as important as the main aim, part, etc. of sth           次要的；附带的         ◆   peripheral information   辅助信息       peripheral to sth           ◆   Fund-raising is peripheral to their main activities.   相对于他们的主要活动，筹集资金是次要的。         2     (           technical             术语   )           connected with the outer edge of a particular area           外围的；周边的         ◆   the peripheral nervous system   周围神经系统       ◆   peripheral vision   周边视觉         3   (         computing           计   )           ( of equipment         设备   )       connected to a computer           与计算机相连的         ◆   a peripheral device   外围设备             ▶     per·iph·er·al·ly     /   pəˈrɪfərəli     ;             NAmE     pəˈrɪfərəli     /       adverb                     noun         (         computing           计   )         a piece of equipment that is connected to a computer         外围设备；周边设备         ◆   monitors, printers and other peripherals   显示器、打印机及其他外围设备           per·iph·eral     /   pəˈrɪfərəl     ;           NAmE     pəˈrɪfərəl     /         per·iph·er·al·ly     /   pəˈrɪfərəli     ;           NAmE     pəˈrɪfərəli     /      "
-        },
-        {
-            "6": "peri+phras.is  n. 旁敲侧击的表达"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "oblivious"
-        },
-        {
-            "1": "/əˈblɪviəs/"
-        },
-        {
-            "2": "adj.（一般作表语）~ of. ~ to.  未注意的；未察觉的"
-        },
-        {
-            "3": "`1`oblivious`2`★来自 oblivion ,遗忘，忘却。引申词义未注意的，忽略的。`3` oblivion \t★来自拉丁语 oblivio ,忘记，遗忘，来自 oblino ,涂抹，抹掉，- v ,印欧语词干。来自 ob -,相对，对着的，- lino ,涂抹，词源同 liniment , delete , obliterate .比喻用法。"
-        },
-        {
-            "4": "Online Etymology Dictionary oblivious adj. mid-15c., from Latin  obliviosus  \"forgetful, that easily forgets; producing forgetfulness,\" from  oblivion  (see  oblivion ). Meaning \"unaware, unconscious (of something)\" is from 1862, formerly regarded as erroneous, this is now the general meaning and the word has lost its original sense of \"no longer aware or mindful.\" Properly should be used with  to , not  of . Related:  Obliviously ;  obliviousness ."
-        },
-        {
-            "5": "      ob·livi·ous     /   əˈblɪviəs     ;           NAmE     əˈblɪviəs     /         adjective         [ not usually before noun         ]         not aware of sth         不知道；未注意；未察觉         oblivious (of sth)         ◆   He drove off, oblivious of the damage he had caused.   他车开走了，没有注意到他所造成的损害。       oblivious (to sth)         ◆   You eventually become oblivious to the noise.   你终究会变得不在意吵闹声的。           ▶     ob·livi·ous·ly     /   əˈblɪviəsli     ;             NAmE     əˈblɪviəsli     /       adverb                 ob·livi·ous     /   əˈblɪviəs     ;           NAmE     əˈblɪviəs     /         ob·livi·ous·ly     /   əˈblɪviəsli     ;           NAmE     əˈblɪviəsli     /      "
-        },
-        {
-            "6": "ob对面livi活着ous => 像个死人一样（没注意） 比较：remiss 表语 疏忽大意的 oblivion 没有知觉。被遗忘的状态"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "pleonasm"
-        },
-        {
-            "1": "/ˈpliːənæzəm/"
-        },
-        {
-            "2": "  (  technical 术语  ) （语病）冗笔 赘述"
-        },
-        {
-            "3": "`1`pleonasm`2`★来自希腊语 pleonazein ,过多，超过，来自 pleon ,更多的，来自 PIE * ple ,装满，填满，词源同 fill , full .- asm ,名词后缀。引申词义冗言，赘述。`3` fill \t★来自 full  的动词形式。`3` full \t★来自 PIE * pele ,装满，词源同 fill , plenary ."
-        },
-        {
-            "4": "Online Etymology Dictionary pleonasm n. \"redundancy in words,\" 1580s, from Late Latin  pleonasmus , from Greek  pleonasmos , from  pleonazein  \"to be more than enough, to be superfluous,\" in grammatical use, \"to add superfluously,\" from comb. form of  pleon  \"more\" (see  pleio- )."
-        },
-        {
-            "5": "      ple·on·asm     /   ˈpliːənæzəm     ;           NAmE     ˈpliːənæzəm     /         noun         [ uncountable         ,    countable         ]     (         technical           术语   )             the use of more words than are necessary to express a meaning. For example, ‘see with your eyes’ is a         pleonasm because the same meaning can be expressed using ‘see’.         冗笔；冗述；赘述         pleonasm   pleonasms             ▶     ple·on·as·tic     /   ˌpliːəˈnæstɪk     ;           NAmE     ˌpliːəˈnæstɪk     /       adjective               ple·on·asm     /   ˈpliːənæzəm     ;           NAmE     ˈpliːənæzəm     /         ple·on·as·tic     /   ˌpliːəˈnæstɪk     ;           NAmE     ˌpliːəˈnæstɪk     /      "
-        },
-        {
-            "6": "联想：ple多on在asm汇编语言 verbiage n.连篇累牍晦涩难懂 plethora n.数量上过剩 ； 充血症"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "pewter"
-        },
-        {
-            "1": "/ˈpjuːtə(r)/"
-        },
-        {
-            "2": "n. 白镴器皿"
-        },
-        {
-            "3": "`1`pewter`2`★来自古法语 peautre ,来自拉丁语* peltrum ,词源可能同 spelter ,粗制锌，粗锌。"
-        },
-        {
-            "4": "Online Etymology Dictionary pewter n. early 14c., \"any of various alloys having tin as their main constituent\" (the usual form is one part lead to four parts tin), from Old French  peautre  (12c.), from Vulgar Latin  *peltrum  \"pewter\" (source of Spanish  peltre , Italian  peltro ), of uncertain origin. Related:  Pewterer ."
-        },
-        {
-            "5": "      pew·ter     /   ˈpjuːtə(r)     ;           NAmE     ˈpjuːtər     /         noun         [ uncountable         ]         a grey metal made by mixing tin with         lead, used especially in the past for making cups, dishes, etc; objects made from         pewter   白镴；锡镴；白镴制品         pewter   pewters           pew·ter     /   ˈpjuːtə(r)     ;           NAmE     ˈpjuːtər     /      "
-        },
-        {
-            "6": "pew教堂长椅ter特 =>想象教堂长椅是白 镴 做的，搬不走。"
+            "6": "timber lumber slumber n.vi.睡觉"
         },
         {
             "7": ""
