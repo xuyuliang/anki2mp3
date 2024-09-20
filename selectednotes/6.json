@@ -1,51 +1,25 @@
 [
     [
         {
-            "0": "discrepancy"
+            "0": "arithmetic"
         },
         {
-            "1": "英 [dɪs'krepənsi] "
+            "1": "美 [.erɪθ'metɪk] "
         },
         {
-            "2": "n. （应该相同的东西） 不符合；不一致"
+            "2": "n.算术； n.算术运算；四则运算"
         },
         {
-            "3": "`1`discrepancy`2`★ dis -,分开，散开，- crep ,破裂声，词源同 crevice , decrepit .引申词义争吵，不一致。`3` dis \t★缩写自 disrespect  或 dismiss .`3` crevice \t★来自 crep -,嘎吱作响，词源同 decrepit , discrepancy .词义由嘎吱作响引申为裂缝。"
+            "3": "`1`arithmetic`2`★ arith -,计算，词源同 read , reason .- m ,插入鼻音字母。`3` read \t★来自古英语 raedan ,建议，顾问，劝说，解释，阅读，来自 PIE * redan ,建议，解释，来自 PIE * rei ,思考，考虑，论证，词源同 reason , rate .现词义主要为阅读，朗读。`3` reason \t★来自古法语 raison ,原因，理由，思考，来自拉丁语 rationem ,思考，考虑，动机，来自 PIE * rei ,思考，辩理，词源同 rate , read ."
         },
         {
-            "4": "Online Etymology Dictionary discrepancy n. mid-15c. ( discrepance ), from Latin  discrepantia  \"discordance, discrepancy,\" from  discrepantem  (nominative  discrepans ), present participle of  discrepare  \"sound differently, differ,\" from  dis-  \"apart, off\" (see  dis- ) +  crepare  \"to rattle, crack\" (see  raven ). Related:  Discrepancies ."
+            "4": "Online Etymology Dictionary arithmetic n. mid-13c.,  arsmetike , from Old French  arsmetique  (12c.), from Latin  arithmetica , from Greek  arithmetike (tekhne)  \"(the) counting (art),\" fem. of  arithmetikos  \"of or for reckoning, arithmetical,\" from  arithmos  \"number, counting, amount,\" from PIE root  *re(i)-  \"to reason, count\" (cognates: Old English, Old High German  rim  \"number;\" Old Irish  rim  \"number,\"  dorimu  \"I count;\" Latin  ritus  \"religious custom;\" see  read ). Originally in English also  arsmetrik , on folk etymology from Medieval Latin  ars metrica ; spelling corrected early 16c. Replaced native  tælcræft , literally \"tell-craft.\""
         },
         {
-            "5": "      dis·crep·ancy     /   dɪsˈkrepənsi     ;           NAmE     dɪsˈkrepənsi     /         noun         (     plural   dis·crep·ancies     )       [ countable         ,    uncountable         ]         a difference between two or more things that should be the same         差异；不符合；不一致         discrepancy (in sth)         ◆   wide discrepancies in prices quoted for the work   这项工作的报价出入很大       discrepancy (between A and B)         ◆   What are the reasons for the discrepancy between girls' and boys' performance in school?   女生和男生在学校表现不同的原因何在呢？       discrepancy   discrepancies           dis·crep·ancy     /   dɪsˈkrepənsi     ;           NAmE     dɪsˈkrepənsi     /      "
+            "5": "      arith·met·ic     /   əˈrɪθmətɪk     ;           NAmE     əˈrɪθmətɪk     /         noun         [ uncountable         ]         1     the type of mathematics that deals with the adding, multiplying, etc. of numbers           算术         ◆   He's not very good at arithmetic.   他不太擅长算术。         2     sums involving the adding, multiplying, etc. of numbers           算术运算；四则运算         ◆   a quick bit of           mental arithmetic   (= sums you do in your head, without writing anything down)     心算       ◆   I think there's something wrong with your arithmetic.   我认为你的计算有错。             arith·met·ic     /   əˈrɪθmətɪk     ;           NAmE     əˈrɪθmətɪk     /      "
         },
         {
-            "6": "dis.crep破裂.ancy disparate （差异过大）不能相比的 disparity 不同（不公正导致的）"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "morass"
-        },
-        {
-            "1": "英 [mə'ræs] "
-        },
-        {
-            "2": "n. (  formal ) => 困境； = mire 沼泽 = bog , quagmire"
-        },
-        {
-            "3": "`1`morass`2`★来自 Proto - Germanic * mari ,湖，海，词源同 moor , marsh , marine .即像湖一样的，后用于指湿地，沼泽。引申词义困境。`3` moor \t★来自古英语 mor ,沼泽，来自 Proto - Germanic * mora ,沼泽，来自 PIE * mori ,湖，海，词源同 marine , marsh .`3` marsh \t★来自 Proto - Germanic * marisko ,来自 PIE * mori ,海，湖泊，- iskos ,形容词后缀。即湖泊状的，引申词义沼泽，湿地。`3` marine \t★来自 mare ,海，- ine ,形容词后缀。"
-        },
-        {
-            "4": "Online Etymology Dictionary morass n. \"wet, swampy tract,\" 1650s, from Dutch  moeras  \"marsh, fen,\" from Middle Dutch  marasch , from Old French  marais  \"marsh,\" from Frankish, possibly from West Germanic  *marisk , from Proto-Germanic  *mariskaz  \"like a lake,\" from  *mari  \"sea\" (see  mere ,  n. ). The word was influenced in Dutch by  moer  \"moor\" (see  moor ,  n. ). Figurative use is attested from 1867. Replaced earlier  mareis  (early 14c.; see  marish )."
-        },
-        {
-            "5": "      mor·ass     /   məˈræs     ;           NAmE     məˈræs     /         noun         [ usually singular         ]     (         formal )             1     an unpleasant and complicated situation that is difficult to escape from           困境；陷阱         SYN         web               2     a dangerous area of low soft wet land           沼泽         SYN         bog         ,         quagmire               morass   morasses           mor·ass     /   məˈræs     ;           NAmE     məˈræs     /      "
-        },
-        {
-            "6": "本意是moor+ass morose [məˈrəʊs ] 阴郁的,不爱说话脾气不好的 mores 风俗习惯"
+            "6": "mathematics  结尾不同 matics"
         },
         {
             "7": ""
@@ -53,51 +27,25 @@
     ],
     [
         {
-            "0": "conceal"
+            "0": "embryo"
         },
         {
-            "1": "美 [kən'sil] "
+            "1": "美 [ˈɛmbriˌoʊ] "
         },
         {
-            "2": "v. (  formal )  to hide sb/sth  隐藏；隐瞒；掩盖"
+            "2": "n.  胚胎; 人类8周内的胚胎"
         },
         {
-            "3": "`1`conceal`2`★ con -,表强调，- ceal ,隐藏，词源同 cell , hole .`3` con \t★来自短语 confidence   man  的缩写，反讽，被信任的人欺骗。`3` cell \t★来自 PIE * kel ,隐藏，遮盖，词源同 cellar , ceiling , hole .即隐藏的小室，细胞义因其小室状结构而得名。比较 cytology ,细胞学。`3` hole \t★来自 PIE * kel ,覆盖，隐藏，词源同 cell , hall .引申词义孔，洞。"
+            "3": "`1`embryo`2`★ em -,进入，使，-  bryo ,膨胀，发芽，词源可能同 breast , browse .`3` breast \t★来自 PIE * bhreus ,膨胀，鼓起，词源同 brisket ,胸肉。`3` browse \t★来自 PIE * bhreus ,膨胀，生长，词源同 breast ,胸部。指长出来的嫩芽，蓓蕾，后引申为牛羊吃草，浏览。"
         },
         {
-            "4": "Online Etymology Dictionary conceal v. early 14c.,  concelen , from Old French  conceler  \"to hide, conceal, dissimulate,\" from Latin  concelare  \"to hide,\" from  com- , intensive prefix (see  com- ), +  celare  \"to hide,\" from PIE root  *kel-  (2) \"to cover, conceal\" (see  cell ). Replaced Old English  deagan . Related:  Concealed ;  concealing ."
+            "4": "Online Etymology Dictionary embryo n. \"fetus in utero at an early stage of development,\" mid-14c., from Medieval Latin  embryo , properly  embryon , from Greek  embryon  \"a young one,\" in Homer, \"young animal,\" later, \"fruit of the womb,\" literally \"that which grows,\" from assimilated form of  en  \"in\" (see  en- (2)) +  bryein  \"to swell, be full.\""
         },
         {
-            "5": "      con·ceal     /   kənˈsiːl     ;           NAmE     kənˈsiːl     /         verb             (         formal )             to hide sb/sth         隐藏；隐瞒；掩盖         conceal sb/sth         ◆   The paintings were concealed beneath a thick layer of plaster.   那些画被隐藏在厚厚的灰泥层下面。       ◆   Tim could barely conceal his disappointment.   蒂姆几乎掩饰不住自己的失望。       ◆   She sat down to         conceal the fact that she was trembling.         她坐下来以不让人看出她在发抖。       conceal sb/sth from sb/sth         ◆   For a long time his death was concealed from her.   他的死瞒了很长时间都没告诉她。       ☞ synonyms at             hide             ☞ see also             ill-concealed             conceal   conceals   concealed   concealing           con·ceal     /   kənˈsiːl     ;           NAmE     kənˈsiːl     /      "
+            "5": "      em·bryo     /   ˈembriəʊ     ;           NAmE     ˈembrioʊ     /         noun         (     plural   em·bryos     )         a young animal or plant in the very early stages of development before birth, or before coming out of its egg or seed, especially a human egg in the first eight weeks after         fertilization   胚；胚胎；（尤指受孕后八周内的）人类胚胎         ◆   human embryos   人的胚胎       ◆   (         figurative )         the embryo of an idea   一种想法的雏形       ◆   an embryo politician         (= one who is not yet very experienced)     尚未成熟的政治家       IDIOM     in embryo       existing but not yet fully developed               在胚胎阶段；在萌芽时期；尚未成熟         ◆   The idea already existed in embryo in his earlier novels.   这个想法在他早期的小说中已初见端倪。             embryo   embryos           em·bryo     /   ˈembriəʊ     ;           NAmE     ˈembrioʊ     /      "
         },
         {
-            "6": "联想：seal v.&n. 密封 ；海豹 反义词：reveal"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "exiguous"
-        },
-        {
-            "1": "美 [ɪɡ'zɪɡjuəs] "
-        },
-        {
-            "2": "adj.  (  formal )  数量 少的 或体积 小的 ； ~=  paltry"
-        },
-        {
-            "3": "`1`exiguous`2`★词源同 exact ,精确的。引申词义没有裕量的，不够的。`3` exact \t★ ex -,向外，- act ,做，驱使，称量，词源同 act , examine , exigent .即称量的，精确要求的。"
-        },
-        {
-            "4": "Online Etymology Dictionary exiguous adj. \"scanty, small, diminutive,\" 1650s, from Latin  exiguus  \"small, short; petty, paltry, poor, mean; scanty in measure or number; strict,\" literally \"measured, exact,\" from  exigere  \"drive out, take out\" (see  exact ,  v. ). Compare  immense  \"huge,\" literally \"unmeasured.\""
-        },
-        {
-            "5": "      ex·igu·ous     /   eɡˈzɪɡjuəs     ;           NAmE     eɡˈzɪɡjuəs     /         adjective       (         formal )             very small in size or amount; hardly enough         微小的；稀少的；不够的             ex·igu·ous     /   eɡˈzɪɡjuəs     ;           NAmE     eɡˈzɪɡjuəs     /      "
-        },
-        {
-            "6": "paltry adj.数量少到可以忽略不计 adj.无价值的"
+            "6": "联想：em嵌入在bry带来o zygote 受精卵 (联想：goat 受惊） enzyme 酶"
         },
         {
             "7": ""
@@ -105,51 +53,25 @@
     ],
     [
         {
-            "0": "progeny"
+            "0": "profligate"
         },
         {
-            "1": "美 [ˈprɒdʒəni] "
+            "1": "美 [ˈprɒflɪɡət ] "
         },
         {
-            "2": "n.  ( formal or humorous) (泛指)后代（子孙；幼崽；幼苗）"
+            "2": "adjective (  formal )  挥霍的；浪费的   SYN   wasteful  prodigal  词根：打击"
         },
         {
-            "3": "`1`progeny`2`★来自 pro -,向前，朝向，- gen ,生育，词源同 gene , generate .- y ,小词后缀。引申词义子孙。`3` gen \t★来自 intelligent  的缩写。`3` gene \t★来自 gen -,生育，词源同 generate .用于科学术语。`3` generate \t★来自 gen -,生育，词源同 gene ."
+            "3": "`1`profligate`2`★ pro -,向前，- flig ,击，打，词源同 afflict , conflict .比喻用法。`3` afflict \t★ af -,去，往，- flict ,击打，词源同 conflict ,冲突。`3` conflict \t★ con -,表强调，- flict ,鞭子，击打，词源同 flagellate , afflict ."
         },
         {
-            "4": "Online Etymology Dictionary progeny n. early 14c., from Old French  progenie  (13c.) and directly from Latin  progenies  \"descendants, offspring, lineage, race, family,\" from stem of  progignere  \"beget,\" from  pro-  \"forth\" (see  pro- ) +  gignere  \"to produce, beget\" (see  genus )."
+            "4": "Online Etymology Dictionary 词根李平武蒋争 profligate adj. 1520s, \"overthrown, routed\" (now obsolete in this sense), from Latin  profligatus  \"destroyed, ruined, corrupt, abandoned, dissolute,\" past participle of  profligare  \"to cast down, defeat, ruin,\" from  pro-  \"down, forth\" (see  pro- ) +  fligere  \"to strike\" (see  afflict ). Main modern meaning \"recklessly extravagant\" is 1779, via notion of \"ruined by vice\" (1640s, implied in a use of  profligation ). Related:  Profligately . As a noun from 1709. 〔李〕[pro-;flig;-atea.] a.放荡的 n.放荡的人    ←flig,flict (L fligere,flictum)=to strike 打击"
         },
         {
-            "5": "      pro·geny     /   ˈprɒdʒəni     ;           NAmE     ˈprɑːdʒəni     /         noun         [ plural         ]     (         formal   or   humorous )             a person's children; the young of animals and plants         子孙；幼崽；幼兽；幼苗         ◆   He was surrounded by his numerous progeny.   众多的子孙簇拥着他。       progeny   progenies           pro·geny     /   ˈprɒdʒəni     ;           NAmE     ˈprɑːdʒəni     /      "
+            "5": "      prof·li·gate     /   ˈprɒflɪɡət     ;           NAmE     ˈprɑːflɪɡət     /         adjective       (         formal,   disapproving )             using money, time, materials, etc. in a careless way         挥霍的；浪费的         SYN         wasteful             ◆   profligate spending   恣意挥霍的开支           ▶     prof·li·gacy     /   ˈprɒflɪɡəsi     ;             NAmE     ˈprɑːflɪɡəsi     /       noun       [ uncountable           ]             profligate   profligates           prof·li·gate     /   ˈprɒflɪɡət     ;           NAmE     ˈprɑːflɪɡət     /         prof·li·gacy     /   ˈprɒflɪɡəsi     ;           NAmE     ˈprɑːflɪɡəsi     /      "
         },
         {
-            "6": "scion 名门之后。接穗 pro.gen.it.or  [pr əʊ ˈdʒenɪtə(r)] 祖先 pro.gen.y"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "descant"
-        },
-        {
-            "1": "美 ['deskænt] "
-        },
-        {
-            "2": "n. ( music 音 )同时演奏并高于主音的旋律"
-        },
-        {
-            "3": "`1`descant`2`★ des -,分开，散开，词源同 dis -.- cant ,唱，吟唱，词源同 chant , cantata .原义为对唱，对和，后指高于主旋律的曲调。`3` dis \t★缩写自 disrespect  或 dismiss .`3` cant \t★1. 伪善言辞，词源同 chant ,唱，吟唱。2. 倾斜，来自 PIE * kemb ,弯，转，词源同 camber , change , decant .`3` chant \t★来自 PIE * kan ,唱，吟，拟声词，词源同 cantor , incantation .`3` cantata \t★来自 cant -,唱，吟唱，词源同 chant ."
-        },
-        {
-            "4": "Online Etymology Dictionary descant n. late 14c., from Old North French  descant  (Old French  deschant ), from Medieval Latin  discantus  \"refrain, part-song,\" from Latin  dis-  \"asunder, apart\" (see  dis- ) +  cantus  \"song\" (see  chant ). Spelling was partly Latinized 16c. Originally \"counterpoint.\" v. mid-15c.; see  descant ,  n. . Sense of \"to comment at length\" is first attested 1640s."
-        },
-        {
-            "5": "      des·cant     /   ˈdeskænt     ;           NAmE     ˈdeskænt     /         noun       (         music           音   )             a tune that is sung or played at the same time as, and usually higher than, the main tune         高于主音的旋律         descant   descants   descanted   descanting           des·cant     /   ˈdeskænt     ;           NAmE     ˈdeskænt     /      "
-        },
-        {
-            "6": "des.cant : des=dis  de.cant 倒水 scant adj. 几乎没有的"
+            "6": "afflict 、 inflict vt. 使遭受痛苦 conflict n.v. 冲突 g=ct , flig = flict 护卫舰 frigate"
         },
         {
             "7": ""
@@ -157,51 +79,25 @@
     ],
     [
         {
-            "0": "hidebound"
+            "0": "complement"
         },
         {
-            "1": "/ˈhaɪdbaʊnd/"
+            "1": "英 ['kɒmplɪment] "
         },
         {
-            "2": " 守旧的；迂腐的  SYN narrow-minded"
+            "2": "vt. 补足，使完美 n. 补足； n. 补语；"
         },
         {
-            "3": "`1`hidebound`2`★ hide ,兽皮， bound ,绑着，束缚。其原义为瘦骨嶙峋的老牛，后用于比喻义守旧的，迂腐的。`3` hide \t★来自 PIE * skeu ,隐藏，遮盖，词源同 house , cuticle , sky .引申词义兽皮。 hide - and - seek  捉迷藏游戏儿童游戏名。`3` bound \t★1. 弹，跳，拟声词，词源同 bounce .2. 边界，束缚，词源同 bind ."
+            "3": "`1`complement`2`★来自 complete ,完整的。`3` complete \t★ com -,表强调，- ple ,装满，满的，词源同 full , fulfill ."
         },
         {
-            "4": "Online Etymology Dictionary hidebound adj. 1550s, from  hide ,  n. 1 + past tense of  bind ,  v. . Original reference is to emaciated cattle with skin sticking closely to backbones and ribs; metaphoric sense of \"restricted by narrow attitudes\" is first recorded c.1600."
+            "4": "Online Etymology Dictionary 词根李平武蒋争 complement n. late 14c., \"that which completes,\" from Old French  compliement  \"accomplishment, fulfillment\" (14c., Modern French  complément ), from Latin  complementum  \"that which fills up or completes,\" from  complere  \"fill up\" (see  complete ,  adj. ). Originally also having senses which were taken up c.1650-1725 by  compliment . v. 1610s, \"exchange courtesies,\" from  complement ,  n. . Meaning \"make complete\" is from 1640s. Related:  Complemented ;  complementing . 〔李〕[com- = together 一起；ple = to fill 装满；-ment n. = the means表手段→“the means of filling together一起填满的手段”→]Ⅰn. something that completes or makes perfect补充，补充物"
         },
         {
-            "5": "      hide·bound     /   ˈhaɪdbaʊnd     ;           NAmE     ˈhaɪdbaʊnd     /         adjective       (         disapproving )             having old-fashioned ideas, rather than accepting new ways of thinking         守旧的；迂腐的         SYN         narrow-minded                 hide·bound     /   ˈhaɪdbaʊnd     ;           NAmE     ˈhaɪdbaʊnd     /      "
+            "5": "      com·ple·ment     AWL         verb     ,     noun           complement   complements   complemented   complementing               verb               /   ˈkɒmplɪment     ;         NAmE     ˈkɑːmplɪment     /       complement sth         to add to sth in a way that improves it or makes it more attractive         补充；补足；使完美；使更具吸引力         ◆   The excellent menu is complemented by a good wine list.   佳肴佐以美酒，堪称完美无缺。       ◆   The team needs players who         complement each other.     球队需要能够相互取长补短的队员。       ☞ note at             compliment                     noun         /   ˈkɒmplɪmənt     ;         NAmE     ˈkɑːmplɪmənt     /       1     complement (to sth)           a thing that adds new qualities to sth in a way that improves it or makes it more attractive           补充物；补足物           2     the complete number or quantity needed or allowed           足数；足额         ◆   We've taken our full complement of trainees this year.   我们今年接收的实习生已满员。         3     (           grammar             语法   )           a word or phrase, especially an adjective or a noun, that is used after linking verbs such as           be and           become, and describes the subject of the verb. In some descriptions of grammar it is used to refer to any word or phrase which is           governed by a verb and usually comes after the verb in a sentence.           补足语；补语         ◆   In the sentences ‘I'm angry’ and ‘He became a politician’, ‘angry’ and ‘politician’ are complements.   在句子 I'm angry 和 He became a politician 中，angry 和 politician 为补语。             com·ple·ment     /   ˈkɒmplɪment     ;           NAmE     ˈkɑːmplɪment     /      "
         },
         {
-            "6": "裹着兽皮的人 hide 隐藏、兽皮，bound,绑着，束缚。"
-        },
-        {
-            "7": ""
-        }
-    ],
-    [
-        {
-            "0": "ingrained"
-        },
-        {
-            "1": "美 [ɪnˈɡreɪnd] "
-        },
-        {
-            "2": "adjective  (习惯、态度等) 根深蒂固的；日久难改的 SYN deep-rooted adjective  (灰尘) 深嵌并难以清除的"
-        },
-        {
-            "3": ""
-        },
-        {
-            "4": ""
-        },
-        {
-            "5": "      in·grained     /   ɪnˈɡreɪnd     ;           NAmE     ɪnˈɡreɪnd     /         adjective           1     ingrained (in sb/sth)           ( of a habit, an attitude, etc.         习惯、态度等   )       that has existed for a long time and is therefore difficult to change           根深蒂固的；日久难改的         SYN         deep-rooted             ◆   ingrained prejudices   很深的成见         2     ( of dirt         灰尘   )       under the surface of sth and therefore difficult to get rid of           深嵌并难以清除的               in·grained     /   ɪnˈɡreɪnd     ;           NAmE     ɪnˈɡreɪnd     /      "
-        },
-        {
-            "6": "grain 谷物 细粒"
+            "6": "这里是-ple-完成 complete sup.ple.ment 补充（增补）<= 维生素、矿物质等补品是用这个词的。 compliment  [ˈkɒmplɪmənt] n.v.赞美 与compliance （服从）同源"
         },
         {
             "7": ""
@@ -209,25 +105,25 @@
     ],
     [
         {
-            "0": "expletive"
+            "0": "encomium"
         },
         {
-            "1": "/ɪkˈspliːtɪv/"
+            "1": "英 [ɪn'kəʊmiəm] "
         },
         {
-            "2": "n.（愤怒或痛苦时用的）咒骂语，感叹语   SYN swear word"
+            "2": "n.  ( formal) 颂辞；歌颂的演说（或文章）；"
         },
         {
-            "3": "`1`expletive`2`★ ex -,向外，- plet ,满的，词源同 full , complete .即拿出去，后用来指不便刊印的脏话，咒骂语。`3` ex \t★来自 PIE * eghs ,从，从...出，向外，同前缀 ex -,向外，即从前，前任。`3` full \t★来自 PIE * pele ,装满，词源同 fill , plenary .`3` complete \t★ com -,表强调，- ple ,装满，满的，词源同 full , fulfill ."
+            "3": "`1`encomium`2`★ en -,进入，使，- com ,欢乐，颂歌，词源同 comedy , comic .`3` comedy \t★ com -,缩写自希腊语 komos ,欢乐，伴侣，- edy ,唱，歌，词源同 ode ,颂诗，颂歌。 come - hither  调情的 come ,来， hither ,来自 here  古词拼写。`3` comic \t★来自 comedy ,喜悦。"
         },
         {
-            "4": "Online Etymology Dictionary expletive n. 1610s, \"a word or phrase serving to fill out a sentence or metrical line,\" from Middle French  explétif  (15c.) and directly from Late Latin  expletivus  \"serving to fill out,\" from  explet- , past participle stem of Latin  explere  \"fill out, fill up, glut,\" from  ex-  \"out\" (see  ex- ) +  plere  \"to fill\" (see  pleio- ). Sense of \"an exclamation,\" especially \"a curse word, an oath,\" first recorded 1815 in Sir Walter Scott, popularized by edited transcripts of Watergate tapes (mid-1970s), in which  expletive deleted  replaced President Nixon's salty expressions. As an adjective, from 1660s. adj. mid-15c., in grammar, \"correlative,\" from Latin  expletivus  \"serving to fill out\" (see  expletive ,  n. )."
+            "4": "Online Etymology Dictionary encomium n. \"discriminating expression of approval,\" 1580s, from Late Latin  encomium , from Greek  enkomion (epos)  \"laudatory (ode), eulogy,\" from  en  \"in\" (see  en- (2)) +  komos  \"banquet, procession, merrymaking\" (see  comedy )."
         },
         {
-            "5": "      ex·ple·tive     /   ɪkˈspliːtɪv     ;           NAmE     ˈeksplətɪv     /         noun       (         formal )             a word, especially a rude word, that you use when you are angry, or in pain         （愤怒或痛苦时用的）秽语，咒骂语，感叹语         SYN         swear word             expletive   expletives           ex·ple·tive     /   ɪkˈspliːtɪv     ;           NAmE     ˈeksplətɪv     /      "
+            "5": "      en·co·mium     /   enˈkəʊmiəm     ;           NAmE     enˈkoʊmiəm     /         noun         (     plural   en·co·miums   or   en·co·mia     /   enˈkəʊmiə     ;               NAmE     enˈkoʊmiə     /       )     (         formal )             a speech or piece of writing that praises sb or sth highly         高度赞扬的话（或文章）；颂辞         encomium   encomiums   encomia           en·co·mium     /   enˈkəʊmiəm     ;           NAmE     enˈkoʊmiəm     /         en·co·mia     /   enˈkəʊmiə     ;           NAmE     enˈkoʊmiə     /      "
         },
         {
-            "6": "ex向外发出ple完整tive vehement  adj.情绪激动的，尤其是愤怒的； complement  v. 补足； n.补语 invective  恶言；咒骂的话；"
+            "6": "联想：en使com一起ium 谐音：en.commie.um 阿共 com:com.ic、com.edy 对比：eu.phem.ism 委婉语; decorum 社交中得体的行为 eulogy 悼词。欢送的颂词"
         },
         {
             "7": ""
@@ -235,25 +131,129 @@
     ],
     [
         {
-            "0": "condominium"
+            "0": "census"
         },
         {
-            "1": "[ˌkɒndəˈmɪniəm]"
+            "1": "英 ['sensəs] "
         },
         {
-            "2": "n. （分户出售的）公寓； (这种公寓的）套房/单元房；"
+            "2": "n. （官方的）统计，调查（尤指人口普查）"
         },
         {
-            "3": "`1`condominium`2`★ con -,表强调，- dom ,管理，控制，词源同 domineer , domesticate .即共管区域。`3` con \t★来自短语 confidence   man  的缩写，反讽，被信任的人欺骗。`3` domineer \t★来自拉丁语 domus ,家，词源同 domain .即一家之主，专断。`3` domesticate \t★来自拉丁语 domus ,家，词源同 domain .即家养，驯养。"
+            "3": "`1`census`2`★来自 PIE * kens ,庄严的宣布，通知，评估，检查。最早来自古罗马氏族社会时期依据个人的财产，地位，收入等进行公民社会等级划分，第一任审查官为公元前6 世纪古罗马带有传奇色彩的伟大首领 Servius   Tullius .更多参照 class  词源。`3` class \t★来自 PIE * kele ,呼喊，呼叫，词源同 call , claim .最早来自公元前6 世纪古罗马具有传奇色彩的伟大首领 Servius   Tullius  对公民的财产，地位，收入等进行评估（参照 census  词源），并依据评估结果对公民划分社会阶级（ classify ），最终形成6 个阶级。前5 个阶级具有响应国家军事号召参军入伍的资格，而最低等的阶级即马克思理论的无产阶级（参照 proletarian  词源）是不具有这种资格的，他们唯一的使命是为罗马帝国繁衍后代，在罗马帝国新占领的领土上移民聚居。这一改革的结果废除了古罗马原有的3 个部落氏族（参照 tribe  词源），使罗马由氏族部落过渡到奴隶社会，军事实力大增。并引申诸多词义。"
         },
         {
-            "4": "Online Etymology Dictionary 词根李平武蒋争 condominium n. c.1714, \"joint rule or sovereignty,\" from Modern Latin  condominium  \"joint sovereignty,\" apparently coined in German c.1700 from Latin  com-  \"together\" (see  com- ) +  dominum  \"right of ownership\" (see  domain ). A word in politics and international law until sense of \"privately owned apartment\" arose in American English 1962 as a special use of the legal term. 〔李〕[con-;domin;-iumn.] n.共同统治，共管    ←domin (L dominus)=owner, lord 主人"
+            "4": "Online Etymology Dictionary census n. 1610s, from Latin  census  \"the enrollment of the names and property assessments of all Roman citizens,\" originally past participle of  censere  \"to assess\" (see  censor ,  n. ). The modern census begins in the U.S., 1790., and Revolutionary France. Property for taxation was the primary purpose in Rome, hence Latin  census  also was used for \"one's wealth, one's worth, wealthiness.\""
         },
         {
-            "5": "      con·do·min·ium     /   ˌkɒndəˈmɪniəm     ;           NAmE     ˌkɑːndəˈmɪniəm     /       (   also     informal     condo   )         noun       (         especially NAmE )             an apartment building or group of houses in which each flat/apartment/house is owned by the person living in it but the shared areas are owned by everyone together; a flat/apartment/house in such a building or group of houses         公寓（套房私有，其他地方属业主共有）；公寓的套房；公寓的单元         condominium   condominiums           con·do·min·ium     /   ˌkɒndəˈmɪniəm     ;           NAmE     ˌkɑːndəˈmɪniəm     /      "
+            "5": "      cen·sus     /   ˈsensəs     ;           NAmE     ˈsensəs     /         noun         (     plural   cen·suses     )         the process of officially counting sth, especially a country's population, and recording various facts         （官方的）统计；人口普查；人口调查         census   censuses   censused   censusing           cen·sus     /   ˈsensəs     ;           NAmE     ˈsensəs     /      "
         },
         {
-            "6": "condo.mini.um 是中国式的公寓房 简称 condo [ ˌkɒndəu] apartment 在结构上与condo一样，但是房子只出租不卖；=flat （英国英语）"
+            "6": "cen=ken 看；  censor （对书籍等的）审查 sensor 传感器"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "peripheral"
+        },
+        {
+            "1": "/pəˈrɪfərəl/"
+        },
+        {
+            "2": "adj. 次要的；附带的 adj. 外围的，周边的"
+        },
+        {
+            "3": "`1`peripheral`2`★来自 periphery ,外围，边缘。引申词义外围的，不重要的。`3` periphery \t★ peri -,在周围，- pher ,带来，词源同 bring , pheromone .引申词义外围，边缘。"
+        },
+        {
+            "4": "Online Etymology Dictionary peripheral adj. 1803, from  periphery  +  -al (1). An earlier formation was  peripherial  (1670s). Related:  Peripherally . As a noun,  peripherals , \"peripheral devices of a computer,\" is from 1966."
+        },
+        {
+            "5": "      per·iph·eral     /   pəˈrɪfərəl     ;           NAmE     pəˈrɪfərəl     /         adjective     ,     noun           peripheral   peripherals               adjective         1     (           formal )           not as important as the main aim, part, etc. of sth           次要的；附带的         ◆   peripheral information   辅助信息       peripheral to sth           ◆   Fund-raising is peripheral to their main activities.   相对于他们的主要活动，筹集资金是次要的。         2     (           technical             术语   )           connected with the outer edge of a particular area           外围的；周边的         ◆   the peripheral nervous system   周围神经系统       ◆   peripheral vision   周边视觉         3   (         computing           计   )           ( of equipment         设备   )       connected to a computer           与计算机相连的         ◆   a peripheral device   外围设备             ▶     per·iph·er·al·ly     /   pəˈrɪfərəli     ;             NAmE     pəˈrɪfərəli     /       adverb                     noun         (         computing           计   )         a piece of equipment that is connected to a computer         外围设备；周边设备         ◆   monitors, printers and other peripherals   显示器、打印机及其他外围设备           per·iph·eral     /   pəˈrɪfərəl     ;           NAmE     pəˈrɪfərəl     /         per·iph·er·al·ly     /   pəˈrɪfərəli     ;           NAmE     pəˈrɪfərəli     /      "
+        },
+        {
+            "6": "peri+phras.is  n. 旁敲侧击的表达"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "oblivious"
+        },
+        {
+            "1": "/əˈblɪviəs/"
+        },
+        {
+            "2": "adj.（一般作表语）~ of. ~ to.  未注意的；未察觉的"
+        },
+        {
+            "3": "`1`oblivious`2`★来自 oblivion ,遗忘，忘却。引申词义未注意的，忽略的。`3` oblivion \t★来自拉丁语 oblivio ,忘记，遗忘，来自 oblino ,涂抹，抹掉，- v ,印欧语词干。来自 ob -,相对，对着的，- lino ,涂抹，词源同 liniment , delete , obliterate .比喻用法。"
+        },
+        {
+            "4": "Online Etymology Dictionary oblivious adj. mid-15c., from Latin  obliviosus  \"forgetful, that easily forgets; producing forgetfulness,\" from  oblivion  (see  oblivion ). Meaning \"unaware, unconscious (of something)\" is from 1862, formerly regarded as erroneous, this is now the general meaning and the word has lost its original sense of \"no longer aware or mindful.\" Properly should be used with  to , not  of . Related:  Obliviously ;  obliviousness ."
+        },
+        {
+            "5": "      ob·livi·ous     /   əˈblɪviəs     ;           NAmE     əˈblɪviəs     /         adjective         [ not usually before noun         ]         not aware of sth         不知道；未注意；未察觉         oblivious (of sth)         ◆   He drove off, oblivious of the damage he had caused.   他车开走了，没有注意到他所造成的损害。       oblivious (to sth)         ◆   You eventually become oblivious to the noise.   你终究会变得不在意吵闹声的。           ▶     ob·livi·ous·ly     /   əˈblɪviəsli     ;             NAmE     əˈblɪviəsli     /       adverb                 ob·livi·ous     /   əˈblɪviəs     ;           NAmE     əˈblɪviəs     /         ob·livi·ous·ly     /   əˈblɪviəsli     ;           NAmE     əˈblɪviəsli     /      "
+        },
+        {
+            "6": "ob对面livi活着ous => 像个死人一样（没注意） 比较：remiss 表语 疏忽大意的 oblivion 没有知觉。被遗忘的状态"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "pleonasm"
+        },
+        {
+            "1": "/ˈpliːənæzəm/"
+        },
+        {
+            "2": "  (  technical 术语  ) （语病）冗笔 赘述"
+        },
+        {
+            "3": "`1`pleonasm`2`★来自希腊语 pleonazein ,过多，超过，来自 pleon ,更多的，来自 PIE * ple ,装满，填满，词源同 fill , full .- asm ,名词后缀。引申词义冗言，赘述。`3` fill \t★来自 full  的动词形式。`3` full \t★来自 PIE * pele ,装满，词源同 fill , plenary ."
+        },
+        {
+            "4": "Online Etymology Dictionary pleonasm n. \"redundancy in words,\" 1580s, from Late Latin  pleonasmus , from Greek  pleonasmos , from  pleonazein  \"to be more than enough, to be superfluous,\" in grammatical use, \"to add superfluously,\" from comb. form of  pleon  \"more\" (see  pleio- )."
+        },
+        {
+            "5": "      ple·on·asm     /   ˈpliːənæzəm     ;           NAmE     ˈpliːənæzəm     /         noun         [ uncountable         ,    countable         ]     (         technical           术语   )             the use of more words than are necessary to express a meaning. For example, ‘see with your eyes’ is a         pleonasm because the same meaning can be expressed using ‘see’.         冗笔；冗述；赘述         pleonasm   pleonasms             ▶     ple·on·as·tic     /   ˌpliːəˈnæstɪk     ;           NAmE     ˌpliːəˈnæstɪk     /       adjective               ple·on·asm     /   ˈpliːənæzəm     ;           NAmE     ˈpliːənæzəm     /         ple·on·as·tic     /   ˌpliːəˈnæstɪk     ;           NAmE     ˌpliːəˈnæstɪk     /      "
+        },
+        {
+            "6": "联想：ple多on在asm汇编语言 verbiage n.连篇累牍晦涩难懂 plethora n.数量上过剩 ； 充血症"
+        },
+        {
+            "7": ""
+        }
+    ],
+    [
+        {
+            "0": "pewter"
+        },
+        {
+            "1": "/ˈpjuːtə(r)/"
+        },
+        {
+            "2": "n. 白镴器皿"
+        },
+        {
+            "3": "`1`pewter`2`★来自古法语 peautre ,来自拉丁语* peltrum ,词源可能同 spelter ,粗制锌，粗锌。"
+        },
+        {
+            "4": "Online Etymology Dictionary pewter n. early 14c., \"any of various alloys having tin as their main constituent\" (the usual form is one part lead to four parts tin), from Old French  peautre  (12c.), from Vulgar Latin  *peltrum  \"pewter\" (source of Spanish  peltre , Italian  peltro ), of uncertain origin. Related:  Pewterer ."
+        },
+        {
+            "5": "      pew·ter     /   ˈpjuːtə(r)     ;           NAmE     ˈpjuːtər     /         noun         [ uncountable         ]         a grey metal made by mixing tin with         lead, used especially in the past for making cups, dishes, etc; objects made from         pewter   白镴；锡镴；白镴制品         pewter   pewters           pew·ter     /   ˈpjuːtə(r)     ;           NAmE     ˈpjuːtər     /      "
+        },
+        {
+            "6": "pew教堂长椅ter特 =>想象教堂长椅是白 镴 做的，搬不走。"
         },
         {
             "7": ""
