@@ -308,7 +308,11 @@ def product_sound_separately(readlist,input_filename,engine,sound_source='localT
                 text_to_sound(k,v,engine,str(i)+'.mp3',sound_source)
                 i+=1
 
-
+def delete_sound_files(sound_folder):
+    for file_object in os.listdir(sound_folder):
+        file_object_path = os.path.join(sound_folder, file_object)
+        if os.path.isfile(file_object_path) or os.path.islink(file_object_path):
+            os.remove(file_object_path)
 
 def clear_sound_folder(sound_folder):
     for file_object in os.listdir(sound_folder):
@@ -326,7 +330,7 @@ def main():
     # list_voices(engine)
     determin_LONGMAN_BASE_PATH()
     #把旧的输出mp3目录清空
-    clear_sound_folder(SOUND_OUTPUT_FOLDER)
+    delete_sound_files(SOUND_OUTPUT_FOLDER)
     for input_file in os.listdir(INPUT_FOLDER):
         if not os.path.isfile(os.path.join(INPUT_FOLDER,input_file)):
             continue
