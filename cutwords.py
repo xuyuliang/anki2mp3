@@ -113,7 +113,11 @@ def isEnglishChar(s):
         return True
 
 # extract user's manual cut from Anki
-def extract_english_letters(realword,astring):
+
+def extract_english_letters(realword,astring):  #realword is the word itself, astring is tips or explains containing 'cuts'
+    realword = realword.lower()
+    # replace ' ' with ''
+    realword = realword.replace(' ','')
     contents = astring.split(' ')
     for content in contents:
         firstword = ''
@@ -124,7 +128,7 @@ def extract_english_letters(realword,astring):
                 firstword +='.'
         # print('firstword:',firstword)
         bigword = firstword.replace('.','')
-        # print(bigword)
+        print('bigword:',bigword)
         if realword in bigword:
             #find tail
             listword = firstword.split('.')
@@ -132,7 +136,7 @@ def extract_english_letters(realword,astring):
             # 其实没写分隔符号，只是提及了这个单词
             if listword[0] == realword :
                 return ''
-            # print(listword)
+            print(listword)
             for i,item in enumerate(listword):
                 # if realword.endswith(item) & listword[:i]
                 # print('curr:',i,'item:',item,len(item),realword.endswith(item))
@@ -378,8 +382,15 @@ def test4():
     realword = 'aroma'
     text='      aroma     /   əˈrəʊmə     ;           NAmE     əˈroʊmə     /         noun           a pleasant, noticeable smell         芳香；香味         ◆   the aroma of fresh coffee   新鲜咖啡的香味       aroma   aromas           aroma     /   əˈrəʊmə     ;           NAmE     əˈroʊmə     /      '
     extract_english_letters(realword,text)
+
+def test5():
+    print('测试5')
+    realword ='nouveau riche'
+    text = 'nou.veau.riche 新的，丰富的'
+    extract_english_letters(realword,text)
 if __name__ == "__main__" :
-    main()
-    test2()
-    test3()
-    test4() #测试不分段的短单词
+    # main()
+    # test2()
+    # test3()
+    # test4() #测试不分段的短单词
+    test5()
