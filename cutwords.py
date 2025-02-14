@@ -388,9 +388,15 @@ def test5():
     realword ='nouveau riche'
     text = 'nou.veau.riche 新的，丰富的'
     extract_english_letters(realword,text)
+def test6():
+    print('测试6')
+    realword ='come down with sth'
+    text = 'come.down.with.sth'
+    extract_english_letters(realword,text)
 if __name__ == "__main__" :
     # main()
     # test2()
     # test3()
     # test4() #测试不分段的短单词
     test5()
+    test6()
